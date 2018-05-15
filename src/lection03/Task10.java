@@ -13,7 +13,7 @@ public class Task10 {
         System.out.println("факториал while:" + calculateTheFactorialUsingWhile(number));
     }
 
-    static int calculateTheFactorialUsingFor(int n) {
+    static private int calculateTheFactorialUsingFor(int n) {
         int result = 1;
         for (int i = 1; i <= n; i++) {
             result = result * i;
@@ -21,7 +21,7 @@ public class Task10 {
         return result;
     }
 
-    static int calculateTheFactorialUsingWhile(int n) {
+    static private int calculateTheFactorialUsingWhile(int n) {
         int result = 1;
         int i = 1;
         while (i <= n) {

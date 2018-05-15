@@ -18,8 +18,8 @@ public class Task2 {
             }
         }
 
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
+        for (int i : array) {
+            System.out.println(i);
         }
     }
 }

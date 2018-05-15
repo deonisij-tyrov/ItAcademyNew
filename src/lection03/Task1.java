@@ -7,8 +7,8 @@ public class Task1 {
 
         int[] intArray = ArrayConsoleInput.getIntArrayFromConsole();
 
-        for (int i = 0; i < intArray.length; i++) {
-            System.out.print(intArray[i] + " ");
+        for (int i : intArray) {
+            System.out.print(i + " ");
         }
         System.out.println("");
         for (int i = intArray.length - 1; i >= 0; i--) {

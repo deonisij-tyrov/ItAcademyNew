@@ -34,7 +34,7 @@ public class Task8 {
         return cards;
     }
 
-    static String[][] mixCardsVar2(String[][] cards) {
+    static private String[][] mixCardsVar2(String[][] cards) {
         for (int i = 0; i < cards.length; i++) {
             List<String> list = Arrays.asList(cards[i]);
             Collections.shuffle(list);
@@ -46,10 +46,10 @@ public class Task8 {
         return cards;
     }
 
-    static void print(String[][] cards) {
-        for (int i = 0; i < cards.length; i++) {
-            for (int j = 0; j < cards[i].length; j++) {
-                System.out.print(cards[i][j] + "; ");
+    static private void print(String[][] cards) {
+        for (String[] strings : cards) {
+            for (String string : strings) {
+                System.out.print(string + "; ");
             }
             System.out.println("");
         }

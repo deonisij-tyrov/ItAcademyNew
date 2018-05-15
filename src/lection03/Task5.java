@@ -33,9 +33,9 @@ public class Task5 {
 
     private static void printMass(String[][] butterflyArray) {
 
-        for (int i = 0; i < butterflyArray.length; i++) {
-            for (int j = 0; j < butterflyArray[i].length; j++) {
-                System.out.print(butterflyArray[i][j] + " ");
+        for (String[] strings : butterflyArray) {
+            for (String string : strings) {
+                System.out.print(string + " ");
             }
             System.out.println("");
         }
