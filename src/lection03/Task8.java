@@ -23,14 +23,16 @@ public class Task8 {
     }
 
     static String[][] mixCardsVar1(String[][] cards) {
-        int cardNumber1 = (int) (Math.random() * 13);
-        int suitNumber1 = (int) (Math.random() * 4);
-        int cardNumber2 = (int) (Math.random() * 13);
-        int suitNumber2 = (int) (Math.random() * 4);
+        for (int i = 0; i < 3; i++) {
+            int cardNumber1 = (int) (Math.random() * 13);
+            int suitNumber1 = (int) (Math.random() * 4);
+            int cardNumber2 = (int) (Math.random() * 13);
+            int suitNumber2 = (int) (Math.random() * 4);
 
-        String tmp = cards[suitNumber1][cardNumber1];
-        cards[suitNumber1][cardNumber1] = cards[suitNumber2][cardNumber2];
-        cards[suitNumber2][cardNumber2] = tmp;
+            String tmp = cards[suitNumber1][cardNumber1];
+            cards[suitNumber1][cardNumber1] = cards[suitNumber2][cardNumber2];
+            cards[suitNumber2][cardNumber2] = tmp;
+        }
         return cards;
     }
 

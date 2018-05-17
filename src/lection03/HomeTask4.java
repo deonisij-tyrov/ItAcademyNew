@@ -10,41 +10,41 @@ public class HomeTask4 {
         System.out.println("Дз4");
         System.out.println("Введите размер двумерного массива:");
         Scanner scanner = new Scanner(System.in);
-        int sizeMassive1 = scanner.nextInt();
-        int sizeMassive2 = scanner.nextInt();
+        int sizeArray1 = scanner.nextInt();
+        int sizeArray2 = scanner.nextInt();
         System.out.println("Введите значение массива:");
-        int[][] massive = new int[sizeMassive1][sizeMassive2];
+        int[][] array = new int[sizeArray1][sizeArray2];
 
-        for (int i = 0; i < massive.length; i++) {
-            for (int j = 0; j < massive[i].length; j++) {
-                massive[i][j] = scanner.nextInt();
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                array[i][j] = scanner.nextInt();
             }
         }
 
         System.out.println("Исходный массив");
-        for (int i = 0; i < massive.length; i++) {
-            for (int j = 0; j < massive[i].length; j++) {
-                System.out.print(massive[i][j] + " ");
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print(array[i][j] + " ");
             }
             System.out.println("");
         }
 
-        int[] newMassive = linearize(massive);
+        int[] newArray = linearize(array);
         System.out.println("Итоговый массив");
-        for (int i = 0; i < newMassive.length; i++) {
-            System.out.print(newMassive[i] + " ");
+        for (int i = 0; i < newArray.length; i++) {
+            System.out.print(newArray[i] + " ");
         }
     }
 
     private static int[] linearize(int[][] massive) {
-        int[] newMassive = new int[massive.length * massive[0].length];
-        int newCountMassive = 0;
+        int[] newArray = new int[massive.length * massive[0].length];
+        int newCountArray = 0;
         for (int i = 0; i < massive.length; i++) {
             for (int j = 0; j < massive[i].length; j++) {
-                newMassive[newCountMassive] = massive[i][j];
-                newCountMassive++;
+                newArray[newCountArray] = massive[i][j];
+                newCountArray++;
             }
         }
-        return newMassive;
+        return newArray;
     }
 }

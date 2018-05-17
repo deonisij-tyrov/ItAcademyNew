@@ -7,25 +7,26 @@ public class ArrayConsoleInput {
         System.out.println("Введите размер массива:");
         Scanner scanner = new Scanner(System.in);
         int sizeMassive = scanner.nextInt();
-        String[] massive = new String[sizeMassive];
+        String[] array = new String[sizeMassive];
 
         System.out.println("Введите элементы массива");
-        for (int i = 0; i < massive.length; i++) {
-            massive[i] = scanner.next();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = scanner.next();
         }
-        return massive;
+        return array;
     }
 
     public static int[] getIntArrayFromConsole() {
-        System.out.println("Введите размер массива:");
-        Scanner scanner = new Scanner(System.in);
-        int sizeMassive = scanner.nextInt();
-        int[] massive = new int[sizeMassive];
-
-        System.out.println("Введите элементы массива");
-        for (int i = 0; i < massive.length; i++) {
-            massive[i] = scanner.nextInt();
-        }
-        return massive;
+//        System.out.println("Введите размер массива:");
+//        Scanner scanner = new Scanner(System.in);
+//        int sizeMassive = scanner.nextInt();
+//        int[] array = new int[sizeMassive];
+//
+//        System.out.println("Введите элементы массива");
+//        for (int i = 0; i < array.length; i++) {
+//            array[i] = scanner.nextInt();
+//        }
+//        return array;
+        return new int[]{12,45,78,56,13};
     }
 }

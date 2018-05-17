@@ -19,7 +19,8 @@ public class Task2 {
         }
 
         for (int i : array) {
-            System.out.println(i);
+            System.out.print(i + " ");
         }
+        System.out.println();
     }
 }

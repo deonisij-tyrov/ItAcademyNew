@@ -32,6 +32,10 @@ public class Task3 {
             }
         }
 
+        for (int element : intArray) {
+            System.out.print(element + " ");
+        }
+
         System.out.println("Сумма = " + sum);
     }
 }

@@ -14,5 +14,6 @@ public class Task1 {
         for (int i = intArray.length - 1; i >= 0; i--) {
             System.out.print(intArray[i] + " ");
         }
+
     }
 }

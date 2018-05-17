@@ -6,15 +6,26 @@ public class MainClassForLection03 {
 //        HomeTask2.run();
 //        HomeTask3.run();
 //        HomeTask4.run();
-//        Task1.run();
-//        Task2.run();
-//        Task3.run();
-//        Task4.run();
-//        Task5.run();
-//        Task6.run();
+        System.out.println("_______________________________________");
+        Task1.run();
+        System.out.println("_______________________________________");
+        Task2.run();
+        System.out.println("_______________________________________");
+        Task3.run();
+        System.out.println("_______________________________________");
+        Task4.run();
+        System.out.println("_______________________________________");
+        Task5.run();
+        System.out.println("_______________________________________");
+        Task6.run();
+        System.out.println("_______________________________________");
         Task7.run();
-        //Task8.run();
-//        Task9.run();
-//        Task10.run();
+        System.out.println("_______________________________________");
+        Task8.run();
+        System.out.println("_______________________________________");
+        Task9.run();
+        System.out.println("_______________________________________");
+        Task10.run();
+        System.out.println("_______________________________________");
     }
 }
