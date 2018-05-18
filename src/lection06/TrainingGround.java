@@ -21,9 +21,9 @@ int i = 0;
             i++;
         }
         if (checkLive(heroes) == true) {
-            System.out.print("heroes win" + i);
+            System.out.print("heroes win. Step : " + i);
         }
-        else {System.out.println("heroes dead" + i);}
+        else {System.out.println("heroes dead. Step : " + i);}
     }
 
 
