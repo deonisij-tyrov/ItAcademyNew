@@ -6,7 +6,7 @@ public class MainClassForLection02 {
 //        lection02.HomeTask2.run();
 //        lection02.HomeTask3.run();
 //        lection02.Task1.run();
-        lection02.Task2.run();
+//        lection02.Task2.run();
 //        lection02.Task3.run();
 //        Task4.run();
     }
