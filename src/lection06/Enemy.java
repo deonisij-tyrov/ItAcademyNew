@@ -1,6 +1,6 @@
 package lection06;
 
-public class Enemy implements Mortal {
+public abstract class Enemy implements Mortal {
     private int health;
     private int attackPower;
 
@@ -10,7 +10,7 @@ public class Enemy implements Mortal {
     }
 
     public int getHealth() {
-        return health;
+        return health >= 0 ? health : 0;
     }
 
     public void setHealth(int health) {
@@ -23,14 +23,11 @@ public class Enemy implements Mortal {
 
     public void takeDamage(int damage) {
         health -= damage;
-        System.out.println("this enemy have " + health + "hp\n");
+        System.out.println("this enemy have " + getHealth() + "hp\n");
     }
 
 
-    public void attackHero(Hero hero) {
-        System.out.println("Enemy attacks hero " + hero.getName());
-        hero.takeDamage(this.getAttackPower());
-    }
+    public abstract void attackHero(Hero hero);
 
     @Override
     public boolean isAlive() {

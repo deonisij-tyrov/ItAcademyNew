@@ -11,23 +11,25 @@ public class TrainingGround {
         heroes[1] = mage;
         heroes[2] = archer;
 
-        Enemy[] enemies = new Enemy[5];
-        for (int i = 0; i < enemies.length; i++) {
-            enemies[i] = new Zombie(100, 5);
-        }
-int i = 0;
+        Enemy[] enemies = new Enemy[4];
+        enemies[0] = new Zombie(100, 20);
+        enemies[1] = new Zombie(100, 20);
+        enemies[2] = new Vampire(100, 20);
+        enemies[3] = new Vampire(100, 20);
+
+        int numberOfMoves = 0;
         while (checkLive(heroes) && checkLive(enemies)) {
-            fight(heroes, enemies);
-            i++;
+            fight(enemies, heroes);
+            numberOfMoves++;
         }
         if (checkLive(heroes) == true) {
-            System.out.print("heroes win. Step : " + i);
+            System.out.print("heroes win. Step : " + numberOfMoves);
         }
-        else {System.out.println("heroes dead. Step : " + i);}
+        else {System.out.println("heroes dead. Step : " + numberOfMoves);}
     }
 
 
-    private static boolean checkLive (Mortal... mortal) {
+    public static boolean checkLive (Mortal... mortal) {
         for (Mortal m : mortal) {
             if (m.isAlive() == true) {
                 return true;
@@ -36,7 +38,7 @@ int i = 0;
         return false;
     }
 
-    private static void fight (Hero[] heroes, Enemy[] enemies) {
+    public static void fight ( Enemy[] enemies, Hero... heroes) {
         for (Hero hero : heroes) {
             if (hero.isAlive()) {
                 Enemy enemy = enemies[(int)(Math.random() * enemies.length)];

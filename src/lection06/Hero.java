@@ -13,7 +13,7 @@ public abstract class Hero implements Mortal {
     }
 
     public int getHealth() {
-        return health;
+        return health >= 0 ? health : 0;
     }
 
     public void setHealth(int health) {
@@ -40,7 +40,7 @@ public abstract class Hero implements Mortal {
     @Override
     public void takeDamage(int damage) {
         health -= damage;
-        System.out.println("this hero "+ getName() +" have " + health + "hp\n");
+        System.out.println("this hero " + getName() + " have " + getHealth() + "hp\n");
     }
 
     public void healthAdd(int healthToAdd) {

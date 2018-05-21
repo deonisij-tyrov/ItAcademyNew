@@ -1,7 +1,9 @@
 package lection06;
 
 public class Zombie extends Enemy {
-    private boolean rise = true;
+    public static final String ANSI_RED = "\u001b[31m";
+    private final int ROSE_AGAIN_HP = 50;
+    private boolean riseAgain = true;
 
     public Zombie(int health, int attackPower) {
         super(health, attackPower);
@@ -10,15 +12,19 @@ public class Zombie extends Enemy {
     @Override
     public void takeDamage(int damage) {
         super.takeDamage(damage);
-        if (this.isAlive() == false && rise == true) {
-            this.rise();
+        if (this.isAlive() == false && riseAgain == true) {
+            this.riseAgain();
         }
     }
 
-    public void rise() {
-        System.out.println("Zombie rises\n");
-        rise = false;
-        this.setHealth(50);
+    public void riseAgain() {
+        System.out.println(ANSI_RED + "Zombie rises\n");
+        riseAgain = false;
+        this.setHealth(ROSE_AGAIN_HP);
     }
 
+    public void attackHero(Hero hero) {
+        System.out.println(ANSI_RED + "Zombie attacks hero " + hero.getName());
+        hero.takeDamage(this.getAttackPower());
+    }
 }
