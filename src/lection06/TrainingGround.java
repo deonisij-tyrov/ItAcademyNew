@@ -3,6 +3,7 @@ package lection06;
 public class TrainingGround {
     public static void main(String[] args) {
 
+
         Hero[] heroes = new Hero[3];
         Warrior warrior = new Warrior("MyWarrior", 300,50, 3);
         Mage mage = new Mage("MyMage", 100, 20, 2);

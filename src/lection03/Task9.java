@@ -9,7 +9,7 @@ public class Task9 {
         System.out.println("Введите число");
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
-        System.out.print("натуральность числа:" + isNatural(number));
+        System.out.print("простое число:" + isNatural(number) + "\n");
 
 
     }
