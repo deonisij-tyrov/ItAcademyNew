@@ -14,7 +14,6 @@ public class Task2 {
                     break;
                 }
                 numberElements++;
-
             }
         }
 

@@ -8,8 +8,8 @@ package lection04.Time;
 Написать программу для тестирования возможностей класса.
 */
 public class Time {
-    private static final int MINUTES_IN_HOUR = 60;
-    private static final int SECONDS_IN_MINUTE = 60;
+    private final int MINUTES_IN_HOUR = 60;
+    private final int SECONDS_IN_MINUTE = 60;
     private int seconds;
     private int minutes;
     private int hours;
@@ -19,12 +19,12 @@ public class Time {
     }
 
     public Time(int seconds, int minutes, int hours) {
-        if (seconds < SECONDS_IN_MINUTE && minutes < MINUTES_IN_HOUR) {
+        if (seconds < 0 && minutes < 0) {
+            System.out.println("Неверно введенные данные");
+        } else {
             this.seconds = seconds;
             this.minutes = minutes;
             this.hours = hours;
-        } else {
-            System.out.println("Неверно введенные данные");
         }
     }
 

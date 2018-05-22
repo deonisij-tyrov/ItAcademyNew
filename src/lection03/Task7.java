@@ -10,7 +10,7 @@ public class Task7 {
         int cardNumber = (int) (Math.random() * 13);
         int suitNumber = (int) (Math.random() * 4);
         String[][] cards = cards();
-        System.out.print(cards[suitNumber][cardNumber]);
+        System.out.print(cards[suitNumber][cardNumber] + "\n");
     }
 
     static String[][] cards() {
