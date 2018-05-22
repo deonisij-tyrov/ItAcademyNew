@@ -6,12 +6,12 @@ public class Square extends Rectangle {
     }
 
     @Override
-    public double areaOfTheFigure() {
-        return Math.pow(this.sideA, 2);
+    public double area() {
+        return Math.pow(getSideA(), 2);
     }
 
     @Override
-    public double heightOfFigure(PointOfCoordinates fromThePoint, double side) {
+    public double height(PointOfCoordinates fromThePoint, double side) {
         return side;
     }
 }

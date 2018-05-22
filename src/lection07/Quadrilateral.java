@@ -1,14 +1,14 @@
 package lection07;
 
-public abstract class Quadrilateral extends Figure implements BasicMetodsOfFigure {
-    PointOfCoordinates pointA;
-    PointOfCoordinates pointB;
-    PointOfCoordinates pointC;
-    PointOfCoordinates pointD;
-    double sideA;
-    double sideB;
-    double sideC;
-    double sideD;
+public abstract class Quadrilateral extends Figure implements BasicMetodsOfQuadrilateral {
+    private PointOfCoordinates pointA;
+    private PointOfCoordinates pointB;
+    private PointOfCoordinates pointC;
+    private PointOfCoordinates pointD;
+    private double sideA;
+    private double sideB;
+    private double sideC;
+    private double sideD;
 
 
     public Quadrilateral(PointOfCoordinates pointA, PointOfCoordinates pointB, PointOfCoordinates pointC, PointOfCoordinates pointD) {
@@ -72,10 +72,10 @@ public abstract class Quadrilateral extends Figure implements BasicMetodsOfFigur
     }
 
     @Override
-    public abstract double areaOfTheFigure();
+    public abstract double area();
 
     @Override
-    public abstract double heightOfFigure(PointOfCoordinates fromThePoint, double side);
+    public abstract double height(PointOfCoordinates fromThePoint, double side);
 
     @Override
     public double perimeterOfTheFigure() {

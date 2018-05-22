@@ -6,16 +6,16 @@ public class Rectangle extends Quadrilateral implements BasicMetodsOfFigure {
     }
 
     @Override
-    public double areaOfTheFigure() {
+    public double area() {
         return getSideA() * getSideB();
     }
 
     @Override
-    public double heightOfFigure(PointOfCoordinates fromThePoint, double side) {
+    public double height(PointOfCoordinates fromThePoint, double side) {
         if (getSideA() == side) {
-            return sideB;
+            return getSideB();
         } else {
-            return sideA;
+            return getSideA();
         }
     }
 }

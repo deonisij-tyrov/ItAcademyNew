@@ -6,12 +6,16 @@ public class Parallelogram extends Quadrilateral implements BasicMetodsOfFigure 
     }
 
     @Override
-    public double areaOfTheFigure() {
-        return 0;
+    public double area() {
+        double height = height(getPointA(), getSideA());
+        return height * getSideA();
     }
 
     @Override
-    public double heightOfFigure(PointOfCoordinates fromThePoint, double side) {
-        return 0;
+    public double height(PointOfCoordinates fromThePoint, double side) {
+        /*полупериметр*/
+        double perimeter = perimeterOfTheFigure() / 2;
+        double dioganal = diagonal(fromThePoint);
+        return Math.sqrt(perimeter * (perimeter - getSideA()) * (perimeter - getSideB()) * perimeter - dioganal) * 2 / side;
     }
 }

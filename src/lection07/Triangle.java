@@ -1,6 +1,6 @@
 package lection07;
 
-public class Triangle extends Figure {
+public class Triangle extends Figure implements BasicMetodsOfFigure {
     PointOfCoordinates pointA;
     PointOfCoordinates pointB;
     PointOfCoordinates pointC;
@@ -52,5 +52,17 @@ public class Triangle extends Figure {
     @Override
     public double perimeterOfTheFigure() {
         return sideA + sideB + sideC;
+    }
+
+    @Override
+    public double area() {
+        return height(getPointA(),sideB) * sideB / 2;
+    }
+
+    @Override
+    public double height(PointOfCoordinates fromThePoint, double side) {
+        /*полупериметр*/
+        double perimeter = perimeterOfTheFigure() / 2;
+        return Math.sqrt(perimeter * (perimeter - getSideA()) * (perimeter - getSideB()) * perimeter - getSideC()) * 2 / side;
     }
 }
