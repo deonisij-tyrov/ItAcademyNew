@@ -1,6 +1,6 @@
 package lection07;
 
-public class Parallelogram extends Quadrilateral implements BasicMetodsOfFigure {
+public class Parallelogram extends Quadrilateral {
     public Parallelogram(PointOfCoordinates pointA, PointOfCoordinates pointB, PointOfCoordinates pointC, PointOfCoordinates pointD) {
         super(pointA, pointB, pointC, pointD);
     }

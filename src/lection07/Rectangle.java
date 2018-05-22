@@ -1,6 +1,6 @@
 package lection07;
 
-public class Rectangle extends Quadrilateral implements BasicMetodsOfFigure {
+public class Rectangle extends Quadrilateral {
     public Rectangle(PointOfCoordinates pointA, PointOfCoordinates pointB, PointOfCoordinates pointC, PointOfCoordinates pointD) {
         super(pointA, pointB, pointC, pointD);
     }
