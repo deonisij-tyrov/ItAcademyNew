@@ -1,0 +1,56 @@
+package lection07;
+
+public class Triangle extends Figure {
+    PointOfCoordinates pointA;
+    PointOfCoordinates pointB;
+    PointOfCoordinates pointC;
+    double sideA;
+    double sideB;
+    double sideC;
+
+    public Triangle(PointOfCoordinates pointA, PointOfCoordinates pointB, PointOfCoordinates pointC) {
+        double sideA = pointA.lengthOfSide(pointB);
+        double sideB = pointB.lengthOfSide(pointC);
+        double sideC = pointC.lengthOfSide(pointA);
+
+        if (sideA + sideB < sideC || sideB + sideC < sideA || sideC + sideA < sideB) {
+            System.out.println("Неверные данные");
+        } else {
+            this.pointA = pointA;
+            this.pointB = pointB;
+            this.pointC = pointC;
+            this.sideA = sideA;
+            this.sideB = sideB;
+            this.sideC = sideC;
+        }
+    }
+
+    public PointOfCoordinates getPointA() {
+        return pointA;
+    }
+
+    public PointOfCoordinates getPointB() {
+        return pointB;
+    }
+
+    public PointOfCoordinates getPointC() {
+        return pointC;
+    }
+
+    public double getSideA() {
+        return sideA;
+    }
+
+    public double getSideB() {
+        return sideB;
+    }
+
+    public double getSideC() {
+        return sideC;
+    }
+
+    @Override
+    public double perimeterOfTheFigure() {
+        return sideA + sideB + sideC;
+    }
+}
