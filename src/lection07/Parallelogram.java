@@ -8,7 +8,7 @@ public class Parallelogram extends Quadrilateral {
     @Override
     public double area() {
         double height = height(getPointA(), getSideA());
-        return height * getSideA();
+        return Math.rint(height * getSideA());
     }
 
     @Override
@@ -17,5 +17,10 @@ public class Parallelogram extends Quadrilateral {
         double perimeter = perimeterOfTheFigure() / 2;
         double dioganal = diagonal(fromThePoint);
         return Math.sqrt(perimeter * (perimeter - getSideA()) * (perimeter - getSideB()) * perimeter - dioganal) * 2 / side;
+    }
+
+    @Override
+    public String toString() {
+        return this.getClass().toString() + " " + getPointA() + " " + getPointB() + " " + getPointC() + " " + getPointD() + " - параллелограмм";
     }
 }

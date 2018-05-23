@@ -1,6 +1,6 @@
 package lection07;
 
-public class Rectangle extends Quadrilateral {
+public class Rectangle extends Parallelogram {
     public Rectangle(PointOfCoordinates pointA, PointOfCoordinates pointB, PointOfCoordinates pointC, PointOfCoordinates pointD) {
         super(pointA, pointB, pointC, pointD);
     }
@@ -17,5 +17,10 @@ public class Rectangle extends Quadrilateral {
         } else {
             return getSideA();
         }
+    }
+
+    @Override
+    public String toString() {
+        return this.getClass().toString() + " " + getPointA() + " " + getPointB() + " " + getPointC() + " " + getPointD() + " - прямоугольник";
     }
 }

@@ -1,28 +1,20 @@
 package lection07;
 
 public class Triangle extends Figure implements BasicMetodsOfFigure {
-    PointOfCoordinates pointA;
-    PointOfCoordinates pointB;
-    PointOfCoordinates pointC;
-    double sideA;
-    double sideB;
-    double sideC;
+    private PointOfCoordinates pointA;
+    private PointOfCoordinates pointB;
+    private PointOfCoordinates pointC;
+    private double sideA;
+    private double sideB;
+    private double sideC;
 
     public Triangle(PointOfCoordinates pointA, PointOfCoordinates pointB, PointOfCoordinates pointC) {
-        double sideA = pointA.lengthOfSide(pointB);
-        double sideB = pointB.lengthOfSide(pointC);
-        double sideC = pointC.lengthOfSide(pointA);
-
-        if (sideA + sideB < sideC || sideB + sideC < sideA || sideC + sideA < sideB) {
-            System.out.println("Неверные данные");
-        } else {
             this.pointA = pointA;
             this.pointB = pointB;
             this.pointC = pointC;
-            this.sideA = sideA;
-            this.sideB = sideB;
-            this.sideC = sideC;
-        }
+            this.sideA = pointA.lengthOfSide(pointB);
+            this.sideB = pointB.lengthOfSide(pointC);
+            this.sideC = pointC.lengthOfSide(pointA);
     }
 
     public PointOfCoordinates getPointA() {
@@ -56,13 +48,18 @@ public class Triangle extends Figure implements BasicMetodsOfFigure {
 
     @Override
     public double area() {
-        return height(getPointA(),sideB) * sideB / 2;
+        return Math.rint(height(getPointA(),sideB) * sideB / 2);
     }
 
     @Override
     public double height(PointOfCoordinates fromThePoint, double side) {
         /*полупериметр*/
         double perimeter = perimeterOfTheFigure() / 2;
-        return Math.sqrt(perimeter * (perimeter - getSideA()) * (perimeter - getSideB()) * perimeter - getSideC()) * 2 / side;
+        return Math.sqrt(perimeter * (perimeter - getSideA()) * (perimeter - getSideB()) * (perimeter - getSideC())) * 2 / side;
+    }
+
+    @Override
+    public String toString() {
+        return this.getClass().toString() + " " + pointA + " " + pointB + " " + pointC + " - треугольник";
     }
 }
