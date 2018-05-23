@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="164.00000000000003" y="0.0">lection07.BasicMetodsOfFigure</node>
+    <node x="258.125" y="240.0">lection07.RectangularTriangle</node>
+    <node x="200.0" y="475.0">lection07.ShapeUtils</node>
+    <node x="289.625" y="160.0">lection07.Triangle</node>
+    <node x="0.0" y="475.0">lection07.PointOfCoordinates</node>
+    <node x="107.37500000000003" y="240.0">lection07.Parallelogram</node>
+    <node x="0.0" y="80.0">lection07.BasicMetodsOfQuadrilateral</node>
+    <node x="117.87500000000003" y="320.0">lection07.Rectangle</node>
+    <node x="125.87500000000003" y="400.0">lection07.Square</node>
+    <node x="109.87500000000003" y="160.0">lection07.Quadrilateral</node>
+    <node x="218.00000000000003" y="80.0">lection07.Figure</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="lection07.Parallelogram" target="lection07.Quadrilateral">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="lection07.Quadrilateral" target="lection07.Figure">
+      <point x="29.5" y="-15.0" />
+      <point x="198.37500000000003" y="135.0" />
+      <point x="238.75000000000003" y="135.0" />
+      <point x="-20.75" y="15.0" />
+    </edge>
+    <edge source="lection07.RectangularTriangle" target="lection07.Triangle">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="lection07.BasicMetodsOfQuadrilateral" target="lection07.BasicMetodsOfFigure">
+      <point x="0.0" y="-15.0" />
+      <point x="99.0" y="55.0" />
+      <point x="204.75000000000003" y="55.0" />
+      <point x="-40.75" y="15.0" />
+    </edge>
+    <edge source="lection07.Square" target="lection07.Rectangle">
+      <point x="-1.4210854715202004E-14" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="lection07.Triangle" target="lection07.Figure">
+      <point x="-23.25" y="-15.0" />
+      <point x="312.875" y="135.0" />
+      <point x="280.25" y="135.0" />
+      <point x="20.75" y="15.0" />
+    </edge>
+    <edge source="lection07.Quadrilateral" target="lection07.BasicMetodsOfQuadrilateral">
+      <point x="-29.5" y="-15.0" />
+      <point x="139.37500000000003" y="135.0" />
+      <point x="99.0" y="135.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="lection07.Triangle" target="lection07.BasicMetodsOfFigure">
+      <point x="23.25" y="-15.0" />
+      <point x="359.375" y="135.0" />
+      <point x="351.75" y="135.0" />
+      <point x="351.75" y="55.0" />
+      <point x="286.25" y="55.0" />
+      <point x="40.75" y="15.0" />
+    </edge>
+    <edge source="lection07.Rectangle" target="lection07.Parallelogram">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="11.0" y="200.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
