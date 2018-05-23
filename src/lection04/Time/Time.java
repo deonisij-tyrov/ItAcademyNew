@@ -28,11 +28,11 @@ public class Time {
         }
     }
 
-    public int getAllSeconds() {
-        return seconds = seconds + SECONDS_IN_MINUTE * minutes + MINUTES_IN_HOUR * SECONDS_IN_MINUTE * hours;
+    public int getTimeInSeconds() {
+        return seconds + SECONDS_IN_MINUTE * minutes + MINUTES_IN_HOUR * SECONDS_IN_MINUTE * hours;
     }
 
     public void printSeconds() {
-        System.out.println("All seconds = " + this.getAllSeconds());
+        System.out.println("All seconds = " + this.getTimeInSeconds());
     }
 }

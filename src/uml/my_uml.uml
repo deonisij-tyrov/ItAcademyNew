@@ -3,70 +3,69 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="164.00000000000003" y="0.0">lection07.BasicMetodsOfFigure</node>
-    <node x="258.125" y="240.0">lection07.RectangularTriangle</node>
-    <node x="200.0" y="475.0">lection07.ShapeUtils</node>
-    <node x="289.625" y="160.0">lection07.Triangle</node>
-    <node x="0.0" y="475.0">lection07.PointOfCoordinates</node>
-    <node x="107.37500000000003" y="240.0">lection07.Parallelogram</node>
-    <node x="0.0" y="80.0">lection07.BasicMetodsOfQuadrilateral</node>
-    <node x="117.87500000000003" y="320.0">lection07.Rectangle</node>
-    <node x="125.87500000000003" y="400.0">lection07.Square</node>
-    <node x="109.87500000000003" y="160.0">lection07.Quadrilateral</node>
-    <node x="218.00000000000003" y="80.0">lection07.Figure</node>
+    <node x="321.5" y="0.0">lection06.Mortal</node>
+    <node x="221.0" y="158.0">lection06.Archer</node>
+    <node x="177.0" y="232.0">lection06.BattleGround</node>
+    <node x="73.00462962962962" y="79.0">lection06.Enemy</node>
+    <node x="0.0" y="158.0">lection06.Vampire</node>
+    <node x="0.0" y="232.0">lection06.TrainingGround</node>
+    <node x="112.0" y="158.0">lection06.Zombie</node>
+    <node x="316.8287037037037" y="79.0">lection06.Hero</node>
+    <node x="422.0" y="158.0">lection06.Warrior</node>
+    <node x="324.0" y="158.0">lection06.Mage</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="lection07.Parallelogram" target="lection07.Quadrilateral">
-      <point x="0.0" y="-15.0" />
-      <point x="0.0" y="15.0" />
+    <edge source="lection06.Vampire" target="lection06.Enemy">
+      <point x="0.0" y="-14.5" />
+      <point x="46.0" y="133.0" />
+      <point x="94.00462962962962" y="133.0" />
+      <point x="-21.0" y="14.5" />
     </edge>
-    <edge source="lection07.Quadrilateral" target="lection07.Figure">
-      <point x="29.5" y="-15.0" />
-      <point x="198.37500000000003" y="135.0" />
-      <point x="238.75000000000003" y="135.0" />
-      <point x="-20.75" y="15.0" />
+    <edge source="lection06.Hero" target="lection06.Mortal">
+      <point x="0.0" y="-14.5" />
+      <point x="353.8287037037037" y="54.0" />
+      <point x="363.0" y="54.0" />
+      <point x="0.0" y="14.5" />
     </edge>
-    <edge source="lection07.RectangularTriangle" target="lection07.Triangle">
-      <point x="0.0" y="-15.0" />
-      <point x="0.0" y="15.0" />
+    <edge source="lection06.Warrior" target="lection06.Hero">
+      <point x="-21.75" y="-14.5" />
+      <point x="443.75" y="133.0" />
+      <point x="378.4953703703704" y="133.0" />
+      <point x="24.66666666666667" y="14.5" />
     </edge>
-    <edge source="lection07.BasicMetodsOfQuadrilateral" target="lection07.BasicMetodsOfFigure">
-      <point x="0.0" y="-15.0" />
-      <point x="99.0" y="55.0" />
-      <point x="204.75000000000003" y="55.0" />
-      <point x="-40.75" y="15.0" />
+    <edge source="lection06.Mage" target="lection06.Hero">
+      <point x="0.0" y="-14.5" />
+      <point x="363.0" y="133.0" />
+      <point x="353.8287037037037" y="133.0" />
+      <point x="0.0" y="14.5" />
     </edge>
-    <edge source="lection07.Square" target="lection07.Rectangle">
-      <point x="-1.4210854715202004E-14" y="-15.0" />
-      <point x="0.0" y="15.0" />
+    <edge source="lection06.Zombie" target="lection06.Enemy">
+      <point x="0.0" y="-14.5" />
+      <point x="156.5" y="133.0" />
+      <point x="136.00462962962962" y="133.0" />
+      <point x="21.0" y="14.5" />
     </edge>
-    <edge source="lection07.Triangle" target="lection07.Figure">
-      <point x="-23.25" y="-15.0" />
-      <point x="312.875" y="135.0" />
-      <point x="280.25" y="135.0" />
-      <point x="20.75" y="15.0" />
+    <edge source="lection06.Enemy" target="lection06.Mortal">
+      <point x="0.0" y="-14.5" />
+      <point x="115.00462962962962" y="54.0" />
+      <point x="335.3333333333333" y="54.0" />
+      <point x="-27.666666666666668" y="14.5" />
     </edge>
-    <edge source="lection07.Quadrilateral" target="lection07.BasicMetodsOfQuadrilateral">
-      <point x="-29.5" y="-15.0" />
-      <point x="139.37500000000003" y="135.0" />
-      <point x="99.0" y="135.0" />
-      <point x="0.0" y="15.0" />
+    <edge source="lection06.Archer" target="lection06.Hero">
+      <point x="0.0" y="-14.5" />
+      <point x="262.5" y="133.0" />
+      <point x="329.162037037037" y="133.0" />
+      <point x="-24.666666666666668" y="14.5" />
     </edge>
-    <edge source="lection07.Triangle" target="lection07.BasicMetodsOfFigure">
-      <point x="23.25" y="-15.0" />
-      <point x="359.375" y="135.0" />
-      <point x="351.75" y="135.0" />
-      <point x="351.75" y="55.0" />
-      <point x="286.25" y="55.0" />
-      <point x="40.75" y="15.0" />
-    </edge>
-    <edge source="lection07.Rectangle" target="lection07.Parallelogram">
-      <point x="0.0" y="-15.0" />
-      <point x="0.0" y="15.0" />
+    <edge source="lection06.Warrior" target="lection06.Mortal">
+      <point x="21.75" y="-14.5" />
+      <point x="487.25" y="54.0" />
+      <point x="390.66666666666663" y="54.0" />
+      <point x="27.66666666666667" y="14.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="11.0" y="200.0" />
+  <settings layout="Hierarchic Group" zoom="1.0" x="11.5" y="200.5" />
   <SelectedNodes />
   <Categories />
   <SCOPE>All</SCOPE>
