@@ -8,10 +8,15 @@ public abstract class Figure {
     }
 
     public static Figure newFigure(PointOfCoordinates pointA, PointOfCoordinates pointB, PointOfCoordinates pointC, PointOfCoordinates pointD) {
+        double sideA = pointA.lengthOfSide(pointB);
+        double sideB = pointB.lengthOfSide(pointC);
+        double sideC = pointC.lengthOfSide(pointD);
+        double sideD = pointD.lengthOfSide(pointA);
+
         if (pointA.lengthOfSide(pointB) == pointC.lengthOfSide(pointD) && pointB.lengthOfSide(pointC) == pointD.lengthOfSide(pointA)) {
-            if (pointA.lengthOfSide(pointB) == pointC.lengthOfSide(pointD) && pointB.lengthOfSide(pointC) == pointD.lengthOfSide(pointA)) {//параллелограмм ?
-                if (pointA.getX() == pointB.getX() && pointC.getX() == pointD.getX() && pointB.getY() == pointC.getY() && pointA.getY() == pointD.getY()) {  //прямоугольник ?
-                    if (pointA.lengthOfSide(pointB) == pointB.lengthOfSide(pointC)) {                                                                               //квадрат ?
+            if (sideA == sideC && sideB == sideD) {                                                                                                                 //параллелограмм ?
+                if (pointA.getX() == pointB.getX() && pointC.getX() == pointD.getX() && pointB.getY() == pointC.getY() && pointA.getY() == pointD.getY()) {         //прямоугольник ?
+                    if (sideA == sideB) {                                                                                                                           //квадрат ?
                         return new Square(pointA, pointB, pointC, pointD);
                     } else {
                         return new Rectangle(pointA, pointB, pointC, pointD);
