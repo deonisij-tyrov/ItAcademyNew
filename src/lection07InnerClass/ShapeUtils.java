@@ -1,5 +1,7 @@
-package lection07;
+package lection07InnerClass;
 
+
+import lection07InnerClass.RectangularTriangle;
 
 public class ShapeUtils {
     public static void main(String[] args) {
