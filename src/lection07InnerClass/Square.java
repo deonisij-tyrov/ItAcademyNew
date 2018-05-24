@@ -14,4 +14,9 @@ public class Square extends Rectangle {
     public double height(PointOfCoordinates fromThePoint, double side) {
         return side;
     }
+
+    @Override
+    public String toString() {
+        return this.getClass().toString() + " " + getPointA() + " " + getPointB() + " " + getPointC() + " " + getPointD() + " - квадрат";
+    }
 }

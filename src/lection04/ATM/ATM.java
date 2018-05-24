@@ -8,9 +8,9 @@ package lection04.ATM;
 Создать конструктор с тремя параметрами - количеством купюр каждого номинала.
 */
 public class ATM {
-    private static final int RATE20 = 20;
-    private static final int RATE50 = 50;
-    private static final int RATE100 = 100;
+    private static final int RATE_20 = 20;
+    private static final int RATE_50 = 50;
+    private static final int RATE_100 = 100;
     private int rate20Count;
     private int rate50Count;
     private int rate100Count;
@@ -38,14 +38,14 @@ public class ATM {
         int rate50 = rate50Count;
         int rate100 = rate100Count;
         while (takeMoney != 0) {
-            if (takeMoney >= RATE100 && rate100Count > 0 && (takeMoney / 10) % 2 == 0) {
-                takeMoney -= RATE100;
+            if (takeMoney >= RATE_100 && rate100Count > 0 && (takeMoney / 10) % 2 == 0) {
+                takeMoney -= RATE_100;
                 rate100Count--;
-            } else if (takeMoney >= RATE50 && rate50Count > 0 && ((takeMoney / 10) % 2 != 0 || takeMoney % 50 == 0)) {
-                takeMoney -= RATE50;
+            } else if (takeMoney >= RATE_50 && rate50Count > 0 && ((takeMoney / 10) % 2 != 0 || takeMoney % 50 == 0)) {
+                takeMoney -= RATE_50;
                 rate50Count--;
-            } else if (takeMoney >= RATE20 && rate20Count > 0) {
-                takeMoney -= RATE20;
+            } else if (takeMoney >= RATE_20 && rate20Count > 0) {
+                takeMoney -= RATE_20;
                 rate20Count--;
             } else {
                 System.out.println("Ошибка выдачи");

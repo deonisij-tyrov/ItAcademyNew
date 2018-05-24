@@ -18,4 +18,9 @@ public class Rectangle extends Parallelogram {
             return getSideA();
         }
     }
+
+    @Override
+    public String toString() {
+        return this.getClass().toString() + " " + getPointA() + " " + getPointB() + " " + getPointC() + " " + getPointD() + " - прямоугольник";
+    }
 }
