@@ -1,4 +1,4 @@
-package lection07;
+package lection07InnerClass;
 
 public class Triangle extends Figure implements BasicMetodsOfFigure {
     PointOfCoordinates pointA;

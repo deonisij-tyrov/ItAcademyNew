@@ -1,4 +1,4 @@
-package lection07;
+package lection07InnerClass;
 
 public class Parallelogram extends Quadrilateral {
     public Parallelogram(PointOfCoordinates pointA, PointOfCoordinates pointB, PointOfCoordinates pointC, PointOfCoordinates pointD) {

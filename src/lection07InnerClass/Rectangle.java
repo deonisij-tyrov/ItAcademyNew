@@ -1,6 +1,6 @@
-package lection07;
+package lection07InnerClass;
 
-public class Rectangle extends Quadrilateral {
+public class Rectangle extends Parallelogram {
     public Rectangle(PointOfCoordinates pointA, PointOfCoordinates pointB, PointOfCoordinates pointC, PointOfCoordinates pointD) {
         super(pointA, pointB, pointC, pointD);
     }
