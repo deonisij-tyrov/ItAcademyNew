@@ -1,4 +1,4 @@
-package lection07;
+package lection07InnerClass;
 
 public class Rectangle extends Parallelogram {
     public Rectangle(PointOfCoordinates pointA, PointOfCoordinates pointB, PointOfCoordinates pointC, PointOfCoordinates pointD) {

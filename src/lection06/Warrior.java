@@ -1,6 +1,6 @@
 package lection06;
 
-public class Warrior extends Hero implements Mortal {
+public class Warrior extends Hero {
     public static final String ANSI_BLUE = "\u001b[34m";
     private int stepToAbility;
 

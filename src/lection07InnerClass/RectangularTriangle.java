@@ -1,4 +1,4 @@
-package lection07;
+package lection07InnerClass;
 
 public class RectangularTriangle extends Triangle {
     public RectangularTriangle(PointOfCoordinates pointA, PointOfCoordinates pointB, PointOfCoordinates pointC) {

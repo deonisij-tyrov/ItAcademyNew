@@ -1,4 +1,4 @@
-package lection07;
+package lection07InnerClass;
 
 public abstract class Quadrilateral extends Figure implements BasicMetodsOfQuadrilateral {
     private PointOfCoordinates pointA;

@@ -7,13 +7,13 @@ import lection04.homeTask.Rectangle;
 
 public class MainForLection04 {
     public static void main (String[] args) {
-        Time time1 = new Time(380);
-        time1.printSeconds();
-        Time time2 = new Time(55, 1, 1);
-        time2.printSeconds();
+//        Time time1 = new Time(380);
+//        time1.printSeconds();
+//        Time time2 = new Time(55, 1, 1);
+//        time2.printSeconds();
 
-//        ATM atm = new ATM(4,4,3);
-//        atm.takeOffMoney(160);
+        ATM atm = new ATM(10,10,10);
+        atm.takeOffMoney(60);
 
 //        Point point1 = new Point(4,4);
 //        Point point2 = new Point(6,2);
