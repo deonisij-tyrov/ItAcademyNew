@@ -1,7 +1,7 @@
 package lection06;
 
 public class Vampire extends Enemy {
-    public static final String ANSI_CYAN = "\u001B[36m";
+    private static final String ANSI_CYAN = "\u001B[36m";
 
     public Vampire(int health, int attackPower) {
         super(health, attackPower);

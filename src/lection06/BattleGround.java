@@ -1,13 +1,17 @@
 package lection06;
 
-import static lection06.TrainingGround.*;
+import static lection06.TrainingGround.checkLive;
+import static lection06.TrainingGround.fight;
 
 public class BattleGround {
 
     public static void main(String[] args) {
         fight1();
+        System.out.println("\n___________________________");
         fight2();
+        System.out.println("\n___________________________");
         fight3();
+        System.out.println("\n___________________________");
     }
 
     private static void fight1() {

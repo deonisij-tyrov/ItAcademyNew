@@ -1,7 +1,7 @@
 package lection06;
 
 public class Warrior extends Hero {
-    public static final String ANSI_BLUE = "\u001b[34m";
+    private static final String ANSI_BLUE = "\u001b[34m";
     private int stepToAbility;
 
     public Warrior(String name, int health, int attackPower, int stepToAbility) {
@@ -19,7 +19,7 @@ public class Warrior extends Hero {
     }
 
     public void fury(Enemy enemy) {
-            System.out.println(ANSI_BLUE + "The warrior " + super.getName() + " is furious:");
-            attackEnemy(enemy);
+        System.out.println(ANSI_BLUE + "The warrior " + super.getName() + " is furious:");
+        attackEnemy(enemy);
     }
 }

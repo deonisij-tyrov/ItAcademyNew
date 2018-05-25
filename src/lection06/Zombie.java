@@ -1,7 +1,7 @@
 package lection06;
 
 public class Zombie extends Enemy {
-    public static final String ANSI_RED = "\u001b[31m";
+    private static final String ANSI_RED = "\u001b[31m";
     private final int ROSE_AGAIN_HP = 50;
     private boolean riseAgain = true;
 

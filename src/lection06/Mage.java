@@ -1,7 +1,7 @@
 package lection06;
 
 public class Mage extends Hero {
-    public static final String ANSI_YELLOW = "\u001B[33m";
+    private static final String ANSI_YELLOW = "\u001B[33m";
     private final int MANA_FOR_ABILITY = 2;
     private final int CRITICAL_HIALTH = 20;
     private int mana;
@@ -18,7 +18,7 @@ public class Mage extends Hero {
         mana++;
         if (this.getHealth() < CRITICAL_HIALTH && mana > MANA_FOR_ABILITY) {
             therapy(this);
-            mana -= 2;
+            mana -= MANA_FOR_ABILITY;
         }
     }
 

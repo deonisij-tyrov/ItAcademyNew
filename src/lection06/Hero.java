@@ -16,10 +16,6 @@ public abstract class Hero implements Mortal {
         return health >= 0 ? health : 0;
     }
 
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
     public String getName() {
         return name;
     }
