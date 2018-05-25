@@ -3,63 +3,65 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="180.69791666666669" y="0.0">lection06.Mortal</node>
-    <node x="434.0" y="160.0">lection06.Archer</node>
-    <node x="179.0" y="235.0">lection06.BattleGround</node>
-    <node x="53.48958333333334" y="80.0">lection06.Enemy</node>
-    <node x="111.0" y="160.0">lection06.Vampire</node>
-    <node x="0.0" y="235.0">lection06.TrainingGround</node>
-    <node x="0.0" y="160.0">lection06.Zombie</node>
-    <node x="331.5" y="80.0">lection06.Hero</node>
-    <node x="325.0" y="160.0">lection06.Warrior</node>
-    <node x="225.0" y="160.0">lection06.Mage</node>
+    <node x="360.75" y="0.0">lection06.Mortal</node>
+    <node x="868.0" y="389.0">lection06.Archer</node>
+    <node x="0.0" y="518.0">lection06.BattleGround</node>
+    <node x="95.765625" y="145.0">lection06.Enemy</node>
+    <node x="0.0" y="389.0">lection06.Vampire</node>
+    <node x="214.0" y="518.0">lection06.TrainingGround</node>
+    <node x="207.0" y="378.0">lection06.Zombie</node>
+    <node x="641.0" y="123.0">lection06.Hero</node>
+    <node x="641.0" y="389.0">lection06.Warrior</node>
+    <node x="414.0" y="389.0">lection06.Mage</node>
   </nodes>
   <notes />
   <edges>
     <edge source="lection06.Vampire" target="lection06.Enemy">
-      <point x="0.0" y="-15.0" />
-      <point x="158.0" y="135.0" />
-      <point x="117.98958333333334" y="135.0" />
-      <point x="21.5" y="15.0" />
+      <point x="0.0" y="-36.5" />
+      <point x="93.5" y="353.0" />
+      <point x="142.515625" y="353.0" />
+      <point x="-46.75" y="80.5" />
     </edge>
     <edge source="lection06.Hero" target="lection06.Mortal">
-      <point x="0.0" y="-15.0" />
-      <point x="369.5" y="55.0" />
-      <point x="244.44791666666669" y="55.0" />
-      <point x="21.25" y="15.0" />
-    </edge>
-    <edge source="lection06.Mage" target="lection06.Hero">
-      <point x="0.0" y="-15.0" />
-      <point x="265.0" y="135.0" />
-      <point x="344.1666666666667" y="135.0" />
-      <point x="-25.333333333333314" y="15.0" />
+      <point x="0.0" y="-102.5" />
+      <point x="744.5" y="98.0" />
+      <point x="498.0" y="98.0" />
+      <point x="45.75" y="36.5" />
     </edge>
     <edge source="lection06.Warrior" target="lection06.Hero">
-      <point x="0.0" y="-15.0" />
-      <point x="0.0" y="15.0" />
-    </edge>
-    <edge source="lection06.Zombie" target="lection06.Enemy">
-      <point x="0.0" y="-15.0" />
-      <point x="45.5" y="135.0" />
-      <point x="74.98958333333334" y="135.0" />
-      <point x="-21.5" y="15.0" />
-    </edge>
-    <edge source="lection06.Archer" target="lection06.Hero">
-      <point x="0.0" y="-15.0" />
-      <point x="476.5" y="135.0" />
-      <point x="394.8333333333333" y="135.0" />
-      <point x="25.333333333333314" y="15.0" />
+      <point x="0.0" y="-36.5" />
+      <point x="0.0" y="102.5" />
     </edge>
     <edge source="lection06.Enemy" target="lection06.Mortal">
-      <point x="0.0" y="-15.0" />
-      <point x="96.48958333333334" y="55.0" />
-      <point x="201.94791666666669" y="55.0" />
-      <point x="-21.25" y="15.0" />
+      <point x="0.0" y="-80.5" />
+      <point x="189.265625" y="98.0" />
+      <point x="406.5" y="98.0" />
+      <point x="-45.75" y="36.5" />
+    </edge>
+    <edge source="lection06.Mage" target="lection06.Hero">
+      <point x="0.0" y="-36.5" />
+      <point x="517.5" y="353.0" />
+      <point x="675.5" y="353.0" />
+      <point x="-69.0" y="102.5" />
+    </edge>
+    <edge source="lection06.Zombie" target="lection06.Enemy">
+      <point x="0.0" y="-47.5" />
+      <point x="300.5" y="353.0" />
+      <point x="236.015625" y="353.0" />
+      <point x="46.75" y="80.5" />
+    </edge>
+    <edge source="lection06.Archer" target="lection06.Hero">
+      <point x="0.0" y="-36.5" />
+      <point x="971.5" y="353.0" />
+      <point x="813.5" y="353.0" />
+      <point x="69.0" y="102.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="587.0" y="276.0" />
+  <settings layout="Hierarchic Group" zoom="1.0" x="587.0" y="536.5" />
   <SelectedNodes />
-  <Categories />
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>
 </Diagram>

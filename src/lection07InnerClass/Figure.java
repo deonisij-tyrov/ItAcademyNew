@@ -1,12 +1,6 @@
 package lection07InnerClass;
 
 public abstract class Figure {
-    public abstract double area();
-
-    public boolean saneArea(Figure figure) {
-        return this.area() == figure.area();
-    }
-
     public static Figure newFigure(PointOfCoordinates pointA, PointOfCoordinates pointB, PointOfCoordinates pointC, PointOfCoordinates pointD) {
         double sideA = pointA.lengthOfSide(pointB);
         double sideB = pointB.lengthOfSide(pointC);
@@ -37,7 +31,9 @@ public abstract class Figure {
 
         if (sideA + sideB < sideC || sideB + sideC < sideA || sideC + sideA < sideB) {
             System.out.println("Неверные данные");
-        } else if (sideA == Math.sqrt(Math.pow(sideB, 2) + Math.pow(sideC,2 )) || sideB == Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideC,2 )) || sideC == Math.sqrt(Math.pow(sideB, 2) + Math.pow(sideA,2 ))) {
+        } else if (sideA == Math.sqrt(Math.pow(sideB, 2) + Math.pow(sideC, 2)) ||
+                sideB == Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideC, 2)) ||
+                sideC == Math.sqrt(Math.pow(sideB, 2) + Math.pow(sideA, 2))) {      //прямоугольный ?
             return new RectangularTriangle(pointA, pointB, pointC);
         } else {
             return new Triangle(pointA, pointB, pointC);
@@ -45,5 +41,11 @@ public abstract class Figure {
 
         System.out.println("Фигура не определена");
         return null;
+    }
+
+    public abstract double area();
+
+    public boolean saneArea(Figure figure) {
+        return this.area() == figure.area();
     }
 }
