@@ -27,6 +27,8 @@ public class ShapeUtils {
                 if (figure instanceof Square) {
                     System.out.print(" - Квадрат");
                 }
+            } else {
+                System.out.print(" - Ромб");
             }
         }
         System.out.println();

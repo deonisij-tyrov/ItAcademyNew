@@ -7,14 +7,16 @@ public abstract class Figure {
         double sideC = pointC.lengthOfSide(pointD);
         double sideD = pointD.lengthOfSide(pointA);
 
-        if (pointA.lengthOfSide(pointB) == pointC.lengthOfSide(pointD) && pointB.lengthOfSide(pointC) == pointD.lengthOfSide(pointA)) {
-            if (sideA == sideC && sideB == sideD) {                                                                                                                 //параллелограмм ?
-                if (pointA.getX() == pointB.getX() && pointC.getX() == pointD.getX() && pointB.getY() == pointC.getY() && pointA.getY() == pointD.getY()) {         //прямоугольник ?
-                    if (sideA == sideB) {                                                                                                                           //квадрат ?
-                        return new Square(pointA, pointB, pointC, pointD);
-                    } else {
-                        return new Rectangle(pointA, pointB, pointC, pointD);
-                    }
+        if (sideA == sideC && sideB == sideD) {                                                                                                                 //параллелограмм ?
+            if (hasrightAngle(sideA, sideB, pointB.lengthOfSide(pointD))) {                                                                                    //прямоугольник ?
+                if (sideA == sideB) {                                                                                                                           //квадрат ?
+                    return new Square(pointA, pointB, pointC, pointD);
+                } else {
+                    return new Rectangle(pointA, pointB, pointC, pointD);
+                }
+            } else {
+                if (sideA == sideB) {
+                    return new Rhombus(pointA, pointB, pointC, pointD);
                 } else {
                     return new Parallelogram(pointA, pointB, pointC, pointD);
                 }
@@ -31,9 +33,7 @@ public abstract class Figure {
 
         if (sideA + sideB < sideC || sideB + sideC < sideA || sideC + sideA < sideB) {
             System.out.println("Неверные данные");
-        } else if (sideA == Math.sqrt(Math.pow(sideB, 2) + Math.pow(sideC, 2)) ||
-                sideB == Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideC, 2)) ||
-                sideC == Math.sqrt(Math.pow(sideB, 2) + Math.pow(sideA, 2))) {      //прямоугольный ?
+        } else if (hasrightAngle(sideA, sideB, sideC)) {                                    //прямоугольный ?
             return new RectangularTriangle(pointA, pointB, pointC);
         } else {
             return new Triangle(pointA, pointB, pointC);
@@ -41,6 +41,12 @@ public abstract class Figure {
 
         System.out.println("Фигура не определена");
         return null;
+    }
+
+    private static boolean hasrightAngle(double sideA, double sideB, double sideC) {
+        return sideA == Math.sqrt(Math.pow(sideB, 2) + Math.pow(sideC, 2)) ||
+                sideB == Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideC, 2)) ||
+                sideC == Math.sqrt(Math.pow(sideB, 2) + Math.pow(sideA, 2));
     }
 
     public abstract double area();
