@@ -1,8 +1,8 @@
-package lection08AnnotationGenerics;
+package lection08AnnotationGenerics.pair;
 
 public class Pair<K,V> {
-    K k;
-    V v;
+    private K k;
+    private V v;
 
     public Pair(K k, V v) {
         this.k = k;
