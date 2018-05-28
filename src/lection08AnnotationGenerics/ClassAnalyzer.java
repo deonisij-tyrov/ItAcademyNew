@@ -22,8 +22,7 @@ public class ClassAnalyzer {
 
     private static void getClassInformation(Class c) {
         System.out.println("Имя класса: " + c.getName());
-        System.out.println("Имя суперкласса" + c.getSuperclass().getName());
-
+        getAnnotationInformation(c.getAnnotations());
         Class[] interfaces = c.getInterfaces();
         if (interfaces.length > 0) {
             System.out.println("Интерфейсы: ");
@@ -31,93 +30,47 @@ public class ClassAnalyzer {
                 System.out.print(clazz + " ");
             }
         }
-        getAnnotationInformation(c.getAnnotations());
+        System.out.println();
     }
 
     private static void getFieldInformation(Class c) {
-        Field[] fields = c.getFields();
+        Field[] fields = c.getDeclaredFields();
         if (fields.length > 0) {
-            System.out.println("Доступные поля: ");
+            System.out.println("Поля: ");
             for (Field f : fields) {
-                System.out.print(f.getType() + " " + f.getName() + ", ");
+                System.out.println("\t" + f.getType() + " " + f.getName() + ", ");
                 getAnnotationInformation(f.getAnnotations());
             }
         }
-
-        fields = c.getDeclaredFields();
-        if (fields.length > 0) {
-            System.out.println("Закрытые поля: ");
-            for (Field f : fields) {
-                System.out.print(f.getType() + " " + f.getName() + ", ");
-                getAnnotationInformation(f.getAnnotations());
-            }
-        }
+        System.out.println();
     }
 
     private static void getMethodInformation(Class c) {
-        Method[] methods = c.getMethods();
+        Method[] methods = c.getDeclaredMethods();
         System.out.println("Доступные методы: ");
         for (Method method : methods) {
-            if (!method.getName().equals("equals") && !method.getName().equals("clone") && !method.getName().equals("finalize") && !method.getName().equals("getClass") &&
-                    !method.getName().equals("hashCode") && !method.getName().equals("notify") && !method.getName().equals("notifyAll") && !method.getName().equals("toString") &&
-                    !method.getName().equals("wait")) {
-                System.out.println("Имя метода: " + method.getName());
-                System.out.println("Тип возвращаемого значения: " + method.getReturnType().getName());
-
-                Class[] paramTypes = method.getParameterTypes();
-                System.out.print("Типы параметров: ");
-                for (Class paramType : paramTypes) {
-                    System.out.print(" " + paramType.getName());
-                }
-            }
+            System.out.println("\t" + method.toString());
             getAnnotationInformation(method.getAnnotations());
         }
-
-        methods = c.getDeclaredMethods();
-        System.out.println("Скрытые методы: ");
-        for (Method method : methods) {
-            System.out.println("Имя скрытого метода: " + method.getName());
-            System.out.println("Тип возвращаемого значения: " + method.getReturnType().getName());
-
-            Class[] paramTypes = method.getParameterTypes();
-            System.out.print("Типы параметров: ");
-            for (Class paramType : paramTypes) {
-                System.out.print(" " + paramType.getName());
-            }
-            getAnnotationInformation(method.getAnnotations());
-        }
+        System.out.println();
     }
 
     private static void getConstructorInformation(Class c) {
-        Constructor[] constructors = c.getConstructors();
+        Constructor[] constructors = c.getDeclaredConstructors();
         if (constructors.length > 0) {
-            System.out.println("Конструктор(ы) открытый(е):");
-            printConstructor(constructors);
-        }
-        Constructor[] declaredConstructors = c.getDeclaredConstructors();
-        if (declaredConstructors.length > 0) {
-            System.out.println("Конструктор(ы) закрытый(е):");
-            printConstructor(declaredConstructors);
-        }
-    }
-
-    private static void printConstructor(Constructor[] constructors) {
-        for (Constructor constructor : constructors) {
-            Class[] paramTypes = constructor.getParameterTypes();
-            for (Class paramType : paramTypes) {
-                System.out.print(paramType.getName() + " ");
+            System.out.println("Конструктор(ы) :");
+            for (Constructor constructor : constructors) {
+                System.out.println("\t" + constructor.toString());
             }
-            System.out.println();
         }
     }
 
     private static void getAnnotationInformation(Annotation[] annotations) {
         if (annotations.length > 0) {
-            System.out.println("\nАннотация:");
+            System.out.println("\tАннотация:");
             for (Annotation a : annotations) {
-                System.out.println(a);
+                System.out.println("\t\t" + a);
             }
         }
-        System.out.println();
     }
 }
