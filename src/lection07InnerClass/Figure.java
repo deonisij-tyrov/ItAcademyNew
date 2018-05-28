@@ -1,7 +1,7 @@
 package lection07InnerClass;
 
 public abstract class Figure {
-    public static Figure newFigure(PointOfCoordinates pointA, PointOfCoordinates pointB, PointOfCoordinates pointC, PointOfCoordinates pointD) {
+    public static Figure newFigure(Point2D pointA, Point2D pointB, Point2D pointC, Point2D pointD) {
         double sideA = pointA.lengthOfSide(pointB);
         double sideB = pointB.lengthOfSide(pointC);
         double sideC = pointC.lengthOfSide(pointD);
@@ -26,7 +26,7 @@ public abstract class Figure {
         return null;
     }
 
-    public static Figure newFigure(PointOfCoordinates pointA, PointOfCoordinates pointB, PointOfCoordinates pointC) {
+    public static Figure newFigure(Point2D pointA, Point2D pointB, Point2D pointC) {
         double sideA = pointA.lengthOfSide(pointB);
         double sideB = pointB.lengthOfSide(pointC);
         double sideC = pointC.lengthOfSide(pointA);

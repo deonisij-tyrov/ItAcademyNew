@@ -1,7 +1,7 @@
 package lection07InnerClass;
 
 public class Rectangle extends Parallelogram {
-    public Rectangle(PointOfCoordinates pointA, PointOfCoordinates pointB, PointOfCoordinates pointC, PointOfCoordinates pointD) {
+    public Rectangle(Point2D pointA, Point2D pointB, Point2D pointC, Point2D pointD) {
         super(pointA, pointB, pointC, pointD);
     }
 
@@ -11,7 +11,7 @@ public class Rectangle extends Parallelogram {
     }
 
     @Override
-    public double height(PointOfCoordinates fromThePoint, double side) {
+    public double height(Point2D fromThePoint, double side) {
         if (getSideA() == side) {
             return getSideB();
         } else {

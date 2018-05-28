@@ -1,17 +1,17 @@
 package lection07InnerClass;
 
-public abstract class Quadrilateral extends Figure implements BasicMetodsOfQuadrilateral {
-    private PointOfCoordinates pointA;
-    private PointOfCoordinates pointB;
-    private PointOfCoordinates pointC;
-    private PointOfCoordinates pointD;
+public abstract class FourAngle extends Figure implements BasicMetodsOfQuadrilateral {
+    private Point2D pointA;
+    private Point2D pointB;
+    private Point2D pointC;
+    private Point2D pointD;
     private double sideA;
     private double sideB;
     private double sideC;
     private double sideD;
 
 
-    public Quadrilateral(PointOfCoordinates pointA, PointOfCoordinates pointB, PointOfCoordinates pointC, PointOfCoordinates pointD) {
+    public FourAngle(Point2D pointA, Point2D pointB, Point2D pointC, Point2D pointD) {
         this.pointA = pointA;
         this.pointB = pointB;
         this.pointC = pointC;
@@ -22,19 +22,19 @@ public abstract class Quadrilateral extends Figure implements BasicMetodsOfQuadr
         sideD = pointD.lengthOfSide(pointA);
     }
 
-    public PointOfCoordinates getPointA() {
+    public Point2D getPointA() {
         return pointA;
     }
 
-    public PointOfCoordinates getPointB() {
+    public Point2D getPointB() {
         return pointB;
     }
 
-    public PointOfCoordinates getPointC() {
+    public Point2D getPointC() {
         return pointC;
     }
 
-    public PointOfCoordinates getPointD() {
+    public Point2D getPointD() {
         return pointD;
     }
 
@@ -55,7 +55,7 @@ public abstract class Quadrilateral extends Figure implements BasicMetodsOfQuadr
     }
 
     @Override
-    public double diagonal(PointOfCoordinates fromThePoint) {
+    public double diagonal(Point2D fromThePoint) {
         if (fromThePoint.equals(getPointA())) {
             return fromThePoint.lengthOfSide(getPointC());
         }
@@ -75,10 +75,10 @@ public abstract class Quadrilateral extends Figure implements BasicMetodsOfQuadr
     public abstract double area();
 
     @Override
-    public abstract double height(PointOfCoordinates fromThePoint, double side);
+    public abstract double height(Point2D fromThePoint, double side);
 
     @Override
-    public double perimeterOfTheFigure() {
+    public double perimeter() {
         return sideA + sideB + sideC + sideD;
     }
 }

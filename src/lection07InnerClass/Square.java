@@ -1,7 +1,7 @@
 package lection07InnerClass;
 
 public class Square extends Rectangle {
-    public Square(PointOfCoordinates pointA, PointOfCoordinates pointB, PointOfCoordinates pointC, PointOfCoordinates pointD) {
+    public Square(Point2D pointA, Point2D pointB, Point2D pointC, Point2D pointD) {
         super(pointA, pointB, pointC, pointD);
     }
 
@@ -11,7 +11,7 @@ public class Square extends Rectangle {
     }
 
     @Override
-    public double height(PointOfCoordinates fromThePoint, double side) {
+    public double height(Point2D fromThePoint, double side) {
         return side;
     }
 

@@ -1,7 +1,7 @@
 package lection07InnerClass;
 
-public class Parallelogram extends Quadrilateral {
-    public Parallelogram(PointOfCoordinates pointA, PointOfCoordinates pointB, PointOfCoordinates pointC, PointOfCoordinates pointD) {
+public class Parallelogram extends FourAngle {
+    public Parallelogram(Point2D pointA, Point2D pointB, Point2D pointC, Point2D pointD) {
         super(pointA, pointB, pointC, pointD);
     }
 
@@ -12,9 +12,9 @@ public class Parallelogram extends Quadrilateral {
     }
 
     @Override
-    public double height(PointOfCoordinates fromThePoint, double side) {
+    public double height(Point2D fromThePoint, double side) {
         /*полупериметр*/
-        double perimeter = perimeterOfTheFigure() / 2;
+        double perimeter = perimeter() / 2;
         double dioganal = diagonal(fromThePoint);
         return Math.sqrt(perimeter * (perimeter - getSideA()) * (perimeter - getSideB()) * perimeter - dioganal) * 2 / side;
     }

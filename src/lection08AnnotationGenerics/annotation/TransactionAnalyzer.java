@@ -2,6 +2,7 @@ package lection08AnnotationGenerics.annotation;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
 
 public class TransactionAnalyzer {
     public static void analyzerTransaction(Object o) {

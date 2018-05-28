@@ -1,14 +1,14 @@
 package lection07InnerClass;
 
 public class Triangle extends Figure implements BasicMetodsOfFigure {
-    private PointOfCoordinates pointA;
-    private PointOfCoordinates pointB;
-    private PointOfCoordinates pointC;
+    private Point2D pointA;
+    private Point2D pointB;
+    private Point2D pointC;
     private double sideA;
     private double sideB;
     private double sideC;
 
-    public Triangle(PointOfCoordinates pointA, PointOfCoordinates pointB, PointOfCoordinates pointC) {
+    public Triangle(Point2D pointA, Point2D pointB, Point2D pointC) {
             this.pointA = pointA;
             this.pointB = pointB;
             this.pointC = pointC;
@@ -17,15 +17,15 @@ public class Triangle extends Figure implements BasicMetodsOfFigure {
             this.sideC = pointC.lengthOfSide(pointA);
     }
 
-    public PointOfCoordinates getPointA() {
+    public Point2D getPointA() {
         return pointA;
     }
 
-    public PointOfCoordinates getPointB() {
+    public Point2D getPointB() {
         return pointB;
     }
 
-    public PointOfCoordinates getPointC() {
+    public Point2D getPointC() {
         return pointC;
     }
 
@@ -42,7 +42,7 @@ public class Triangle extends Figure implements BasicMetodsOfFigure {
     }
 
     @Override
-    public double perimeterOfTheFigure() {
+    public double perimeter() {
         return sideA + sideB + sideC;
     }
 
@@ -52,9 +52,9 @@ public class Triangle extends Figure implements BasicMetodsOfFigure {
     }
 
     @Override
-    public double height(PointOfCoordinates fromThePoint, double side) {
+    public double height(Point2D fromThePoint, double side) {
         /*полупериметр*/
-        double perimeter = perimeterOfTheFigure() / 2;
+        double perimeter = perimeter() / 2;
         return Math.sqrt(perimeter * (perimeter - getSideA()) * (perimeter - getSideB()) * (perimeter - getSideC())) * 2 / side;
     }
 

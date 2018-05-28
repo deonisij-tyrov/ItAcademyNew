@@ -3,8 +3,8 @@ package lection07InnerClass;
 
 public class ShapeUtils {
     public static void main(String[] args) {
-        Figure square = Figure.newFigure(new PointOfCoordinates(0, 0), new PointOfCoordinates(0, 2), new PointOfCoordinates(2, 2), new PointOfCoordinates(2, 0));
-        Figure triangle = Figure.newFigure(new PointOfCoordinates(0, 0), new PointOfCoordinates(0, 2), new PointOfCoordinates(4, 0));
+        Figure square = Figure.newFigure(new Point2D(0, 0), new Point2D(0, 2), new Point2D(2, 2), new Point2D(2, 0));
+        Figure triangle = Figure.newFigure(new Point2D(0, 0), new Point2D(0, 2), new Point2D(4, 0));
 
         System.out.println("равенство площадей : " + square.saneArea(triangle));
         System.out.println(square.area());

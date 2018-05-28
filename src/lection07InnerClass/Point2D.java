@@ -1,10 +1,10 @@
 package lection07InnerClass;
 
-public class PointOfCoordinates {
+public class Point2D {
     private int x;
     private int y;
 
-    public PointOfCoordinates(int x, int y) {
+    public Point2D(int x, int y) {
         this.x = x;
         this.y = y;
     }
@@ -17,16 +17,16 @@ public class PointOfCoordinates {
         return y;
     }
 
-    public double lengthOfSide (PointOfCoordinates point) {
+    public double lengthOfSide (Point2D point) {
         return Math.hypot(point.getX() - this.x, point.getY() - this.y);
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof PointOfCoordinates)) return false;
+        if (!(o instanceof Point2D)) return false;
 
-        PointOfCoordinates that = (PointOfCoordinates) o;
+        Point2D that = (Point2D) o;
 
         if (getX() != that.getX()) return false;
         return getY() == that.getY();

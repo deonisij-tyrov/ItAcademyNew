@@ -1,7 +1,7 @@
 package lection07InnerClass;
 
 public class Rhombus extends Parallelogram{
-    public Rhombus(PointOfCoordinates pointA, PointOfCoordinates pointB, PointOfCoordinates pointC, PointOfCoordinates pointD) {
+    public Rhombus(Point2D pointA, Point2D pointB, Point2D pointC, Point2D pointD) {
         super(pointA, pointB, pointC, pointD);
     }
 

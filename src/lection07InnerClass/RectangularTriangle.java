@@ -1,7 +1,7 @@
 package lection07InnerClass;
 
 public class RectangularTriangle extends Triangle {
-    public RectangularTriangle(PointOfCoordinates pointA, PointOfCoordinates pointB, PointOfCoordinates pointC) {
+    public RectangularTriangle(Point2D pointA, Point2D pointB, Point2D pointC) {
         super(pointA, pointB, pointC);
     }
 
