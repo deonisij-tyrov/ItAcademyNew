@@ -1,9 +1,11 @@
 package lection08AnnotationGenerics.calculator;
 
+import lection08AnnotationGenerics.TestAnnotation;
 import lection08AnnotationGenerics.annotation.Transaction;
 
+@TestAnnotation
 public class Calculator<T extends Number> {
-
+    @SuppressWarnings (value = "m")
     public Number amount(T t1, T t2) {
         if (realNmber(t1)) {
             return (t1.doubleValue() + t2.doubleValue());

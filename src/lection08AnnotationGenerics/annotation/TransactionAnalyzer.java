@@ -1,7 +1,5 @@
 package lection08AnnotationGenerics.annotation;
 
-import lection08AnnotationGenerics.annotation.Transaction;
-
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 

@@ -1,5 +1,6 @@
 package lection08AnnotationGenerics;
 
+import lection06.Zombie;
 import lection08AnnotationGenerics.annotation.TransactionAnalyzer;
 import lection08AnnotationGenerics.calculator.Calculator;
 
@@ -15,6 +16,8 @@ public class Main {
 //        Calculator<Integer> calculator1 = new Calculator<>();
 //        System.out.println(calculator1.amount(1, 25));
 
-        TransactionAnalyzer.analyzerTransaction(new Calculator<Integer>());
+//        TransactionAnalyzer.analyzerTransaction(new Calculator<Integer>());
+
+        ClassAnalyzer.analyze(new Calculator<>());
     }
 }

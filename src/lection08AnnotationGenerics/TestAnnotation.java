@@ -1,12 +1,12 @@
-package lection08AnnotationGenerics.annotation;
+package lection08AnnotationGenerics;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target(ElementType.METHOD)
+@Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Transaction {
+public @interface TestAnnotation {
     String name() default "transaction";
 }
