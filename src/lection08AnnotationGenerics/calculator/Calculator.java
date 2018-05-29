@@ -1,6 +1,6 @@
 package lection08AnnotationGenerics.calculator;
 
-import lection08AnnotationGenerics.TestAnnotation;
+import lection08AnnotationGenerics.analyzer.TestAnnotation;
 import lection08AnnotationGenerics.annotation.Transaction;
 
 @TestAnnotation

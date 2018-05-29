@@ -1,4 +1,4 @@
-package lection08AnnotationGenerics;
+package lection08AnnotationGenerics.analyzer;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
