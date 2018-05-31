@@ -7,10 +7,10 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        example3();
+        example4();
     }
 
-    public static void example1 () {
+    public static void example1() {
         List<Integer> list = new ArrayList<>();
         list.add(4);
         list.add(2);
@@ -18,6 +18,7 @@ public class Main {
         list.add(4);
         System.out.println(CollectionsMethods.countUnique(list));
     }
+
     public static void example2() {
         Map<String, String> map = new HashMap<>();
         map.put("1", "two");
@@ -43,5 +44,18 @@ public class Main {
         map2.put(1, 1);
 
         System.out.println(CollectionsMethods.summaryPolynomial(map1, map2));
+    }
+
+    public static void example4() {
+        BlackBox blackBox = new BlackBox();
+        blackBox.addNumber(1);
+        blackBox.addNumber(2);
+        blackBox.addNumber(1);
+        blackBox.addNumber(5);
+        blackBox.addNumber(7);
+        blackBox.addNumber(4);
+
+        System.out.println(blackBox.getMinElement(8));
+        System.out.println(blackBox.getMaxElement(8));
     }
 }
