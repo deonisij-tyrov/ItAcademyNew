@@ -55,7 +55,7 @@ public class Main {
         blackBox.addNumber(7);
         blackBox.addNumber(4);
 
-        System.out.println(blackBox.getMinElement(8));
-        System.out.println(blackBox.getMaxElement(8));
+        System.out.println(blackBox.getMinElement(2));
+        System.out.println(blackBox.getMaxElement(2));
     }
 }

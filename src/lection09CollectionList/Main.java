@@ -8,26 +8,29 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        /*задание 2*/
-        List<Student> studentsList = createStudentsList();
 
+        List<Student> studentsList = createStudentsList();
         Students students = new Students(studentsList);
+
+        /*задание 1-2*/
+        students.addRandomGrades();
+
+        System.out.println("\nрейтинг");
+        students.printListRating();
+        students.removeBadGrades();
+
+        System.out.println("\nизмененный рейтинг");
+        students.printListRating();
+
+        System.out.println("\nмаксимальная оценка = " + students.getMaxGrade());
+
+        /*задание 3*/
         System.out.println("\nвывод в обратном порядке  1:");
         students.printListReverse1();
         System.out.println("\nвывод в обратном порядке  2:");
         students.printListReverse2();
         System.out.println("\nвывод в обратном порядке  3:");
-        students.printListReverse2();
-
-        /*задание 1*/
-        students.addRandomGrades();
-        students.printListRating();
-        students.removeBadGrades();
-        System.out.println("\nизмененный рейтинг");
-        students.printListRating();
-        System.out.println("\nмаксимальная оценка = " + students.getMaxGrade());
-
-
+        students.printListReverse3();
     }
 
     public static List<Student> createStudentsList() {

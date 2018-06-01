@@ -4,7 +4,10 @@ package lection09CollectionList;
     Задание2. Создать список оценок учеников с помощью ListIterator, заполнить случайными оценками. Найти самую высокую оценку с использованием итератора.
     Задание3. Вывести учеников из списка в обратном порядке. (2 варианта решения). */
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.ListIterator;
 
 public class Students {
     private List<Student> students;
@@ -69,7 +72,7 @@ public class Students {
         List<Integer> list = listRating;
         Collections.reverse(list);
         ListIterator<Student> listIterator = students.listIterator();
-        while (listIterator.hasNext()){
+        while (listIterator.hasNext()) {
             System.out.println(listIterator.next());
         }
     }

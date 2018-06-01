@@ -9,9 +9,17 @@ public class Main {
     final static Logger logger = Logger.getLogger(Main.class);
 
     public static void main(String[] args) {
-        task7();
+        task1();
+//        task2();
+//        task3();
+//        task4();
+//        task5();
+//        task6();
+//        task7();
     }
 
+    /*Объявите переменную со значением null. Вызовите метод у этой переменной.
+Отловите возникшее исключение.*/
     static void task1() {
         Student student = null;
         try {
@@ -21,6 +29,7 @@ public class Main {
         }
     }
 
+    /*Написать код, который создаст, а затем отловит ArrayIndexOutOfBoundsException.*/
     static void task2() {
         int[] i = new int[10];
         try {
@@ -30,6 +39,9 @@ public class Main {
         }
     }
 
+    /*Создать собственный класс-исключение - наследник класса Exception.
+Создать метод, выбрасывающий это исключение.
+Вызвать этот метод и отловить исключение. Вывести stacktrace в консоль.*/
     static void task3() {
         try {
             throw new MyException();
@@ -38,6 +50,8 @@ public class Main {
         }
     }
 
+    /*Повторить предыдущее упражнение, но наследуя свой класс от класса RuntimeException.
+Добавить вконструктор своего класса возможность указания сообщения.*/
     static void task4() {
         try {
             throw new MyRuntimeException("MyException(((");
@@ -46,6 +60,7 @@ public class Main {
         }
     }
 
+    /*Бросить одно из существующих в JDK исключений, отловить его и выбросить своё собственное,указав в качестве причины отловленное.*/
     static void task5() {
         try {
             throw new IOException();
@@ -59,6 +74,8 @@ public class Main {
         }
     }
 
+    /*Создать метод случайным образом выбрасывающий одно из 3-х видов исключений.
+Вызвать этот метод в блоке try-catch, отлавливающем любое из 3-х.*/
     static void task6() {
         try {
             switch ((int) (Math.random() * 3)) {
@@ -78,6 +95,8 @@ public class Main {
         }
     }
 
+    /*Написать метод, который в 50% случаев бросает исключение.
+Вызвать этот метод в конструкции try-catch-finally. Протестировать работу блока finally.*/
     static void task7() {
         try {
             if ((Math.random() * 10) > 4) {
@@ -86,8 +105,8 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            logger.info("\"это тут есть всегда\"");
-            System.out.println("это тут есть всегда");
+            logger.info("это тут есть всегда");
+//            System.out.println("это тут есть всегда");
         }
     }
 }
