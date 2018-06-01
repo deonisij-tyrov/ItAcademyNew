@@ -1,10 +1,12 @@
 package lection11Exceptions;
 
 import lection09CollectionList.Student;
+import org.apache.log4j.Logger;
 
 import java.io.IOException;
 
 public class Main {
+    final static Logger logger = Logger.getLogger(Main.class);
 
     public static void main(String[] args) {
         task7();
@@ -77,8 +79,6 @@ public class Main {
     }
 
     static void task7() {
-
-
         try {
             if ((Math.random() * 10) > 4) {
                 throw new MyException("исключение");
@@ -86,6 +86,7 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
+            logger.info("\"это тут есть всегда\"");
             System.out.println("это тут есть всегда");
         }
     }
