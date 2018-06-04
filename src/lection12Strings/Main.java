@@ -103,6 +103,7 @@ public class Main {
         }
         return i;
     }
+
     /*Написать функцию, заменяющую несколько последовательных одинаковых символов в строке одним.
     Пример: aaabbcdeef ->abcdef*/
     public static String task6(String s) {
