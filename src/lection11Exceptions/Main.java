@@ -19,7 +19,7 @@ public class Main {
     }
 
     /*Объявите переменную со значением null. Вызовите метод у этой переменной.
-Отловите возникшее исключение.*/
+    Отловите возникшее исключение.*/
     static void task1() {
         Student student = null;
         try {
@@ -40,21 +40,21 @@ public class Main {
     }
 
     /*Создать собственный класс-исключение - наследник класса Exception.
-Создать метод, выбрасывающий это исключение.
-Вызвать этот метод и отловить исключение. Вывести stacktrace в консоль.*/
+    Создать метод, выбрасывающий это исключение.
+    Вызвать этот метод и отловить исключение. Вывести stacktrace в консоль.*/
     static void task3() {
         try {
-            throw new MyException();
+            throw new MyException("MyExeption");
         } catch (MyException e) {
             e.printStackTrace();
         }
     }
 
     /*Повторить предыдущее упражнение, но наследуя свой класс от класса RuntimeException.
-Добавить вконструктор своего класса возможность указания сообщения.*/
+    Добавить вконструктор своего класса возможность указания сообщения.*/
     static void task4() {
         try {
-            throw new MyRuntimeException("MyException(((");
+            throw new MyRuntimeException("MyRuntimeException(((");
         } catch (MyRuntimeException e) {
             e.printStackTrace();
         }
@@ -65,17 +65,23 @@ public class Main {
         try {
             throw new IOException();
 //            throw new NullPointerException();
+        } catch (RuntimeException e) {
+            try {
+                throw new MyRuntimeException(e);
+            } catch (MyRuntimeException e1) {
+                e1.printStackTrace();
+            }
         } catch (Exception e) {
             try {
                 throw new MyException(e);
             } catch (MyException e1) {
-                System.out.println(e1.toString());
+                e1.printStackTrace();
             }
         }
     }
 
     /*Создать метод случайным образом выбрасывающий одно из 3-х видов исключений.
-Вызвать этот метод в блоке try-catch, отлавливающем любое из 3-х.*/
+    Вызвать этот метод в блоке try-catch, отлавливающем любое из 3-х.*/
     static void task6() {
         try {
             switch ((int) (Math.random() * 3)) {
@@ -87,16 +93,16 @@ public class Main {
                     throw new Exception();
             }
         } catch (MyRuntimeException e) {
-            e.printStackTrace();
+            logger.error(e);
         } catch (MyException e) {
-            e.printStackTrace();
+            logger.error(e);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error(e);
         }
     }
 
     /*Написать метод, который в 50% случаев бросает исключение.
-Вызвать этот метод в конструкции try-catch-finally. Протестировать работу блока finally.*/
+    Вызвать этот метод в конструкции try-catch-finally. Протестировать работу блока finally.*/
     static void task7() {
         try {
             if ((Math.random() * 10) > 4) {
@@ -106,7 +112,6 @@ public class Main {
             e.printStackTrace();
         } finally {
             logger.info("это тут есть всегда");
-//            System.out.println("это тут есть всегда");
         }
     }
 }
