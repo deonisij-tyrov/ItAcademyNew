@@ -20,3 +20,5 @@ Y - номер телефона
 5. Написать метод, который проверяет, является ли строка адресом IPv4.
 ((^1+(?=0)0*$)|(^0(?<=0)0*$)|(^1+(?=1)1*$))
 http://svn.apache.org/viewvc/commons/proper/validator/trunk/src/main/java/org/apache/commons/validator/routines/InetAddressValidator.java?view=markup
+
+\b(([0-2][5]){1}|\d{1})\b
