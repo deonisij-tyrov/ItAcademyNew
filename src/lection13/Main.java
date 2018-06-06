@@ -117,26 +117,8 @@ public class Main {
         if (s == null) {
             return false;
         }
-        String[] strings = s.split("\\.");
-        if (strings.length < 4) {
-            return false;
-        }
 
-        Matcher matcher = Pattern.compile("^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$").matcher(s);
-        if (matcher.matches() == false) {
-            return false;
-        }
-        for (String string : strings) {
-            try {
-                int n = Integer.parseInt(string);
-                if (n > 254 || n < 0) {
-                    return false;
-                }
-            } catch (NumberFormatException e) {
-                System.out.println(e.toString());
-                return false;
-            }
-        }
-        return true;
+        Matcher matcher = Pattern.compile("^((25[0-5]|2[0-4][0-9]|1\\d\\d|[1-9]*\\d*\\d)\\.?){4}$").matcher(s);
+        return matcher.matches();
     }
 }
