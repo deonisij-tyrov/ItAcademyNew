@@ -1,0 +1,53 @@
+
+import java.io.*;
+import java.util.*;
+казак
+appla
+/*
+Знакомство с properties
+*/
+public class Solution {
+    public static Map<String, String> properties = new HashMap<>();
+
+    public void fillInPropertiesMap() throws IOException {
+        //implement this method - реализуйте этот метод
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        String directoryFile = bufferedReader.readLine();
+        bufferedReader.close();
+        InputStream fileInputStream = new FileInputStream(directoryFile);
+        try {
+            load(fileInputStream);
+        }catch (Exception e) {}
+        fileInputStream.close();
+    }
+
+    public void save(OutputStream outputStream) throws IOException {
+        //implement this method - реализуйте этот метод
+        Properties propert = new Properties();
+        propert.putAll(properties);
+        propert.store(outputStream, "");
+    }
+
+    public void load(InputStream inputStream) throws Exception {
+        //implement this method - реализуйте этот метод
+        Properties propert = new Properties();
+        propert.load(inputStream);
+        for(Map.Entry<Object,Object> entry : propert.entrySet()) {
+            properties.put(entry.getKey().toString(), entry.getValue().toString());
+        }
+    }
+
+    public static void main(String[] args) throws IOException {
+        Solution solution = new Solution();
+//        OutputStream stream = new FileOutputStream("c:\\ide\\5.txt");
+//        properties.put("den1", "asdasdasdasd");
+//        properties.put("den2", "123");
+//        properties.put("den3", "1312312");
+//        try {
+//            solution.save(stream);
+//        }catch (Exception e) {e.printStackTrace();}
+
+        solution.fillInPropertiesMap();
+
+    }
+}
