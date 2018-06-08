@@ -10,9 +10,11 @@ public class BinaryFile {
     }
 
     public void writeBinaryData() {
-        try (OutputStreamWriter bf = new OutputStreamWriter(new FileOutputStream(file))) {
+        System.out.println("записали числа ");
+        try (DataOutputStream bf = new DataOutputStream(new FileOutputStream(file))) {
             for (int i = 0; i < 20; i++) {
                 Double d = (Math.random() * 100) + 128;
+                System.out.print(d.intValue() + " ");
                 bf.write(d.intValue());
             }
             bf.flush();
@@ -23,11 +25,11 @@ public class BinaryFile {
 
     public void readBinaryData() {
         if (file.exists() && file.isFile()) {
-            try (InputStreamReader bi = new InputStreamReader(new FileInputStream(file))) {
+            try (DataInputStream bi = new DataInputStream(new FileInputStream(file))) {
                 int sum = 0;
                 int i = 0;
-                System.out.println("числа:");
-                while (bi.ready()) {
+                System.out.println("\nчисла:");
+                while (bi.available() > 0) {
                     int value = bi.read();
                     System.out.print(value + " ");
                     sum += value;
