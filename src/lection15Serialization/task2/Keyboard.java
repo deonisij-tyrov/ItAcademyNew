@@ -1,13 +1,13 @@
 package lection15Serialization.task2;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 import java.io.Serializable;
 
 @Data
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class Keyboard implements Serializable {
-    String model;
+    private static final long serialVersionUID = 2;
+    private String model;
 }
