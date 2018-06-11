@@ -12,7 +12,7 @@ import java.io.Serializable;
 public class Computer implements Serializable {
     private static final long serialVersionUID = 1;
     private Keyboard keyboard;
-    private transient Monitor monitor;
+    private Monitor monitor;
     private Mouse mouse;
 
     public Computer(Monitor monitor) {
