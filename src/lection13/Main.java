@@ -27,7 +27,7 @@ public class Main {
         System.out.println(replaceTeg(s3));
 
         System.out.println("______________________________________\nзадача 4");
-        findPhoneNumber("ghfghfhjg +375295077120");
+        findPhoneNumber("ghfghfhjg +375295077120 +375291111111");
 
         System.out.println("______________________________________\nзадача 5");
         System.out.println("Mask - " + isMaskIPv4("255.0.0.0"));
@@ -71,13 +71,7 @@ public class Main {
             }
             return null;
         }
-        Pattern pattern = Pattern.compile("<([a-z0-9]+) +[^>]+>");      //для всех тегов с параметрами
-        Matcher matcher = pattern.matcher(s);
-
-        while (matcher.find()) {
-            s = s.replaceAll(matcher.group(), "<" + matcher.group(1) + ">");
-        }
-        return s;
+        return s.replaceAll("<([a-z0-9]+) +[^>]+>", "<$1>");
     }
 
     /*4. Написать программу, выполняющую поиск в строке мобильных телефонных номеров в формате +375XXYYYYYYY
@@ -88,17 +82,10 @@ public class Main {
         if (s == null) {
             return;
         }
-        Pattern pattern = Pattern.compile("(\\+375)(\\d{2})(\\d{3})(\\d{2})(\\d{2})");
-        Matcher matcher = pattern.matcher(s);
-
-        while (matcher.find()) {
-            s = matcher.replaceAll(String.format("%s (%s) %s-%s-%s", matcher.group(1),
-                    matcher.group(2), matcher.group(3), matcher.group(4), matcher.group(5)));
-            System.out.println(s);
-        }
+        System.out.println(s.replaceAll("(\\+375)(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 ($2) $3-$4-$5"));
     }
 
-    /*Написать метод, который проверяет, является ли строка адресом IPv4.*/
+    /*5.Написать метод, который проверяет, является ли строка адресом IPv4.*/
     private static boolean isMaskIPv4(String s) {
         final int BINARY_BASE = 2;
         if (s == null) {
@@ -121,7 +108,7 @@ public class Main {
                 return false;
             }
         }
-        Pattern pattern = Pattern.compile("((^1+(?=0)0*$)|(^0(?<=0)0*$)|(^1+(?=1)1*$))");
+        Pattern pattern = Pattern.compile("(^1+(?=0)0*$)|(^0(?<=0)0*$)|(^1+(?=1)1*$)");
         Matcher matcher = pattern.matcher(sb.toString());
         return matcher.matches();
     }
@@ -130,27 +117,8 @@ public class Main {
         if (s == null) {
             return false;
         }
-        String[] strings = s.split("\\.");
-        if (strings.length < 4) {
-            return false;
-        }
 
-        Matcher matcher = Pattern.compile("^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$").matcher(s);
-        if (matcher.matches() == false) {
-            return false;
-        }
-        for (String string : strings) {
-            try {
-                int n = Integer.parseInt(string);
-                if (n > 254 || n < 0) {
-                    return false;
-                }
-            } catch (NumberFormatException e) {
-                System.out.println(e.toString());
-                return false;
-            }
-        }
-
-        return true;
+        Matcher matcher = Pattern.compile("^((25[0-5]|2[0-4][0-9]|1\\d\\d|[1-9]*\\d*\\d)\\.?){4}$").matcher(s);
+        return matcher.matches();
     }
 }
