@@ -1,4 +1,4 @@
-package lection15StreamApi.task5;
+package lection16StreamApi.task5;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

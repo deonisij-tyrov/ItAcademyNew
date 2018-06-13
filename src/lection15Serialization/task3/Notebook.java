@@ -9,17 +9,20 @@ import lombok.Data;
 @AllArgsConstructor
 public class Notebook extends Computer {
     private Touchpad touchpad;
+    private transient EthAdapter ethAdapter;
 
-    public Notebook(Monitor monitor, Touchpad touchpad) {
+    public Notebook(Monitor monitor, Touchpad touchpad, EthAdapter ethAdapter) {
         super(monitor);
         this.touchpad = touchpad;
+        this.ethAdapter = ethAdapter;
     }
 
     @Override
     public String toString() {
         return "Notebook{" +
                 "touchpad=" + touchpad +
-                "Monitor=" + super.getMonitor() +
-                '}';
+                ", ethAdapter=" + ethAdapter +
+                " motitor" + super.getMonitor().getModel()
+                + '}';
     }
 }

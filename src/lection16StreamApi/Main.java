@@ -1,17 +1,19 @@
-package lection15StreamApi;
+package lection16StreamApi;
 
-import lection15StreamApi.task5.Person;
+import lection16StreamApi.task5.Person;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("задача 1 \n" + averageDivisibleByOddAndFive(Arrays.asList(15, 25, 10, 11, 88, 60, 20, 35, 45)));
 
         System.out.println("задача 2 \n" + countOfUniqueLinesLengthLesEight(Arrays.asList("pass", "apple", "qwertyui111", "as", "as", "as")));
+
 
         Map<String, Integer> map = new HashMap<>();
         map.put("as", 1);
