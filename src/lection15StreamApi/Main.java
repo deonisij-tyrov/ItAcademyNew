@@ -1,10 +1,11 @@
 package lection15StreamApi;
 
+import lection15StreamApi.task5.Person;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collector;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,6 +23,12 @@ public class Main {
         System.out.println("задача 3 \n" + sumOfValue(map));
 
         System.out.println("задача 4 \n" + concatenation(Arrays.asList(1, 2, 1, 1, 8, 0, 2, 3, 4)));
+
+        Person p1 = new Person("ivan", "ivanov", 22);
+        Person p2 = new Person("kate", "smith", 25);
+        Person p3 = new Person("asdsadsa", "ivaasdsadasnov", 30);
+        Person p4 = new Person("vasia", "ivanov", 40);
+        System.out.println("задача 5 \n" + getOlderPersonName(Arrays.asList(p1, p2, p3, p4)));
 
     }
 
@@ -82,6 +89,17 @@ public class Main {
         return list
                 .stream()
                 .map(element -> element.toString())
-                .reduce("",(base, element) -> base + element);
+                .reduce("", (base, element) -> base + element);
+    }
+
+    /*Дан класс Person с полями firstName, lastName, age.
+    Вывести полное имя самого старшего человека, у которого длина этого имени не превышает 15 символов. */
+    public static String getOlderPersonName(List<Person> people) {
+        return people.stream()
+                .filter(person -> person.getFirstName().length() + person.getLastName().length() < 15)
+                .sorted((person1, person2) -> Integer.valueOf(person2.getAge()).compareTo(Integer.valueOf(person1.getAge())))
+                .map(person -> person.getFirstName() + " " + person.getLastName())
+                .findFirst()
+                .get();
     }
 }
