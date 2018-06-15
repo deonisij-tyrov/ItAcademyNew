@@ -2,13 +2,13 @@ package lection17Threads;
 
 public class Factory implements Runnable {
     Dump dump;
-    Acolyte acolyte1;
-    Acolyte acolyte2;
+    Assistant assistant1;
+    Assistant assistant2;
 
     public Factory() {
         this.dump = new Dump();
-        this.acolyte1 = new Acolyte(dump);
-        this.acolyte2 = new Acolyte(dump);
+        this.assistant1 = new Assistant(dump);
+        this.assistant2 = new Assistant(dump);
     }
 
     public void throwOutDetails() {
