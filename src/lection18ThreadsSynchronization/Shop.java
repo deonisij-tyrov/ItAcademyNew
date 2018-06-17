@@ -8,7 +8,7 @@ import java.util.Map;
 
 @Data
 @AllArgsConstructor
-public class Shop {
+public class Shop implements Runnable {
     private Map<Integer, Good> goods;
 
     public Shop() {
@@ -25,5 +25,10 @@ public class Shop {
         goods.put(9, new Good(10, "колбаски", 5.2, 0.3));
         goods.put(10, new Good(11, "йогурт", 2.45, 0.1));
         goods.put(11, new Good(12, "булочка из печки", 0.4, 0.1));
+    }
+
+    @Override
+    public void run() {
+
     }
 }
