@@ -1,29 +1,61 @@
 package lection17Threads;
 
 public class Factory implements Runnable {
-    Dump dump;
-    Assistant assistant1;
-    Assistant assistant2;
+    private Dump dump;
+    private Scientist scientist1;
+    private Scientist scientist2;
+    private Assistant assistant1;
+    private Assistant assistant2;
+
 
     public Factory() {
         this.dump = new Dump();
-        this.assistant1 = new Assistant(dump);
-        this.assistant2 = new Assistant(dump);
+        scientist1 = new Scientist();
+        scientist2 = new Scientist();
+        this.assistant1 = new Assistant(dump, scientist1);
+        this.assistant2 = new Assistant(dump, scientist2);
+    }
+
+    public static void main(String[] args) {
+        new Thread(new Factory(), "factory").start();
     }
 
     public void throwOutDetails() {
-        int countOfDetails = new Double(Math.random() * 4 + 1).intValue();      /*1-4 detail(s) theow*/
-        RobotComponents[] robotComponents1s = RobotComponents.values();
-        for (int i = 0; i < countOfDetails; i++) {
-            Double randomEnum = Math.random() * RobotComponents.values().length;
-            dump.getRobotComponents().add(robotComponents1s[randomEnum.intValue()]);
+        synchronized (dump) {
+            int countOfDetails = new Double(Math.random() * 4 + 1).intValue();      /*1-4 detail(s) theow*/
+            RobotComponents[] robotComponents1s = RobotComponents.values();
+            for (int i = 0; i < countOfDetails; i++) {
+                Double randomEnum = Math.random() * RobotComponents.values().length;
+                dump.getRobotComponents().add(robotComponents1s[randomEnum.intValue()]);
+            }
+            System.out.println("components in the dump - " + dump.getRobotComponents().toString());
         }
     }
 
     @Override
     public void run() {
-        while (true) {
-            throwOutDetails();
+        Thread assistant1 = new Thread(this.assistant1, "assistant1");
+        assistant1.setDaemon(true);
+        Thread assistant2 = new Thread(this.assistant2, "assistant2");
+        assistant2.setDaemon(true);
+        Thread scientist1 = new Thread(this.scientist1, "scientist1");
+        scientist1.setDaemon(true);
+        Thread scientist2 = new Thread(this.scientist2, "scientist2");
+        scientist2.setDaemon(true);
+        scientist1.start();
+        scientist2.start();
+
+        assistant1.start();
+        assistant2.start();
+        for (int i = 0; i < 100; i++) {
+            this.throwOutDetails();
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
         }
     }
+
 }

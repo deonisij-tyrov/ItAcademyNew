@@ -2,19 +2,27 @@ package lection17Threads;
 
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
 public class Dump{
-    private static final int START_VALUE_OF_COMPONENT = 20;
-    List<RobotComponents> robotComponents;
+    private static final int START_VALUE_OF_COMPONENTS = 20;
+    private final List<RobotComponents> robotComponents;
 
     public Dump() {
-        RobotComponents[] robotComponents1s = RobotComponents.values();
-        for(int i = 0; i < START_VALUE_OF_COMPONENT; i++) {
-            Double randomEnum = Math.random() * RobotComponents.values().length;
-            robotComponents.add(robotComponents1s[randomEnum.intValue()]);
+        robotComponents = new ArrayList<>();
+
+        for(int i = 0; i < START_VALUE_OF_COMPONENTS; i++) {
+            double randomEnum = Math.random() * RobotComponents.values().length;
+            robotComponents.add(RobotComponents.values()[(int)randomEnum]);
         }
+        System.out.println(robotComponents.toString());
     }
+
+    public synchronized List<RobotComponents> getRobotComponents() {
+        return robotComponents;
+    }
+
 
 }
