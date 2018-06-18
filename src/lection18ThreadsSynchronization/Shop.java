@@ -5,10 +5,13 @@ import lombok.Data;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.Semaphore;
 
 @Data
 @AllArgsConstructor
-public class Shop implements Runnable {
+public class Shop {
+    private final Cashbox[] CASHBOXES;
+    private final Semaphore SEMAPHORE = new Semaphore(3, true);
     private Map<Integer, Good> goods;
 
     public Shop() {
@@ -25,10 +28,17 @@ public class Shop implements Runnable {
         goods.put(9, new Good(10, "колбаски", 5.2, 0.3));
         goods.put(10, new Good(11, "йогурт", 2.45, 0.1));
         goods.put(11, new Good(12, "булочка из печки", 0.4, 0.1));
+        CASHBOXES = new Cashbox[3];
+        for (int i = 0; i < CASHBOXES.length; i++) {
+            CASHBOXES[i] = new Cashbox(i);
+        }
     }
 
-    @Override
-    public void run() {
 
+    public static void main(String[] args) {
+        Shop shop = new Shop();
+        for (int i = 0; i < 7; i++) {
+            new Thread(new Buyer(shop), "buyer " + i).start();
+        }
     }
 }

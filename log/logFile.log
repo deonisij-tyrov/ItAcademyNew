@@ -1,2 +1,156 @@
-2018-06-01 21:19:28 INFO  Main:102 - "это тут есть всегда"
-2018-06-04 20:18:25 ERROR Main:98 - lection11Exceptions.MyException
+2018-06-18 16:04:34 INFO  Buyer:23 - покупатель buyer 0 зашел в магазин
+2018-06-18 16:04:34 INFO  Buyer:23 - покупатель buyer 1 зашел в магазин
+2018-06-18 16:04:34 INFO  Buyer:23 - покупатель buyer 2 зашел в магазин
+2018-06-18 16:04:34 INFO  Buyer:23 - покупатель buyer 3 зашел в магазин
+2018-06-18 16:04:34 INFO  Buyer:23 - покупатель buyer 4 зашел в магазин
+2018-06-18 16:04:34 INFO  Buyer:23 - покупатель buyer 5 зашел в магазин
+2018-06-18 16:04:34 INFO  Buyer:23 - покупатель buyer 6 зашел в магазин
+2018-06-18 16:04:34 INFO  Buyer:43 - покупатель buyer 0 взял 3 товаров булочка из печки
+2018-06-18 16:04:34 INFO  Buyer:50 - покупатель buyer 0 занял очередь
+2018-06-18 16:04:34 INFO  Buyer:43 - покупатель buyer 1 взял 3 товаров молоко
+2018-06-18 16:04:34 INFO  Buyer:43 - покупатель buyer 1 взял 1 товаров гречка
+2018-06-18 16:04:34 INFO  Buyer:50 - покупатель buyer 1 занял очередь
+2018-06-18 16:04:34 INFO  Buyer:43 - покупатель buyer 2 взял 3 товаров колбаски
+2018-06-18 16:04:34 INFO  Buyer:43 - покупатель buyer 2 взял 1 товаров колбаски
+2018-06-18 16:04:34 INFO  Buyer:43 - покупатель buyer 2 взял 1 товаров чипсы
+2018-06-18 16:04:34 INFO  Buyer:50 - покупатель buyer 2 занял очередь
+2018-06-18 16:04:34 INFO  Buyer:43 - покупатель buyer 3 взял 2 товаров молоко
+2018-06-18 16:04:34 INFO  Buyer:50 - покупатель buyer 3 занял очередь
+2018-06-18 16:04:34 INFO  Buyer:43 - покупатель buyer 4 взял 2 товаров батон
+2018-06-18 16:04:34 INFO  Buyer:43 - покупатель buyer 4 взял 1 товаров селедка
+2018-06-18 16:04:34 INFO  Buyer:50 - покупатель buyer 4 занял очередь
+2018-06-18 16:04:34 INFO  Buyer:43 - покупатель buyer 5 взял 1 товаров йогурт
+2018-06-18 16:04:34 INFO  Buyer:43 - покупатель buyer 5 взял 2 товаров гречка
+2018-06-18 16:04:34 INFO  Buyer:43 - покупатель buyer 5 взял 1 товаров кефир
+2018-06-18 16:04:34 INFO  Buyer:43 - покупатель buyer 5 взял 1 товаров гречка
+2018-06-18 16:04:34 INFO  Buyer:50 - покупатель buyer 5 занял очередь
+2018-06-18 16:04:34 INFO  Buyer:43 - покупатель buyer 6 взял 3 товаров пиво
+2018-06-18 16:04:34 INFO  Buyer:43 - покупатель buyer 6 взял 1 товаров йогурт
+2018-06-18 16:04:34 INFO  Buyer:50 - покупатель buyer 6 занял очередь
+2018-06-18 16:04:34 INFO  Buyer:65 - чек покупателя:buyer 0Receipt(id=1, date=18/6/2018, casseNo=2, items=[Item(number=1, goodName=булочка из печки, quantity=3, cost=0.4, discount=0.1, discountAmount=0.30000000000000004)], totalSum=0.0)
+2018-06-18 16:04:34 INFO  Buyer:65 - чек покупателя:buyer 3Receipt(id=2, date=18/6/2018, casseNo=2, items=[Item(number=1, goodName=молоко, quantity=2, cost=1.5, discount=0.89, discountAmount=0.61)], totalSum=0.0)
+2018-06-18 16:04:34 INFO  Buyer:65 - чек покупателя:buyer 6Receipt(id=3, date=18/6/2018, casseNo=2, items=[Item(number=1, goodName=пиво, quantity=3, cost=2.2, discount=0.1, discountAmount=2.1), Item(number=2, goodName=йогурт, quantity=1, cost=2.45, discount=0.1, discountAmount=2.35)], totalSum=4.0)
+2018-06-18 16:04:35 INFO  Buyer:65 - чек покупателя:buyer 5Receipt(id=4, date=18/6/2018, casseNo=2, items=[Item(number=1, goodName=гречка, quantity=1, cost=3.5, discount=0.0, discountAmount=3.5), Item(number=2, goodName=йогурт, quantity=1, cost=2.45, discount=0.1, discountAmount=2.35), Item(number=3, goodName=кефир, quantity=1, cost=1.7, discount=0.5, discountAmount=1.2)], totalSum=6.0)
+2018-06-18 16:04:35 INFO  Buyer:65 - чек покупателя:buyer 4Receipt(id=5, date=18/6/2018, casseNo=2, items=[Item(number=1, goodName=батон, quantity=2, cost=0.5, discount=0.3, discountAmount=0.2), Item(number=2, goodName=селедка, quantity=1, cost=2.5, discount=0.4, discountAmount=2.1)], totalSum=2.0)
+2018-06-18 16:09:36 INFO  Buyer:23 - покупатель buyer 0 зашел в магазин
+2018-06-18 16:09:36 INFO  Buyer:23 - покупатель buyer 1 зашел в магазин
+2018-06-18 16:09:36 INFO  Buyer:23 - покупатель buyer 2 зашел в магазин
+2018-06-18 16:09:36 INFO  Buyer:23 - покупатель buyer 3 зашел в магазин
+2018-06-18 16:09:36 INFO  Buyer:23 - покупатель buyer 4 зашел в магазин
+2018-06-18 16:09:36 INFO  Buyer:23 - покупатель buyer 5 зашел в магазин
+2018-06-18 16:09:36 INFO  Buyer:23 - покупатель buyer 6 зашел в магазин
+2018-06-18 16:09:36 INFO  Buyer:43 - покупатель buyer 0 взял 2 товаров чипсы
+2018-06-18 16:09:36 INFO  Buyer:43 - покупатель buyer 0 взял 2 товаров батон
+2018-06-18 16:09:36 INFO  Buyer:43 - покупатель buyer 0 взял 3 товаров водка
+2018-06-18 16:09:36 INFO  Buyer:50 - покупатель buyer 0 занял очередь
+2018-06-18 16:09:36 INFO  Buyer:43 - покупатель buyer 1 взял 1 товаров батон
+2018-06-18 16:09:36 INFO  Buyer:43 - покупатель buyer 1 взял 3 товаров водка
+2018-06-18 16:09:36 INFO  Buyer:50 - покупатель buyer 1 занял очередь
+2018-06-18 16:09:36 INFO  Buyer:43 - покупатель buyer 2 взял 1 товаров чипсы
+2018-06-18 16:09:36 INFO  Buyer:43 - покупатель buyer 2 взял 1 товаров пиво
+2018-06-18 16:09:36 INFO  Buyer:50 - покупатель buyer 2 занял очередь
+2018-06-18 16:09:36 INFO  Buyer:43 - покупатель buyer 3 взял 3 товаров молоко
+2018-06-18 16:09:36 INFO  Buyer:43 - покупатель buyer 3 взял 1 товаров йогурт
+2018-06-18 16:09:36 INFO  Buyer:50 - покупатель buyer 3 занял очередь
+2018-06-18 16:09:36 INFO  Buyer:37 - покупатель buyer 4 ничего не выбрал и ушел
+2018-06-18 16:09:36 INFO  Buyer:50 - покупатель buyer 4 занял очередь
+2018-06-18 16:09:36 INFO  Buyer:37 - покупатель buyer 5 ничего не выбрал и ушел
+2018-06-18 16:09:36 INFO  Buyer:50 - покупатель buyer 5 занял очередь
+2018-06-18 16:09:36 INFO  Buyer:43 - покупатель buyer 6 взял 1 товаров хлеб
+2018-06-18 16:09:36 INFO  Buyer:43 - покупатель buyer 6 взял 2 товаров молоко
+2018-06-18 16:09:36 INFO  Buyer:50 - покупатель buyer 6 занял очередь
+2018-06-18 16:09:37 INFO  Buyer:65 - чек покупателя:buyer 0Receipt(id=1, date=18/6/2018, casseNo=2, items=[Item(number=1, goodName=водка, quantity=3, cost=5.0, discount=0.2, discountAmount=4.8), Item(number=2, goodName=батон, quantity=2, cost=0.5, discount=0.3, discountAmount=0.2), Item(number=3, goodName=чипсы, quantity=2, cost=1.2, discount=0.3, discountAmount=0.8999999999999999)], totalSum=4.0)
+2018-06-18 16:09:37 INFO  Buyer:65 - чек покупателя:buyer 3Receipt(id=2, date=18/6/2018, casseNo=2, items=[Item(number=1, goodName=молоко, quantity=3, cost=1.5, discount=0.89, discountAmount=0.61), Item(number=2, goodName=йогурт, quantity=1, cost=2.45, discount=0.1, discountAmount=2.35)], totalSum=2.0)
+2018-06-18 16:09:37 INFO  Buyer:65 - чек покупателя:buyer 6Receipt(id=3, date=18/6/2018, casseNo=2, items=[Item(number=1, goodName=хлеб, quantity=1, cost=0.7, discount=0.5, discountAmount=0.19999999999999996), Item(number=2, goodName=молоко, quantity=2, cost=1.5, discount=0.89, discountAmount=0.61)], totalSum=0.0)
+2018-06-18 16:09:37 INFO  Buyer:65 - чек покупателя:buyer 5Receipt(id=4, date=18/6/2018, casseNo=2, items=[], totalSum=0.0)
+2018-06-18 16:09:37 INFO  Buyer:65 - чек покупателя:buyer 4Receipt(id=5, date=18/6/2018, casseNo=2, items=[], totalSum=0.0)
+2018-06-18 16:12:09 INFO  Buyer:23 - покупатель buyer 0 зашел в магазин
+2018-06-18 16:12:09 INFO  Buyer:23 - покупатель buyer 1 зашел в магазин
+2018-06-18 16:12:09 INFO  Buyer:23 - покупатель buyer 2 зашел в магазин
+2018-06-18 16:12:09 INFO  Buyer:23 - покупатель buyer 3 зашел в магазин
+2018-06-18 16:12:09 INFO  Buyer:23 - покупатель buyer 4 зашел в магазин
+2018-06-18 16:12:09 INFO  Buyer:23 - покупатель buyer 5 зашел в магазин
+2018-06-18 16:12:09 INFO  Buyer:23 - покупатель buyer 6 зашел в магазин
+2018-06-18 16:12:09 INFO  Buyer:43 - покупатель buyer 0 взял 3 товаров чипсы
+2018-06-18 16:12:09 INFO  Buyer:43 - покупатель buyer 0 взял 3 товаров кефир
+2018-06-18 16:12:09 INFO  Buyer:43 - покупатель buyer 0 взял 1 товаров селедка
+2018-06-18 16:12:09 INFO  Buyer:43 - покупатель buyer 1 взял 1 товаров молоко
+2018-06-18 16:12:09 INFO  Buyer:43 - покупатель buyer 1 взял 3 товаров йогурт
+2018-06-18 16:12:09 INFO  Buyer:43 - покупатель buyer 2 взял 1 товаров пиво
+2018-06-18 16:12:09 INFO  Buyer:37 - покупатель buyer 3 ничего не выбрал и ушел
+2018-06-18 16:12:09 INFO  Buyer:43 - покупатель buyer 4 взял 2 товаров пиво
+2018-06-18 16:12:09 INFO  Buyer:43 - покупатель buyer 4 взял 3 товаров колбаски
+2018-06-18 16:12:09 INFO  Buyer:37 - покупатель buyer 5 ничего не выбрал и ушел
+2018-06-18 16:12:09 INFO  Buyer:43 - покупатель buyer 6 взял 2 товаров батон
+2018-06-18 16:13:18 INFO  Buyer:23 - покупатель buyer 0 зашел в магазин
+2018-06-18 16:13:18 INFO  Buyer:23 - покупатель buyer 1 зашел в магазин
+2018-06-18 16:13:18 INFO  Buyer:23 - покупатель buyer 2 зашел в магазин
+2018-06-18 16:13:18 INFO  Buyer:23 - покупатель buyer 3 зашел в магазин
+2018-06-18 16:13:18 INFO  Buyer:23 - покупатель buyer 4 зашел в магазин
+2018-06-18 16:13:18 INFO  Buyer:23 - покупатель buyer 5 зашел в магазин
+2018-06-18 16:13:18 INFO  Buyer:23 - покупатель buyer 6 зашел в магазин
+2018-06-18 16:13:18 INFO  Buyer:43 - покупатель buyer 0 взял 2 товаров булочка из печки
+2018-06-18 16:13:18 INFO  Buyer:43 - покупатель buyer 0 взял 2 товаров пиво
+2018-06-18 16:13:18 INFO  Buyer:43 - покупатель buyer 0 взял 1 товаров колбаски
+2018-06-18 16:13:18 INFO  Buyer:43 - покупатель buyer 0 взял 1 товаров хлеб
+2018-06-18 16:13:18 INFO  Buyer:63 - покупатель buyer 0 занял очередь в кассе 2
+2018-06-18 16:13:18 INFO  Buyer:37 - покупатель buyer 1 ничего не выбрал и ушел
+2018-06-18 16:13:18 INFO  Buyer:43 - покупатель buyer 2 взял 3 товаров хлеб
+2018-06-18 16:13:18 INFO  Buyer:43 - покупатель buyer 2 взял 1 товаров хлеб
+2018-06-18 16:13:18 INFO  Buyer:43 - покупатель buyer 2 взял 1 товаров хлеб
+2018-06-18 16:13:18 INFO  Buyer:43 - покупатель buyer 2 взял 1 товаров водка
+2018-06-18 16:13:18 INFO  Buyer:43 - покупатель buyer 3 взял 3 товаров кефир
+2018-06-18 16:13:19 INFO  Buyer:43 - покупатель buyer 4 взял 3 товаров батон
+2018-06-18 16:13:19 INFO  Buyer:43 - покупатель buyer 4 взял 2 товаров булочка из печки
+2018-06-18 16:13:19 INFO  Buyer:43 - покупатель buyer 4 взял 1 товаров булочка из печки
+2018-06-18 16:13:19 INFO  Buyer:43 - покупатель buyer 4 взял 2 товаров водка
+2018-06-18 16:13:19 INFO  Buyer:43 - покупатель buyer 5 взял 2 товаров йогурт
+2018-06-18 16:13:19 INFO  Buyer:37 - покупатель buyer 6 ничего не выбрал и ушел
+2018-06-18 16:13:19 INFO  Buyer:65 - чек покупателя:buyer 0Receipt(id=1, date=18/6/2018, casseNo=2, items=[Item(number=1, goodName=колбаски, quantity=1, cost=5.2, discount=0.3, discountAmount=4.9), Item(number=2, goodName=булочка из печки, quantity=2, cost=0.4, discount=0.1, discountAmount=0.30000000000000004), Item(number=3, goodName=пиво, quantity=2, cost=2.2, discount=0.1, discountAmount=2.1), Item(number=4, goodName=хлеб, quantity=1, cost=0.7, discount=0.5, discountAmount=0.19999999999999996)], totalSum=6.0)
+2018-06-18 16:13:19 INFO  Buyer:63 - покупатель buyer 3 занял очередь в кассе 2
+2018-06-18 16:13:19 INFO  Buyer:65 - чек покупателя:buyer 3Receipt(id=2, date=18/6/2018, casseNo=2, items=[Item(number=1, goodName=кефир, quantity=3, cost=1.7, discount=0.5, discountAmount=1.2)], totalSum=1.0)
+2018-06-18 16:13:19 INFO  Buyer:63 - покупатель buyer 6 занял очередь в кассе 2
+2018-06-18 16:13:19 INFO  Buyer:65 - чек покупателя:buyer 6Receipt(id=3, date=18/6/2018, casseNo=2, items=[], totalSum=0.0)
+2018-06-18 16:13:19 INFO  Buyer:63 - покупатель buyer 5 занял очередь в кассе 2
+2018-06-18 16:13:19 INFO  Buyer:65 - чек покупателя:buyer 5Receipt(id=4, date=18/6/2018, casseNo=2, items=[Item(number=1, goodName=йогурт, quantity=2, cost=2.45, discount=0.1, discountAmount=2.35)], totalSum=2.0)
+2018-06-18 16:13:19 INFO  Buyer:63 - покупатель buyer 4 занял очередь в кассе 2
+2018-06-18 16:13:19 INFO  Buyer:65 - чек покупателя:buyer 4Receipt(id=5, date=18/6/2018, casseNo=2, items=[Item(number=1, goodName=булочка из печки, quantity=1, cost=0.4, discount=0.1, discountAmount=0.30000000000000004), Item(number=2, goodName=водка, quantity=2, cost=5.0, discount=0.2, discountAmount=4.8), Item(number=3, goodName=батон, quantity=3, cost=0.5, discount=0.3, discountAmount=0.2)], totalSum=4.0)
+2018-06-18 17:06:50 INFO  Buyer:23 - покупатель buyer 0 зашел в магазин
+2018-06-18 17:06:50 INFO  Buyer:23 - покупатель buyer 1 зашел в магазин
+2018-06-18 17:06:50 INFO  Buyer:23 - покупатель buyer 2 зашел в магазин
+2018-06-18 17:06:50 INFO  Buyer:23 - покупатель buyer 3 зашел в магазин
+2018-06-18 17:06:50 INFO  Buyer:23 - покупатель buyer 4 зашел в магазин
+2018-06-18 17:06:50 INFO  Buyer:23 - покупатель buyer 5 зашел в магазин
+2018-06-18 17:06:50 INFO  Buyer:23 - покупатель buyer 6 зашел в магазин
+2018-06-18 17:06:50 INFO  Buyer:43 - покупатель buyer 0 взял 2 товаров йогурт
+2018-06-18 17:06:50 INFO  Buyer:43 - покупатель buyer 0 взял 2 товаров кефир
+2018-06-18 17:06:50 INFO  Buyer:43 - покупатель buyer 0 взял 3 товаров булочка из печки
+2018-06-18 17:06:50 INFO  Buyer:43 - покупатель buyer 0 взял 2 товаров кефир
+2018-06-18 17:06:50 INFO  Buyer:64 - покупатель buyer 0 занял очередь в кассе 0
+2018-06-18 17:06:50 INFO  Buyer:43 - покупатель buyer 1 взял 2 товаров йогурт
+2018-06-18 17:06:50 INFO  Buyer:64 - покупатель buyer 1 занял очередь в кассе 1
+2018-06-18 17:06:50 INFO  Buyer:43 - покупатель buyer 2 взял 2 товаров батон
+2018-06-18 17:06:50 INFO  Buyer:43 - покупатель buyer 2 взял 1 товаров водка
+2018-06-18 17:06:50 INFO  Buyer:64 - покупатель buyer 2 занял очередь в кассе 2
+2018-06-18 17:06:50 INFO  Buyer:43 - покупатель buyer 3 взял 2 товаров колбаски
+2018-06-18 17:06:50 INFO  Buyer:43 - покупатель buyer 4 взял 2 товаров гречка
+2018-06-18 17:06:50 INFO  Buyer:43 - покупатель buyer 4 взял 2 товаров йогурт
+2018-06-18 17:06:50 INFO  Buyer:43 - покупатель buyer 5 взял 1 товаров пиво
+2018-06-18 17:06:50 INFO  Buyer:43 - покупатель buyer 5 взял 1 товаров чипсы
+2018-06-18 17:06:50 INFO  Buyer:43 - покупатель buyer 5 взял 3 товаров батон
+2018-06-18 17:06:50 INFO  Buyer:43 - покупатель buyer 5 взял 1 товаров булочка из печки
+2018-06-18 17:06:50 INFO  Buyer:43 - покупатель buyer 6 взял 1 товаров чипсы
+2018-06-18 17:06:50 INFO  Buyer:43 - покупатель buyer 6 взял 3 товаров молоко
+2018-06-18 17:06:50 INFO  Buyer:43 - покупатель buyer 6 взял 1 товаров колбаски
+2018-06-18 17:06:50 INFO  Buyer:43 - покупатель buyer 6 взял 2 товаров молоко
+2018-06-18 17:06:51 INFO  Buyer:66 - чек покупателя:buyer 1Receipt(id=1, date=18/6/2018, casseNo=1, items=[Item(number=1, goodName=йогурт, quantity=2, cost=2.45, discount=0.1, discountAmount=2.35)], totalSum=2.0)
+2018-06-18 17:06:51 INFO  Buyer:64 - покупатель buyer 3 занял очередь в кассе 1
+2018-06-18 17:06:51 INFO  Buyer:66 - чек покупателя:buyer 3Receipt(id=2, date=18/6/2018, casseNo=1, items=[Item(number=1, goodName=колбаски, quantity=2, cost=5.2, discount=0.3, discountAmount=4.9)], totalSum=4.0)
+2018-06-18 17:06:51 INFO  Buyer:64 - покупатель buyer 6 занял очередь в кассе 1
+2018-06-18 17:06:51 INFO  Buyer:66 - чек покупателя:buyer 2Receipt(id=3, date=18/6/2018, casseNo=2, items=[Item(number=1, goodName=водка, quantity=1, cost=5.0, discount=0.2, discountAmount=4.8), Item(number=2, goodName=батон, quantity=2, cost=0.5, discount=0.3, discountAmount=0.2)], totalSum=4.0)
+2018-06-18 17:06:51 INFO  Buyer:64 - покупатель buyer 5 занял очередь в кассе 2
+2018-06-18 17:06:51 INFO  Buyer:66 - чек покупателя:buyer 0Receipt(id=4, date=18/6/2018, casseNo=0, items=[Item(number=1, goodName=булочка из печки, quantity=3, cost=0.4, discount=0.1, discountAmount=0.30000000000000004), Item(number=2, goodName=йогурт, quantity=2, cost=2.45, discount=0.1, discountAmount=2.35), Item(number=3, goodName=кефир, quantity=2, cost=1.7, discount=0.5, discountAmount=1.2)], totalSum=3.0)
+2018-06-18 17:06:51 INFO  Buyer:64 - покупатель buyer 4 занял очередь в кассе 0
+2018-06-18 17:06:51 INFO  Buyer:66 - чек покупателя:buyer 4Receipt(id=5, date=18/6/2018, casseNo=0, items=[Item(number=1, goodName=гречка, quantity=2, cost=3.5, discount=0.0, discountAmount=3.5), Item(number=2, goodName=йогурт, quantity=2, cost=2.45, discount=0.1, discountAmount=2.35)], totalSum=5.0)
+2018-06-18 17:06:51 INFO  Buyer:66 - чек покупателя:buyer 6Receipt(id=6, date=18/6/2018, casseNo=1, items=[Item(number=1, goodName=колбаски, quantity=1, cost=5.2, discount=0.3, discountAmount=4.9), Item(number=2, goodName=молоко, quantity=2, cost=1.5, discount=0.89, discountAmount=0.61), Item(number=3, goodName=чипсы, quantity=1, cost=1.2, discount=0.3, discountAmount=0.8999999999999999)], totalSum=4.0)
+2018-06-18 17:06:51 INFO  Buyer:66 - чек покупателя:buyer 5Receipt(id=7, date=18/6/2018, casseNo=2, items=[Item(number=1, goodName=пиво, quantity=1, cost=2.2, discount=0.1, discountAmount=2.1), Item(number=2, goodName=булочка из печки, quantity=1, cost=0.4, discount=0.1, discountAmount=0.30000000000000004), Item(number=3, goodName=батон, quantity=3, cost=0.5, discount=0.3, discountAmount=0.2), Item(number=4, goodName=чипсы, quantity=1, cost=1.2, discount=0.3, discountAmount=0.8999999999999999)], totalSum=2.0)
