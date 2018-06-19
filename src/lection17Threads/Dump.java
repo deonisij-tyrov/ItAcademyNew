@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
+
 public class Dump{
     private static final int START_VALUE_OF_COMPONENTS = 20;
     private final List<RobotComponents> robotComponents;
@@ -20,9 +20,15 @@ public class Dump{
         System.out.println(robotComponents.toString());
     }
 
-    public synchronized List<RobotComponents> getRobotComponents() {
-        return robotComponents;
+    public synchronized void addRobotComponent(RobotComponents robotComponent) {
+        robotComponents.add(robotComponent);
+        System.out.println("components in the dump - " + robotComponents.toString());
     }
 
-
+    public synchronized RobotComponents getRobotComponent() {
+        if(robotComponents.size() > 0) {
+            return robotComponents.remove(0);
+        }
+        else return null;
+    }
 }

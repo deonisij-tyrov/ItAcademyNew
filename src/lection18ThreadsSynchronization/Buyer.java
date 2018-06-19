@@ -1,18 +1,17 @@
 package lection18ThreadsSynchronization;
 
 import lombok.Data;
-import org.apache.log4j.Logger;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.Semaphore;
 
 @Data
 public class Buyer implements Runnable {
-    final static Logger logger = Logger.getLogger(Buyer.class.getSimpleName());
+    private final Semaphore SEMAPHORE = new Semaphore(3, true);
     Receipt receipt;
     private Map<Good, Integer> goods;
     private Shop shop;
-    private Cashbox cashbox;
 
     public Buyer(Shop shop) {
         this.shop = shop;
@@ -20,10 +19,20 @@ public class Buyer implements Runnable {
 
     @Override
     public void run() {
-        logger.info(String.format("покупатель %s зашел в магазин", Thread.currentThread().getName()));
+        Shop.logger.info(String.format("покупатель %s зашел в магазин", Thread.currentThread().getName()));
         goods = new HashMap<>();
         putGoods();
-        paysCashier();
+
+        try {
+            shop.logger.error("ждем доступа");
+            SEMAPHORE.acquire();
+            takeTurns();
+            Thread.currentThread().sleep(1000);
+        } catch (InterruptedException e) {
+            shop.logger.error(e.getMessage());
+        }
+
+        SEMAPHORE.release();
     }
 
     private void putGoods() {
@@ -31,40 +40,32 @@ public class Buyer implements Runnable {
         try {
             Thread.sleep(200);
         } catch (InterruptedException e) {
-            logger.error(e.getMessage());
+            Shop.logger.error(e.getMessage());
         }
         if (countGoods == 0) {
-            logger.info(String.format("покупатель %s ничего не выбрал и ушел", Thread.currentThread().getName()));
+            Shop.logger.info(String.format("покупатель %s ничего не выбрал и ушел", Thread.currentThread().getName()));
         } else {
             for (int i = 0; i < countGoods; i++) {
-                Integer goodNumber = (int) (Math.random() * 12);
-                int value = (int) (Math.random() * 3) + 1;
-                goods.put(shop.getGoods().get(goodNumber), value);
-                logger.info(String.format("покупатель %s взял %d товаров %s",
-                        Thread.currentThread().getName(), value, shop.getGoods().get(goodNumber).getName()));
+                Integer goodId = (int) (Math.random() * 12) + 1;                /*значение по id товара*/
+                int value = (int) (Math.random() * 3) + 1;                      /*количество*/
+                Good good = shop.getGood(goodId);
+                if (good != null) {
+                    goods.put(good, value);
+                    Shop.logger.info(String.format("покупатель %s взял %d товаров %s",
+                            Thread.currentThread().getName(), value, good.getName()));
+                } else {
+                    Shop.logger.info(String.format("уже нет жедаемого товара для покупателя %s (((", Thread.currentThread().getName()));
+                }
             }
         }
     }
 
-    private void paysCashier() {
-        synchronized (shop.getCASHBOXES()) {
-            try {
-                shop.getSEMAPHORE().acquire();
-            } catch (InterruptedException e) {
-                logger.error(e.getMessage());
-            }
-            for (int i = 0; i < shop.getCASHBOXES().length; i++) {
-                if (shop.getCASHBOXES()[i].isFree()) {
-                    cashbox = shop.getCASHBOXES()[i];
-                    cashbox.setFree(false);
-                    break;
-                }
-            }
-        }
-        logger.info(String.format("покупатель %s занял очередь в кассе %d", Thread.currentThread().getName(), cashbox.getCasseNo()));
-        receipt = cashbox.makeReceipt(goods);
-        logger.info("чек покупателя:" + Thread.currentThread().getName() + receipt.toString());
+    private void takeTurns() {
+        Cashbox cashbox = shop.getCashbox();
+        Shop.logger.info(String.format("покупатель %s занял кассу %d", Thread.currentThread().getName(),cashbox.getCasseNo()));
+        double sumCost = cashbox.makeSum(goods);
+        receipt = cashbox.payOff(goods, Math.round(sumCost));
+        shop.logger.info(String.format("чек покупателя:\n%s %s", Thread.currentThread().getName(), receipt.toString()));
         cashbox.setFree(true);
-        shop.getSEMAPHORE().release();
     }
 }

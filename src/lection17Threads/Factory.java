@@ -22,13 +22,12 @@ public class Factory implements Runnable {
 
     public void throwOutDetails() {
         synchronized (dump) {
-            int countOfDetails = new Double(Math.random() * 4 + 1).intValue();      /*1-4 detail(s) theow*/
+            int countOfDetails = new Double(Math.random() * 4 + 1).intValue();      /*1-4 detail(s) threow*/
             RobotComponents[] robotComponents1s = RobotComponents.values();
             for (int i = 0; i < countOfDetails; i++) {
                 Double randomEnum = Math.random() * RobotComponents.values().length;
-                dump.getRobotComponents().add(robotComponents1s[randomEnum.intValue()]);
+                dump.addRobotComponent(robotComponents1s[randomEnum.intValue()]);
             }
-            System.out.println("components in the dump - " + dump.getRobotComponents().toString());
         }
     }
 
