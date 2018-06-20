@@ -71,9 +71,9 @@ public class Shop {
 
     public Cashbox takeQueue() {
         try {
-            logger.warn("ждем доступа " + Thread.currentThread().getName());
+            logger.debug("ждем доступа " + Thread.currentThread().getName());
             semaphore.acquire();
-            logger.warn(semaphore.toString() + Thread.currentThread().getName());
+            logger.debug(semaphore.toString() + Thread.currentThread().getName());
         } catch (InterruptedException e) {
             logger.error(e.getMessage());
         }
@@ -94,9 +94,9 @@ public class Shop {
         for(int i = 0; i < CASHBOXES.length; i++) {
             if(CASHBOXES[i] == cashbox) {
                 cashbox.setFree(true);
-                logger.warn("освобождаем " + Thread.currentThread().getName());
+                logger.debug("освобождаем " + Thread.currentThread().getName());
                 semaphore.release();
-                logger.warn(semaphore.toString() + Thread.currentThread().getName());
+                logger.debug(semaphore.toString() + Thread.currentThread().getName());
             }
         }
     }
