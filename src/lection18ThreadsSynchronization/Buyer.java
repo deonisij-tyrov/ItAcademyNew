@@ -8,13 +8,14 @@ import java.util.concurrent.Semaphore;
 
 @Data
 public class Buyer implements Runnable {
-    private final Semaphore SEMAPHORE = new Semaphore(3, true);
+    private final Semaphore semaphore;
     Receipt receipt;
     private Map<Good, Integer> goods;
     private Shop shop;
 
-    public Buyer(Shop shop) {
+    public Buyer(Shop shop, Semaphore semaphore) {
         this.shop = shop;
+        this.semaphore = semaphore;
     }
 
     @Override
@@ -22,17 +23,10 @@ public class Buyer implements Runnable {
         Shop.logger.info(String.format("покупатель %s зашел в магазин", Thread.currentThread().getName()));
         goods = new HashMap<>();
         putGoods();
-
-        try {
-            shop.logger.error("ждем доступа");
-            SEMAPHORE.acquire();
-            takeTurns();
-            Thread.currentThread().sleep(1000);
-        } catch (InterruptedException e) {
-            shop.logger.error(e.getMessage());
+        if (goods.size() == 0) {
+            return;
         }
-
-        SEMAPHORE.release();
+        takeTurns();
     }
 
     private void putGoods() {
@@ -61,11 +55,11 @@ public class Buyer implements Runnable {
     }
 
     private void takeTurns() {
-        Cashbox cashbox = shop.getCashbox();
-        Shop.logger.info(String.format("покупатель %s занял кассу %d", Thread.currentThread().getName(),cashbox.getCasseNo()));
+        Cashbox cashbox = shop.takeQueue();
+        Shop.logger.info(String.format("покупатель %s занял кассу %d", Thread.currentThread().getName(), cashbox.getCasseNo()));
         double sumCost = cashbox.makeSum(goods);
-        receipt = cashbox.payOff(goods, Math.round(sumCost));
+        receipt = cashbox.payOff(goods, Math.ceil(sumCost));
         shop.logger.info(String.format("чек покупателя:\n%s %s", Thread.currentThread().getName(), receipt.toString()));
-        cashbox.setFree(true);
+        shop.leaveQueue(cashbox);
     }
 }

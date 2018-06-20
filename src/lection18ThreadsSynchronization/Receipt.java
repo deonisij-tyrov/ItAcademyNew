@@ -14,6 +14,7 @@ class Receipt {
     private List<Item> items;
     private double totalSum;
     private double change;
+    private double paid;
 
     @Override
     public String toString() {
@@ -24,6 +25,7 @@ class Receipt {
                 ", items=" + items +
                 ", totalSum=" + totalSum +
                 ", change=" + change +
-                "}\n";
+                ", paid=" + paid +
+                '}';
     }
 }

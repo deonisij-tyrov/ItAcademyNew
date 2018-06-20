@@ -6,11 +6,13 @@ import org.apache.log4j.Logger;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.concurrent.Semaphore;
 
 @AllArgsConstructor
 public class Shop {
     final static Logger logger = Logger.getLogger(Buyer.class.getSimpleName());
     private static final int MAX_QUANTITY_OF_GOODS = 10;
+    private static Semaphore semaphore = new Semaphore(3, true);
     private final Cashbox[] CASHBOXES;
     private Map<Good, Integer> goods;
 
@@ -24,7 +26,7 @@ public class Shop {
         goods.put(new Good(6, "селедка", 2.5, 0.4), randomGoodCount());
         goods.put(new Good(7, "кефир", 1.7, 0.5), randomGoodCount());
         goods.put(new Good(8, "батон", 0.5, 0.3), randomGoodCount());
-        goods.put(new Good(9, "гречка", 3.5, 0.0), randomGoodCount());
+        goods.put(new Good(9, "гречка", 3.5, 0.1), randomGoodCount());
         goods.put(new Good(10, "колбаски", 5.2, 0.3), randomGoodCount());
         goods.put(new Good(11, "йогурт", 2.45, 0.1), randomGoodCount());
         goods.put(new Good(12, "булочка из печки", 0.4, 0.1), randomGoodCount());
@@ -36,8 +38,8 @@ public class Shop {
 
     public static void main(String[] args) {
         Shop shop = new Shop();
-        for (int i = 0; i < 100; i++) {
-            new Thread(new Buyer(shop), "Покупатель " + i).start();
+        for (int i = 0; i < 10; i++) {
+            new Thread(new Buyer(shop, semaphore), "Покупатель " + i).start();
         }
     }
 
@@ -67,7 +69,18 @@ public class Shop {
         return null;
     }
 
-    public Cashbox getCashbox() {
+    public Cashbox takeQueue() {
+        try {
+            logger.warn("ждем доступа " + Thread.currentThread().getName());
+            semaphore.acquire();
+            logger.warn(semaphore.toString() + Thread.currentThread().getName());
+        } catch (InterruptedException e) {
+            logger.error(e.getMessage());
+        }
+        return getCashbox();
+    }
+
+    private synchronized Cashbox getCashbox() {
         for (int i = 0; i < CASHBOXES.length; i++) {
             if (CASHBOXES[i].isFree()) {
                 CASHBOXES[i].setFree(false);
@@ -75,5 +88,16 @@ public class Shop {
             }
         }
         return null;
+    }
+
+    public void leaveQueue(Cashbox cashbox) {
+        for(int i = 0; i < CASHBOXES.length; i++) {
+            if(CASHBOXES[i] == cashbox) {
+                cashbox.setFree(true);
+                logger.warn("освобождаем " + Thread.currentThread().getName());
+                semaphore.release();
+                logger.warn(semaphore.toString() + Thread.currentThread().getName());
+            }
+        }
     }
 }
