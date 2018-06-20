@@ -4,11 +4,10 @@ import lombok.Data;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.Semaphore;
 
 @Data
 public class Buyer implements Runnable {
-    private final Semaphore SEMAPHORE = new Semaphore(3, true);
+
     Receipt receipt;
     private Map<Good, Integer> goods;
     private Shop shop;
@@ -22,17 +21,7 @@ public class Buyer implements Runnable {
         Shop.logger.info(String.format("покупатель %s зашел в магазин", Thread.currentThread().getName()));
         goods = new HashMap<>();
         putGoods();
-
-        try {
-            shop.logger.error("ждем доступа");
-            SEMAPHORE.acquire();
-            takeTurns();
-            Thread.currentThread().sleep(1000);
-        } catch (InterruptedException e) {
-            shop.logger.error(e.getMessage());
-        }
-
-        SEMAPHORE.release();
+        takeTurns();
     }
 
     private void putGoods() {
@@ -61,11 +50,12 @@ public class Buyer implements Runnable {
     }
 
     private void takeTurns() {
-        Cashbox cashbox = shop.getCashbox();
+        Cashbox cashbox = shop.takeQueue();
         Shop.logger.info(String.format("покупатель %s занял кассу %d", Thread.currentThread().getName(),cashbox.getCasseNo()));
         double sumCost = cashbox.makeSum(goods);
         receipt = cashbox.payOff(goods, Math.round(sumCost));
         shop.logger.info(String.format("чек покупателя:\n%s %s", Thread.currentThread().getName(), receipt.toString()));
-        cashbox.setFree(true);
+//        cashbox.setFree(true);
+        shop.releaseQueue(cashbox);
     }
 }

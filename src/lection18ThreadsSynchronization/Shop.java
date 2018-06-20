@@ -6,11 +6,13 @@ import org.apache.log4j.Logger;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.concurrent.Semaphore;
 
 @AllArgsConstructor
 public class Shop {
     final static Logger logger = Logger.getLogger(Buyer.class.getSimpleName());
     private static final int MAX_QUANTITY_OF_GOODS = 10;
+    private final static Semaphore SEMAPHORE = new Semaphore(1, true);
     private final Cashbox[] CASHBOXES;
     private Map<Good, Integer> goods;
 
@@ -32,13 +34,20 @@ public class Shop {
         for (int i = 0; i < CASHBOXES.length; i++) {
             CASHBOXES[i] = new Cashbox(i);
         }
+        logger.info(SEMAPHORE.toString());
     }
 
     public static void main(String[] args) {
         Shop shop = new Shop();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 5; i++) {
             new Thread(new Buyer(shop), "Покупатель " + i).start();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
+
     }
 
     private int randomGoodCount() {
@@ -67,13 +76,29 @@ public class Shop {
         return null;
     }
 
-    public Cashbox getCashbox() {
+    public Cashbox takeQueue() {
+        logger.error("ждем доступа " + Thread.currentThread().getName());
+        SEMAPHORE.drainPermits();
+        logger.info(SEMAPHORE.toString());
+        return getCashbox();
+    }
+
+    private synchronized Cashbox getCashbox() {
         for (int i = 0; i < CASHBOXES.length; i++) {
             if (CASHBOXES[i].isFree()) {
                 CASHBOXES[i].setFree(false);
+                SEMAPHORE.release();
                 return CASHBOXES[i];
             }
         }
         return null;
+    }
+
+    public void releaseQueue(Cashbox cashbox) {
+        if (cashbox.isFree()) {
+            logger.error("отпускаем");
+            logger.info(SEMAPHORE.toString());
+            SEMAPHORE.release();
+        }
     }
 }

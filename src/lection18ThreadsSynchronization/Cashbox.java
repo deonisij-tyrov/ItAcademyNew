@@ -29,8 +29,8 @@ public class Cashbox {
             items.add(new Item(i, m.getKey().getName(), m.getValue(), m.getKey().getPrice(), m.getKey().getDiscount(),
                     m.getKey().getPrice() - m.getKey().getDiscount()));
             try {
-                Thread.currentThread().sleep(1000);
-//                System.out.println(Thread.currentThread().getName() + " sleep 100");
+                Thread.currentThread().sleep(2000);
+                System.out.println(Thread.currentThread().getName() + " sleep 100");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
