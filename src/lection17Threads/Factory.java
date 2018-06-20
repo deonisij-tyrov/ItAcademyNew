@@ -48,9 +48,10 @@ public class Factory implements Runnable {
         assistant1.start();
         assistant2.start();
         for (int i = 0; i < 100; i++) {
+            System.out.println("\tночь началась");
             this.throwOutDetails();
             try {
-                Thread.sleep(100);
+                Thread.currentThread().sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

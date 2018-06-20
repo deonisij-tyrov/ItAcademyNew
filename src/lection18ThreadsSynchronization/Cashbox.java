@@ -31,7 +31,6 @@ public class Cashbox {
                     m.getKey().getPrice() - m.getKey().getDiscount()));
             try {
                 Thread.currentThread().sleep(100);
-//                System.out.println(Thread.currentThread().getName() + " sleep 100");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

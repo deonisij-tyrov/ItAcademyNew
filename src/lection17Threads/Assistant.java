@@ -28,7 +28,7 @@ public class Assistant implements Runnable {
     @Override
     public void run() {
         while (true) {
-            synchronized (dump) {
+            synchronized (dump.getRobotComponents()) {
                 if (dump.getRobotComponents().size() > 0) {
                     RobotComponents robotComponent = dump.getRobotComponents().remove(0);
                     System.out.println(Thread.currentThread().getName() + " get component " + robotComponent);

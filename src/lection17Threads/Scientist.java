@@ -8,7 +8,7 @@ import java.util.Map;
 
 @Data
 public class Scientist implements Runnable {
-    private Map<RobotComponents, Integer> components;
+    private final Map<RobotComponents, Integer> components;
     private int countRobots = 0;
 
 
@@ -48,7 +48,7 @@ public class Scientist implements Runnable {
                 }
             }
             try {
-                Thread.sleep(200);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
