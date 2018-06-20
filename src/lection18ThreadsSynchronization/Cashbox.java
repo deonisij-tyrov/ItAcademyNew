@@ -26,7 +26,7 @@ public class Cashbox {
         int i = 0;
         for (Map.Entry<Good, Integer> good : goods.entrySet()) {
             ++i;
-            double discountAmount = round(good.getKey().getPrice() * good.getKey().getDiscount() * good.getValue());
+            double discountAmount = round((good.getKey().getPrice() - (good.getKey().getPrice() * good.getKey().getDiscount())) * good.getValue());
             items.add(new Item(i, good.getKey().getName(), good.getValue(), good.getKey().getPrice(), good.getKey().getDiscount(), discountAmount));
             try {
                 Thread.currentThread().sleep(1000);
@@ -40,7 +40,7 @@ public class Cashbox {
     public double makeSum(Map<Good, Integer> goods) {
         this.sum = goods.entrySet()
                 .stream()
-                .mapToDouble(good -> (good.getKey().getPrice() * good.getKey().getDiscount() * good.getValue()))
+                .mapToDouble(good -> ((good.getKey().getPrice() - (good.getKey().getPrice() * good.getKey().getDiscount())) * good.getValue()))
                 .sum();
         return this.sum = round(sum);
     }
