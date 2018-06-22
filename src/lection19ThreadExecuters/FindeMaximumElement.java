@@ -1,7 +1,7 @@
 package lection19ThreadExecuters;
 
 public class FindeMaximumElement {
-    int[] array;
+    static int[] array;
 
     public FindeMaximumElement(int[] array) {
         this.array = array;

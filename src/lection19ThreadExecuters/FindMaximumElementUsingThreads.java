@@ -2,9 +2,11 @@ package lection19ThreadExecuters;
 
 public class FindMaximumElementUsingThreads implements Runnable {
     int[] array;
+    SearchUsingThreads searchUsingThreads;
 
-    public FindMaximumElementUsingThreads(int[] array) {
+    public FindMaximumElementUsingThreads(int[] array, SearchUsingThreads searchUsingThreads) {
         this.array = array;
+        this.searchUsingThreads = searchUsingThreads;
     }
 
     @Override
@@ -16,6 +18,6 @@ public class FindMaximumElementUsingThreads implements Runnable {
             }
         }
         System.out.println(maxInt + " " + Thread.currentThread().getName());
-        ArrayMainClass.setMaxValues(maxInt);
+        searchUsingThreads.setMaxValues(maxInt);
     }
 }
