@@ -8,14 +8,12 @@ import java.util.concurrent.Semaphore;
 
 @Data
 public class Buyer implements Runnable {
-    private final Semaphore semaphore;
     Receipt receipt;
     private Map<Good, Integer> goods;
     private Shop shop;
 
-    public Buyer(Shop shop, Semaphore semaphore) {
+    public Buyer(Shop shop) {
         this.shop = shop;
-        this.semaphore = semaphore;
     }
 
     @Override

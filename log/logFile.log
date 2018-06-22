@@ -10555,3 +10555,186 @@
 Покупатель 5 Receipt{id=4, date='22.6.2018 21:03:27', casseNo=2, items=[Item(number=1, goodName=хлеб, quantity=1, cost=0.7, discount=0.18, discountAmount=0.57), Item(number=2, goodName=йогурт, quantity=1, cost=2.45, discount=0.1, discountAmount=2.21)], totalSum=2.78, change=0.22, paid=3.0}
 2018-06-22 21:03:27 DEBUG Buyer:97 - освобождаем Покупатель 5
 2018-06-22 21:03:27 DEBUG Buyer:99 - java.util.concurrent.Semaphore@109daf09[Permits = 3]Покупатель 5
+2018-06-22 21:22:04 INFO  Buyer:23 - покупатель Покупатель 2 зашел в магазин
+2018-06-22 21:22:04 INFO  Buyer:23 - покупатель Покупатель 6 зашел в магазин
+2018-06-22 21:22:04 INFO  Buyer:23 - покупатель Покупатель 5 зашел в магазин
+2018-06-22 21:22:04 INFO  Buyer:23 - покупатель Покупатель 0 зашел в магазин
+2018-06-22 21:22:04 INFO  Buyer:23 - покупатель Покупатель 3 зашел в магазин
+2018-06-22 21:22:04 INFO  Buyer:23 - покупатель Покупатель 1 зашел в магазин
+2018-06-22 21:22:04 INFO  Buyer:23 - покупатель Покупатель 9 зашел в магазин
+2018-06-22 21:22:04 INFO  Buyer:23 - покупатель Покупатель 8 зашел в магазин
+2018-06-22 21:22:04 INFO  Buyer:23 - покупатель Покупатель 4 зашел в магазин
+2018-06-22 21:22:04 INFO  Buyer:23 - покупатель Покупатель 7 зашел в магазин
+2018-06-22 21:22:04 INFO  Buyer:40 - покупатель Покупатель 0 ничего не выбрал и ушел
+2018-06-22 21:22:04 INFO  Buyer:40 - покупатель Покупатель 4 ничего не выбрал и ушел
+2018-06-22 21:22:04 INFO  Buyer:40 - покупатель Покупатель 1 ничего не выбрал и ушел
+2018-06-22 21:22:04 INFO  Buyer:48 - покупатель Покупатель 8 взял 1 товаров гречка
+2018-06-22 21:22:04 INFO  Buyer:48 - покупатель Покупатель 5 взял 3 товаров селедка
+2018-06-22 21:22:04 INFO  Buyer:48 - покупатель Покупатель 2 взял 2 товаров булочка из печки
+2018-06-22 21:22:04 INFO  Buyer:48 - покупатель Покупатель 3 взял 3 товаров чипсы
+2018-06-22 21:22:04 INFO  Buyer:48 - покупатель Покупатель 7 взял 3 товаров молоко
+2018-06-22 21:22:04 INFO  Buyer:48 - покупатель Покупатель 9 взял 3 товаров батон
+2018-06-22 21:22:04 INFO  Buyer:48 - покупатель Покупатель 6 взял 1 товаров молоко
+2018-06-22 21:22:04 DEBUG Buyer:74 - ждем доступа Покупатель 6
+2018-06-22 21:22:04 INFO  Buyer:48 - покупатель Покупатель 9 взял 1 товаров молоко
+2018-06-22 21:22:04 DEBUG Buyer:74 - ждем доступа Покупатель 7
+2018-06-22 21:22:04 INFO  Buyer:48 - покупатель Покупатель 3 взял 2 товаров пиво
+2018-06-22 21:22:04 DEBUG Buyer:74 - ждем доступа Покупатель 2
+2018-06-22 21:22:04 INFO  Buyer:48 - покупатель Покупатель 5 взял 2 товаров батон
+2018-06-22 21:22:04 INFO  Buyer:48 - покупатель Покупатель 8 взял 3 товаров селедка
+2018-06-22 21:22:04 DEBUG Buyer:74 - ждем доступа Покупатель 5
+2018-06-22 21:22:04 DEBUG Buyer:76 - java.util.concurrent.Semaphore@13e47409[Permits = 0]Покупатель 2
+2018-06-22 21:22:04 INFO  Buyer:59 - покупатель Покупатель 2 занял кассу 0
+2018-06-22 21:22:04 DEBUG Buyer:74 - ждем доступа Покупатель 3
+2018-06-22 21:22:04 DEBUG Buyer:76 - java.util.concurrent.Semaphore@13e47409[Permits = 1]Покупатель 7
+2018-06-22 21:22:04 INFO  Buyer:48 - покупатель Покупатель 9 взял 1 товаров кефир
+2018-06-22 21:22:04 DEBUG Buyer:74 - ждем доступа Покупатель 9
+2018-06-22 21:22:04 INFO  Buyer:59 - покупатель Покупатель 7 занял кассу 1
+2018-06-22 21:22:04 DEBUG Buyer:76 - java.util.concurrent.Semaphore@13e47409[Permits = 2]Покупатель 6
+2018-06-22 21:22:04 INFO  Buyer:59 - покупатель Покупатель 6 занял кассу 2
+2018-06-22 21:22:04 INFO  Buyer:48 - покупатель Покупатель 8 взял 3 товаров селедка
+2018-06-22 21:22:04 DEBUG Buyer:74 - ждем доступа Покупатель 8
+2018-06-22 21:22:05 INFO  Buyer:62 - чек покупателя:
+Покупатель 6 Receipt{id=1, date='22.6.2018 21:22:05', casseNo=2, items=[Item(number=1, goodName=молоко, quantity=1, cost=1.5, discount=0.89, discountAmount=0.17)], totalSum=0.17, change=0.83, paid=1.0}
+2018-06-22 21:22:05 DEBUG Buyer:97 - освобождаем Покупатель 6
+2018-06-22 21:22:05 INFO  Buyer:62 - чек покупателя:
+Покупатель 2 Receipt{id=3, date='22.6.2018 21:22:05', casseNo=0, items=[Item(number=1, goodName=булочка из печки, quantity=2, cost=0.4, discount=0.1, discountAmount=0.72)], totalSum=0.72, change=0.28, paid=1.0}
+2018-06-22 21:22:05 DEBUG Buyer:97 - освобождаем Покупатель 2
+2018-06-22 21:22:05 DEBUG Buyer:99 - java.util.concurrent.Semaphore@13e47409[Permits = 1]Покупатель 2
+2018-06-22 21:22:05 INFO  Buyer:62 - чек покупателя:
+Покупатель 7 Receipt{id=2, date='22.6.2018 21:22:05', casseNo=1, items=[Item(number=1, goodName=молоко, quantity=3, cost=1.5, discount=0.89, discountAmount=0.5)], totalSum=0.5, change=0.5, paid=1.0}
+2018-06-22 21:22:05 DEBUG Buyer:97 - освобождаем Покупатель 7
+2018-06-22 21:22:05 DEBUG Buyer:76 - java.util.concurrent.Semaphore@13e47409[Permits = 0]Покупатель 3
+2018-06-22 21:22:05 DEBUG Buyer:76 - java.util.concurrent.Semaphore@13e47409[Permits = 0]Покупатель 5
+2018-06-22 21:22:05 DEBUG Buyer:99 - java.util.concurrent.Semaphore@13e47409[Permits = 1]Покупатель 6
+2018-06-22 21:22:05 INFO  Buyer:59 - покупатель Покупатель 5 занял кассу 1
+2018-06-22 21:22:05 INFO  Buyer:59 - покупатель Покупатель 3 занял кассу 0
+2018-06-22 21:22:05 DEBUG Buyer:76 - java.util.concurrent.Semaphore@13e47409[Permits = 0]Покупатель 9
+2018-06-22 21:22:05 DEBUG Buyer:99 - java.util.concurrent.Semaphore@13e47409[Permits = 1]Покупатель 7
+2018-06-22 21:22:05 INFO  Buyer:59 - покупатель Покупатель 9 занял кассу 2
+2018-06-22 21:22:07 INFO  Buyer:62 - чек покупателя:
+Покупатель 3 Receipt{id=4, date='22.6.2018 21:22:07', casseNo=0, items=[Item(number=1, goodName=пиво, quantity=2, cost=2.2, discount=0.1, discountAmount=3.96), Item(number=2, goodName=чипсы, quantity=3, cost=1.2, discount=0.3, discountAmount=2.52)], totalSum=6.48, change=0.52, paid=7.0}
+2018-06-22 21:22:07 INFO  Buyer:62 - чек покупателя:
+Покупатель 5 Receipt{id=5, date='22.6.2018 21:22:07', casseNo=1, items=[Item(number=1, goodName=селедка, quantity=3, cost=2.5, discount=0.4, discountAmount=4.5), Item(number=2, goodName=батон, quantity=2, cost=0.5, discount=0.3, discountAmount=0.7)], totalSum=5.2, change=0.8, paid=6.0}
+2018-06-22 21:22:07 DEBUG Buyer:97 - освобождаем Покупатель 5
+2018-06-22 21:22:07 DEBUG Buyer:97 - освобождаем Покупатель 3
+2018-06-22 21:22:07 DEBUG Buyer:99 - java.util.concurrent.Semaphore@13e47409[Permits = 1]Покупатель 3
+2018-06-22 21:22:07 DEBUG Buyer:76 - java.util.concurrent.Semaphore@13e47409[Permits = 0]Покупатель 8
+2018-06-22 21:22:07 DEBUG Buyer:99 - java.util.concurrent.Semaphore@13e47409[Permits = 1]Покупатель 5
+2018-06-22 21:22:07 INFO  Buyer:59 - покупатель Покупатель 8 занял кассу 0
+2018-06-22 21:22:08 INFO  Buyer:62 - чек покупателя:
+Покупатель 9 Receipt{id=6, date='22.6.2018 21:22:08', casseNo=2, items=[Item(number=1, goodName=молоко, quantity=1, cost=1.5, discount=0.89, discountAmount=0.17), Item(number=2, goodName=батон, quantity=3, cost=0.5, discount=0.3, discountAmount=1.05), Item(number=3, goodName=кефир, quantity=1, cost=1.7, discount=0.5, discountAmount=0.85)], totalSum=2.07, change=0.93, paid=3.0}
+2018-06-22 21:22:08 DEBUG Buyer:97 - освобождаем Покупатель 9
+2018-06-22 21:22:08 DEBUG Buyer:99 - java.util.concurrent.Semaphore@13e47409[Permits = 2]Покупатель 9
+2018-06-22 21:22:09 INFO  Buyer:62 - чек покупателя:
+Покупатель 8 Receipt{id=7, date='22.6.2018 21:22:09', casseNo=0, items=[Item(number=1, goodName=селедка, quantity=3, cost=2.5, discount=0.4, discountAmount=4.5), Item(number=2, goodName=гречка, quantity=1, cost=3.5, discount=0.1, discountAmount=3.15)], totalSum=7.65, change=0.35, paid=8.0}
+2018-06-22 21:22:09 DEBUG Buyer:97 - освобождаем Покупатель 8
+2018-06-22 21:22:09 DEBUG Buyer:99 - java.util.concurrent.Semaphore@13e47409[Permits = 3]Покупатель 8
+2018-06-22 21:24:53 INFO  Buyer:21 - покупатель Покупатель 8 зашел в магазин
+2018-06-22 21:24:53 INFO  Buyer:21 - покупатель Покупатель 0 зашел в магазин
+2018-06-22 21:24:53 INFO  Buyer:21 - покупатель Покупатель 7 зашел в магазин
+2018-06-22 21:24:53 INFO  Buyer:21 - покупатель Покупатель 6 зашел в магазин
+2018-06-22 21:24:53 INFO  Buyer:21 - покупатель Покупатель 2 зашел в магазин
+2018-06-22 21:24:53 INFO  Buyer:21 - покупатель Покупатель 4 зашел в магазин
+2018-06-22 21:24:53 INFO  Buyer:21 - покупатель Покупатель 3 зашел в магазин
+2018-06-22 21:24:53 INFO  Buyer:21 - покупатель Покупатель 9 зашел в магазин
+2018-06-22 21:24:53 INFO  Buyer:21 - покупатель Покупатель 1 зашел в магазин
+2018-06-22 21:24:53 INFO  Buyer:21 - покупатель Покупатель 5 зашел в магазин
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 8 взял 2 товаров кефир
+2018-06-22 21:24:53 INFO  Buyer:49 - уже нет жедаемого товара для покупателя Покупатель 0 (((
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 2 взял 3 товаров молоко
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 4 взял 2 товаров булочка из печки
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 6 взял 3 товаров хлеб
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 5 взял 1 товаров селедка
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 3 взял 3 товаров йогурт
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 9 взял 3 товаров водка
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 1 взял 1 товаров булочка из печки
+2018-06-22 21:24:53 DEBUG Buyer:74 - ждем доступа Покупатель 9
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 3 взял 1 товаров йогурт
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 5 взял 3 товаров молоко
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 6 взял 1 товаров селедка
+2018-06-22 21:24:53 DEBUG Buyer:74 - ждем доступа Покупатель 4
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 2 взял 2 товаров хлеб
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 0 взял 2 товаров йогурт
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 8 взял 3 товаров молоко
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 7 взял 1 товаров чипсы
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 8 взял 1 товаров батон
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 0 взял 3 товаров гречка
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 2 взял 1 товаров гречка
+2018-06-22 21:24:53 DEBUG Buyer:76 - java.util.concurrent.Semaphore@51a21b8b[Permits = 1]Покупатель 4
+2018-06-22 21:24:53 INFO  Buyer:49 - уже нет жедаемого товара для покупателя Покупатель 6 (((
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 5 взял 1 товаров кефир
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 3 взял 3 товаров йогурт
+2018-06-22 21:24:53 DEBUG Buyer:76 - java.util.concurrent.Semaphore@51a21b8b[Permits = 2]Покупатель 9
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 1 взял 2 товаров молоко
+2018-06-22 21:24:53 INFO  Buyer:57 - покупатель Покупатель 9 занял кассу 1
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 3 взял 3 товаров кефир
+2018-06-22 21:24:53 DEBUG Buyer:74 - ждем доступа Покупатель 3
+2018-06-22 21:24:53 DEBUG Buyer:76 - java.util.concurrent.Semaphore@51a21b8b[Permits = 0]Покупатель 3
+2018-06-22 21:24:53 INFO  Buyer:57 - покупатель Покупатель 3 занял кассу 2
+2018-06-22 21:24:53 DEBUG Buyer:74 - ждем доступа Покупатель 5
+2018-06-22 21:24:53 DEBUG Buyer:74 - ждем доступа Покупатель 6
+2018-06-22 21:24:53 INFO  Buyer:57 - покупатель Покупатель 4 занял кассу 0
+2018-06-22 21:24:53 DEBUG Buyer:74 - ждем доступа Покупатель 2
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 0 взял 3 товаров гречка
+2018-06-22 21:24:53 DEBUG Buyer:74 - ждем доступа Покупатель 0
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 8 взял 1 товаров водка
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 7 взял 3 товаров гречка
+2018-06-22 21:24:53 DEBUG Buyer:74 - ждем доступа Покупатель 8
+2018-06-22 21:24:53 DEBUG Buyer:74 - ждем доступа Покупатель 1
+2018-06-22 21:24:53 INFO  Buyer:46 - покупатель Покупатель 7 взял 3 товаров хлеб
+2018-06-22 21:24:53 DEBUG Buyer:74 - ждем доступа Покупатель 7
+2018-06-22 21:24:54 INFO  Buyer:60 - чек покупателя:
+Покупатель 4 Receipt{id=1, date='22.6.2018 21:24:54', casseNo=0, items=[Item(number=1, goodName=булочка из печки, quantity=2, cost=0.4, discount=0.1, discountAmount=0.72)], totalSum=0.72, change=0.28, paid=1.0}
+2018-06-22 21:24:54 DEBUG Buyer:97 - освобождаем Покупатель 4
+2018-06-22 21:24:54 INFO  Buyer:60 - чек покупателя:
+Покупатель 9 Receipt{id=2, date='22.6.2018 21:24:54', casseNo=1, items=[Item(number=1, goodName=водка, quantity=3, cost=5.0, discount=0.2, discountAmount=12.0)], totalSum=12.0, change=0.0, paid=12.0}
+2018-06-22 21:24:54 DEBUG Buyer:97 - освобождаем Покупатель 9
+2018-06-22 21:24:54 DEBUG Buyer:99 - java.util.concurrent.Semaphore@51a21b8b[Permits = 1]Покупатель 9
+2018-06-22 21:24:54 DEBUG Buyer:76 - java.util.concurrent.Semaphore@51a21b8b[Permits = 0]Покупатель 5
+2018-06-22 21:24:54 DEBUG Buyer:99 - java.util.concurrent.Semaphore@51a21b8b[Permits = 1]Покупатель 4
+2018-06-22 21:24:54 INFO  Buyer:57 - покупатель Покупатель 5 занял кассу 0
+2018-06-22 21:24:54 DEBUG Buyer:76 - java.util.concurrent.Semaphore@51a21b8b[Permits = 0]Покупатель 6
+2018-06-22 21:24:54 INFO  Buyer:57 - покупатель Покупатель 6 занял кассу 1
+2018-06-22 21:24:55 INFO  Buyer:60 - чек покупателя:
+Покупатель 3 Receipt{id=3, date='22.6.2018 21:24:55', casseNo=2, items=[Item(number=1, goodName=йогурт, quantity=3, cost=2.45, discount=0.1, discountAmount=6.62), Item(number=2, goodName=кефир, quantity=3, cost=1.7, discount=0.5, discountAmount=2.55)], totalSum=9.16, change=0.84, paid=10.0}
+2018-06-22 21:24:55 DEBUG Buyer:97 - освобождаем Покупатель 3
+2018-06-22 21:24:55 DEBUG Buyer:99 - java.util.concurrent.Semaphore@51a21b8b[Permits = 1]Покупатель 3
+2018-06-22 21:24:55 DEBUG Buyer:76 - java.util.concurrent.Semaphore@51a21b8b[Permits = 0]Покупатель 2
+2018-06-22 21:24:55 INFO  Buyer:57 - покупатель Покупатель 2 занял кассу 2
+2018-06-22 21:24:56 INFO  Buyer:60 - чек покупателя:
+Покупатель 6 Receipt{id=4, date='22.6.2018 21:24:56', casseNo=1, items=[Item(number=1, goodName=хлеб, quantity=3, cost=0.7, discount=0.18, discountAmount=1.72), Item(number=2, goodName=селедка, quantity=1, cost=2.5, discount=0.4, discountAmount=1.5)], totalSum=3.22, change=0.78, paid=4.0}
+2018-06-22 21:24:56 DEBUG Buyer:97 - освобождаем Покупатель 6
+2018-06-22 21:24:56 DEBUG Buyer:99 - java.util.concurrent.Semaphore@51a21b8b[Permits = 1]Покупатель 6
+2018-06-22 21:24:56 DEBUG Buyer:76 - java.util.concurrent.Semaphore@51a21b8b[Permits = 0]Покупатель 0
+2018-06-22 21:24:56 INFO  Buyer:57 - покупатель Покупатель 0 занял кассу 1
+2018-06-22 21:24:57 INFO  Buyer:60 - чек покупателя:
+Покупатель 5 Receipt{id=5, date='22.6.2018 21:24:57', casseNo=0, items=[Item(number=1, goodName=молоко, quantity=3, cost=1.5, discount=0.89, discountAmount=0.5), Item(number=2, goodName=селедка, quantity=1, cost=2.5, discount=0.4, discountAmount=1.5), Item(number=3, goodName=кефир, quantity=1, cost=1.7, discount=0.5, discountAmount=0.85)], totalSum=2.85, change=0.15, paid=3.0}
+2018-06-22 21:24:57 DEBUG Buyer:97 - освобождаем Покупатель 5
+2018-06-22 21:24:57 DEBUG Buyer:99 - java.util.concurrent.Semaphore@51a21b8b[Permits = 1]Покупатель 5
+2018-06-22 21:24:57 DEBUG Buyer:76 - java.util.concurrent.Semaphore@51a21b8b[Permits = 0]Покупатель 8
+2018-06-22 21:24:57 INFO  Buyer:57 - покупатель Покупатель 8 занял кассу 0
+2018-06-22 21:24:58 INFO  Buyer:60 - чек покупателя:
+Покупатель 0 Receipt{id=7, date='22.6.2018 21:24:58', casseNo=1, items=[Item(number=1, goodName=йогурт, quantity=2, cost=2.45, discount=0.1, discountAmount=4.41), Item(number=2, goodName=гречка, quantity=3, cost=3.5, discount=0.1, discountAmount=9.45)], totalSum=13.86, change=0.14, paid=14.0}
+2018-06-22 21:24:58 DEBUG Buyer:97 - освобождаем Покупатель 0
+2018-06-22 21:24:58 INFO  Buyer:60 - чек покупателя:
+Покупатель 2 Receipt{id=6, date='22.6.2018 21:24:58', casseNo=2, items=[Item(number=1, goodName=молоко, quantity=3, cost=1.5, discount=0.89, discountAmount=0.5), Item(number=2, goodName=хлеб, quantity=2, cost=0.7, discount=0.18, discountAmount=1.15), Item(number=3, goodName=гречка, quantity=1, cost=3.5, discount=0.1, discountAmount=3.15)], totalSum=4.79, change=0.21, paid=5.0}
+2018-06-22 21:24:58 DEBUG Buyer:97 - освобождаем Покупатель 2
+2018-06-22 21:24:58 DEBUG Buyer:76 - java.util.concurrent.Semaphore@51a21b8b[Permits = 0]Покупатель 1
+2018-06-22 21:24:58 DEBUG Buyer:99 - java.util.concurrent.Semaphore@51a21b8b[Permits = 1]Покупатель 0
+2018-06-22 21:24:58 INFO  Buyer:57 - покупатель Покупатель 1 занял кассу 1
+2018-06-22 21:24:58 DEBUG Buyer:76 - java.util.concurrent.Semaphore@51a21b8b[Permits = 0]Покупатель 7
+2018-06-22 21:24:58 DEBUG Buyer:99 - java.util.concurrent.Semaphore@51a21b8b[Permits = 1]Покупатель 2
+2018-06-22 21:24:58 INFO  Buyer:57 - покупатель Покупатель 7 занял кассу 2
+2018-06-22 21:25:00 INFO  Buyer:60 - чек покупателя:
+Покупатель 1 Receipt{id=8, date='22.6.2018 21:25:00', casseNo=1, items=[Item(number=1, goodName=булочка из печки, quantity=1, cost=0.4, discount=0.1, discountAmount=0.36), Item(number=2, goodName=молоко, quantity=2, cost=1.5, discount=0.89, discountAmount=0.33)], totalSum=0.69, change=0.31, paid=1.0}
+2018-06-22 21:25:00 DEBUG Buyer:97 - освобождаем Покупатель 1
+2018-06-22 21:25:00 DEBUG Buyer:99 - java.util.concurrent.Semaphore@51a21b8b[Permits = 1]Покупатель 1
+2018-06-22 21:25:01 INFO  Buyer:60 - чек покупателя:
+Покупатель 8 Receipt{id=9, date='22.6.2018 21:25:01', casseNo=0, items=[Item(number=1, goodName=молоко, quantity=3, cost=1.5, discount=0.89, discountAmount=0.5), Item(number=2, goodName=водка, quantity=1, cost=5.0, discount=0.2, discountAmount=4.0), Item(number=3, goodName=батон, quantity=1, cost=0.5, discount=0.3, discountAmount=0.35), Item(number=4, goodName=кефир, quantity=2, cost=1.7, discount=0.5, discountAmount=1.7)], totalSum=6.55, change=0.45, paid=7.0}
+2018-06-22 21:25:01 DEBUG Buyer:97 - освобождаем Покупатель 8
+2018-06-22 21:25:01 INFO  Buyer:60 - чек покупателя:
+Покупатель 7 Receipt{id=9, date='22.6.2018 21:25:01', casseNo=2, items=[Item(number=1, goodName=хлеб, quantity=3, cost=0.7, discount=0.18, discountAmount=1.72), Item(number=2, goodName=чипсы, quantity=1, cost=1.2, discount=0.3, discountAmount=0.84), Item(number=3, goodName=гречка, quantity=3, cost=3.5, discount=0.1, discountAmount=9.45)], totalSum=12.01, change=0.99, paid=13.0}
+2018-06-22 21:25:01 DEBUG Buyer:97 - освобождаем Покупатель 7
+2018-06-22 21:25:01 DEBUG Buyer:99 - java.util.concurrent.Semaphore@51a21b8b[Permits = 2]Покупатель 8
+2018-06-22 21:25:01 DEBUG Buyer:99 - java.util.concurrent.Semaphore@51a21b8b[Permits = 3]Покупатель 7

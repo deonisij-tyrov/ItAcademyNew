@@ -39,7 +39,7 @@ public class Shop {
     public static void main(String[] args) {
         Shop shop = new Shop();
         for (int i = 0; i < 10; i++) {
-            new Thread(new Buyer(shop, semaphore), "Покупатель " + i).start();
+            new Thread(new Buyer(shop), "Покупатель " + i).start();
         }
     }
 
