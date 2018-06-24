@@ -12,7 +12,7 @@ import java.util.concurrent.Semaphore;
 public class Shop {
     final static Logger logger = Logger.getLogger(Buyer.class.getSimpleName());
     private static final int MAX_QUANTITY_OF_GOODS = 10;
-    private static Semaphore semaphore = new Semaphore(3, true);
+    private final Semaphore SEMAPHORE = new Semaphore(1, true);
     private final Cashbox[] CASHBOXES;
     private Map<Good, Integer> goods;
 
@@ -26,7 +26,7 @@ public class Shop {
         goods.put(new Good(6, "селедка", 2.5, 0.4), randomGoodCount());
         goods.put(new Good(7, "кефир", 1.7, 0.5), randomGoodCount());
         goods.put(new Good(8, "батон", 0.5, 0.3), randomGoodCount());
-        goods.put(new Good(9, "гречка", 3.5, 0.1), randomGoodCount());
+        goods.put(new Good(9, "гречка", 3.5, 0.0), randomGoodCount());
         goods.put(new Good(10, "колбаски", 5.2, 0.3), randomGoodCount());
         goods.put(new Good(11, "йогурт", 2.45, 0.1), randomGoodCount());
         goods.put(new Good(12, "булочка из печки", 0.4, 0.1), randomGoodCount());
@@ -34,13 +34,20 @@ public class Shop {
         for (int i = 0; i < CASHBOXES.length; i++) {
             CASHBOXES[i] = new Cashbox(i);
         }
+        logger.info(SEMAPHORE.toString());
     }
 
     public static void main(String[] args) {
         Shop shop = new Shop();
-        for (int i = 0; i < 10; i++) {
-            new Thread(new Buyer(shop, semaphore), "Покупатель " + i).start();
+        for (int i = 0; i < 5; i++) {
+            new Thread(new Buyer(shop), "Покупатель " + i).start();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
+
     }
 
     private int randomGoodCount() {
@@ -70,13 +77,9 @@ public class Shop {
     }
 
     public Cashbox takeQueue() {
-        try {
-            logger.debug("ждем доступа " + Thread.currentThread().getName());
-            semaphore.acquire();
-            logger.debug(semaphore.toString() + Thread.currentThread().getName());
-        } catch (InterruptedException e) {
-            logger.error(e.getMessage());
-        }
+        logger.error("ждем доступа " + Thread.currentThread().getName());
+        SEMAPHORE.drainPermits();
+        logger.info(SEMAPHORE.toString());
         return getCashbox();
     }
 
@@ -84,20 +87,18 @@ public class Shop {
         for (int i = 0; i < CASHBOXES.length; i++) {
             if (CASHBOXES[i].isFree()) {
                 CASHBOXES[i].setFree(false);
+                SEMAPHORE.release();
                 return CASHBOXES[i];
             }
         }
         return null;
     }
 
-    public void leaveQueue(Cashbox cashbox) {
-        for(int i = 0; i < CASHBOXES.length; i++) {
-            if(CASHBOXES[i] == cashbox) {
-                cashbox.setFree(true);
-                logger.debug("освобождаем " + Thread.currentThread().getName());
-                semaphore.release();
-                logger.debug(semaphore.toString() + Thread.currentThread().getName());
-            }
+    public void releaseQueue(Cashbox cashbox) {
+        if (cashbox.isFree()) {
+            logger.error("отпускаем");
+            logger.info(SEMAPHORE.toString());
+            SEMAPHORE.release();
         }
     }
 }
