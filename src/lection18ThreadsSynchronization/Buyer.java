@@ -8,14 +8,12 @@ import java.util.concurrent.Semaphore;
 
 @Data
 public class Buyer implements Runnable {
-    private final Semaphore semaphore;
     Receipt receipt;
     private Map<Good, Integer> goods;
     private Shop shop;
 
-    public Buyer(Shop shop, Semaphore semaphore) {
+    public Buyer(Shop shop) {
         this.shop = shop;
-        this.semaphore = semaphore;
     }
 
     @Override
@@ -56,11 +54,6 @@ public class Buyer implements Runnable {
 
     private void takeTurns() {
         Cashbox cashbox = shop.takeQueue();
-        try {
-            if(cashbox == null) {
-                throw new NullPointerException();
-            }
-        }catch (NullPointerException)
         Shop.logger.info(String.format("покупатель %s занял кассу %d", Thread.currentThread().getName(), cashbox.getCasseNo()));
         double sumCost = cashbox.makeSum(goods);
         receipt = cashbox.payOff(goods, Math.ceil(sumCost));
