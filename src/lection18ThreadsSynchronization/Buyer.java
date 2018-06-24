@@ -57,12 +57,10 @@ public class Buyer implements Runnable {
     private void takeTurns() {
         Cashbox cashbox = shop.takeQueue();
         try {
-            if (cashbox == null) {
+            if(cashbox == null) {
                 throw new NullPointerException();
             }
-        } catch (NullPointerException e) {
-            Shop.logger.error(e.getMessage());
-        }
+        }catch (NullPointerException)
         Shop.logger.info(String.format("покупатель %s занял кассу %d", Thread.currentThread().getName(), cashbox.getCasseNo()));
         double sumCost = cashbox.makeSum(goods);
         receipt = cashbox.payOff(goods, Math.ceil(sumCost));
