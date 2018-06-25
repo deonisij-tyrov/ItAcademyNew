@@ -11,7 +11,7 @@ import java.util.Map;
 @Data
 public class Cashbox {
     private static int idReceipt;
-    double sum;
+    private double totalSum;
     private boolean free;
     private int casseNo;
     private Buyer buyer;
@@ -21,7 +21,7 @@ public class Cashbox {
         this.casseNo = casseNo;
     }
 
-    public Receipt payOff(Map<Good, Integer> goods, double money) {
+    public Receipt payOff(Map<Good, Integer> goods, double moneyFromBuyer) {
         List<Item> items = new ArrayList<>();
         int i = 0;
         for (Map.Entry<Good, Integer> good : goods.entrySet()) {
@@ -34,15 +34,15 @@ public class Cashbox {
                 e.printStackTrace();
             }
         }
-        return new Receipt(++idReceipt, new SimpleDateFormat("dd.M.yyyy HH:mm:ss").format(new Date()), casseNo, items, sum, round(money - sum), money);
+        return new Receipt(++idReceipt, new SimpleDateFormat("dd.M.yyyy HH:mm:ss").format(new Date()), casseNo, items, totalSum, round(moneyFromBuyer - totalSum), moneyFromBuyer);
     }
 
     public double makeSum(Map<Good, Integer> goods) {
-        this.sum = goods.entrySet()
+        this.totalSum = goods.entrySet()
                 .stream()
                 .mapToDouble(good -> ((good.getKey().getPrice() - (good.getKey().getPrice() * good.getKey().getDiscount())) * good.getValue()))
                 .sum();
-        return this.sum = round(sum);
+        return this.totalSum = round(totalSum);
     }
 
     private double round(double number) {

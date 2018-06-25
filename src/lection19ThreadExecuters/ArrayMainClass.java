@@ -1,7 +1,7 @@
 package lection19ThreadExecuters;
 
 public class ArrayMainClass {
-    private static final int MAX_ARRAY_SIZE = 1000000;
+    private static final int MAX_ARRAY_SIZE = 500;
 
     private static int[] array = randomIntArray();
 
