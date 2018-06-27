@@ -36,6 +36,8 @@ public class SleepBufferedReaderTask {
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
+                } catch (NumberFormatException e) {
+                    e.printStackTrace();
                 }
             }
         });
