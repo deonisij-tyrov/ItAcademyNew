@@ -76,8 +76,20 @@ b.
 
 Заполнить таблицу книг данными (10+ записей)
 
-Написать запрос, выбирающий: название книги и имя автора, отсортированные по году издания книги в возрастающем порядке.
+    Написать запрос, выбирающий: название книги и имя автора, отсортированные по году издания книги в возрастающем порядке.
+SELECT b.name, a.name, a.surname
+FROM books b, authors a
+WHERE b.id_author = a.id_author
+ORDER BY b.year_of_publication;
 
-      Написать тот же запрос, но для убывающего порядка.
+    Написать тот же запрос, но для убывающего порядка.
+SELECT b.name, a.name, a.surname
+FROM books b, authors a
+WHERE b.id_author = a.id_author
+ORDER BY b.year_of_publication DESC;
 
-Написать запрос, выбирающий количество книг у заданного автора.
+    Написать запрос, выбирающий количество книг у заданного автора.
+SELECT a.name, a.surname, COUNT(*)
+FROM books b, authors a
+WHERE  b.id_author = a.id_author
+GROUP BY a.surname
