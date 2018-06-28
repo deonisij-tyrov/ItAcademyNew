@@ -1,90 +1,123 @@
 ﻿CREATE TABLE `books` (
-  `id_book` int(2) NOT NULL AUTO_INCREMENT,
-  `name` char(30) NOT NULL,
-  `year_of_publication` int(4) DEFAULT NULL,
-  `id_author` int(2) DEFAULT NULL,
-  `genre` char(10) DEFAULT NULL,
+  `id_book`             INT(2)   NOT NULL AUTO_INCREMENT,
+  `name`                CHAR(30) NOT NULL,
+  `year_of_publication` INT(4)            DEFAULT NULL,
+  `id_author`           INT(2)            DEFAULT NULL,
+  `genre`               CHAR(10)          DEFAULT NULL,
   PRIMARY KEY (`id_book`)
 );
-INSERT INTO `books` VALUES (1,'Сто лет одиночества',1967,1,'Роман'),(2,'Моби Дик, или Белый кит',1987,2,'Роман'),(3,'Великий Гэтсби',1925,9,'Роман'),(4,'Гроздья гнева',1982,3,'Роман'),(5,'Лолита',1955,5,'Роман'),(6,'Шум и ярость',1929,6,'Роман'),(7,'На маяк',1927,7,'Роман'),(8,'Анна Каренина',1878,8,'Роман'),(9,'Война и мир',1865,8,'Роман'),(10,'Улисс',1904,4,'Роман');
+INSERT INTO `books`
+VALUES (1, 'Сто лет одиночества', 1967, 1, 'Роман'), (2, 'Моби Дик, или Белый кит', 1987, 2, 'Роман'),
+  (3, 'Великий Гэтсби', 1925, 9, 'Роман'), (4, 'Гроздья гнева', 1982, 3, 'Роман'), (5, 'Лолита', 1955, 5, 'Роман'),
+  (6, 'Шум и ярость', 1929, 6, 'Роман'), (7, 'На маяк', 1927, 7, 'Роман'), (8, 'Анна Каренина', 1878, 8, 'Роман'),
+  (9, 'Война и мир', 1865, 8, 'Роман'), (10, 'Улисс', 1904, 4, 'Роман');
 
 CREATE TABLE `countries` (
-  `c_id` int(6) NOT NULL AUTO_INCREMENT,
-  `name` char(20) NOT NULL,
-  `population` double DEFAULT NULL,
-  `aria` double DEFAULT NULL,
-  `official_language` char(20) DEFAULT NULL,
+  `c_id`              INT(6)   NOT NULL AUTO_INCREMENT,
+  `name`              CHAR(20) NOT NULL,
+  `population`        DOUBLE            DEFAULT NULL,
+  `aria`              DOUBLE            DEFAULT NULL,
+  `official_language` CHAR(20)          DEFAULT NULL,
   PRIMARY KEY (`c_id`)
-) ;
+);
 
-INSERT INTO `countries` VALUES (1,'Austria',8.741753,83.858,'German'),(2,'Denmark',5.707251,43.094,'Danish'),(3,'England',65.341183,244.82,'English'),(4,'Estonia',1.315944,45.226,'Estonian'),(5,'Finland',5.487308,337.03,'Finnish'),(6,'Iceland',0.332529,103,'Icelandic'),(7,'Ireland',4.65853,70.273,'Irish'),(8,'Latvia',1.968957,64.589,'Latvian'),(9,'Lithuania',2.888558,65.2,'Lithuanian'),(10,'Norway',5.213985,385.186,'Norwegian');
-INSERT INTO countries VALUE (3,'England',65.341183,244.82,'English');
-INSERT INTO countries VALUE (11,'china',65.341183,244.82,'ch');
-use new_book;
+INSERT INTO `countries` VALUES (1, 'Austria', 8.741753, 83.858, 'German'), (2, 'Denmark', 5.707251, 43.094, 'Danish'),
+  (3, 'England', 65.341183, 244.82, 'English'), (4, 'Estonia', 1.315944, 45.226, 'Estonian'),
+  (5, 'Finland', 5.487308, 337.03, 'Finnish'), (6, 'Iceland', 0.332529, 103, 'Icelandic'),
+  (7, 'Ireland', 4.65853, 70.273, 'Irish'), (8, 'Latvia', 1.968957, 64.589, 'Latvian'),
+  (9, 'Lithuania', 2.888558, 65.2, 'Lithuanian'), (10, 'Norway', 5.213985, 385.186, 'Norwegian');
+INSERT INTO countries VALUE (3, 'England', 65.341183, 244.82, 'English');
+INSERT INTO countries VALUE (11, 'china', 65.341183, 244.82, 'ch');
+USE new_book;
 
 CREATE TABLE `authors` (
-  `name` char(50) NOT NULL,
-  `id_author` int(2) NOT NULL AUTO_INCREMENT,
-  `birth` char(10) DEFAULT NULL,
-  `nationality` char(10) DEFAULT NULL,
+  `name`        CHAR(50) NOT NULL,
+  `id_author`   INT(2)   NOT NULL AUTO_INCREMENT,
+  `birth`       CHAR(10)          DEFAULT NULL,
+  `nationality` CHAR(10)          DEFAULT NULL,
   PRIMARY KEY (`id_author`)
 );
 
 CREATE TABLE `authors` (
-  `id_author` int(2) NOT NULL AUTO_INCREMENT,
-  `name` char(10) NOT NULL,
-  `surname` char(11) NOT NULL,
-  `country` char(10) DEFAULT NULL,
+  `id_author` INT(2)   NOT NULL AUTO_INCREMENT,
+  `name`      CHAR(10) NOT NULL,
+  `surname`   CHAR(11) NOT NULL,
+  `country`   CHAR(10)          DEFAULT NULL,
 
-PRIMARY KEY (`id_author`)
+  PRIMARY KEY (`id_author`)
 );
 
-INSERT INTO `authors` VALUES (1,'Габриэль','Маркес','Колумбия'),(2,'Ге́рман','Ме́лвилл','Америка'),(3,'Джон','Стейнбек','Америка'),(4,'Джеймс','Джойс','Ирландия'),(5,'Владимир','Набоков','Россия'),(6,'Уильям','Фолкнер','Америка'),(7,'Вирджиния','Вулф','Британия'),(8,'Лев','Толстой','Россия'),(9,'Скотт','Фицджеральд','Америка');
+INSERT INTO `authors`
+VALUES (1, 'Габриэль', 'Маркес', 'Колумбия'), (2, 'Ге́рман', 'Ме́лвилл', 'Америка'), (3, 'Джон', 'Стейнбек', 'Америка'),
+  (4, 'Джеймс', 'Джойс', 'Ирландия'), (5, 'Владимир', 'Набоков', 'Россия'), (6, 'Уильям', 'Фолкнер', 'Америка'),
+  (7, 'Вирджиния', 'Вулф', 'Британия'), (8, 'Лев', 'Толстой', 'Россия'), (9, 'Скотт', 'Фицджеральд', 'Америка');
 
-INSERT INTO `authors` VALUES ('Стивен Кинг',1,'21.09.1947','Американец'),('Рэй Брэдбери',2,'22.08.1920','Американец'),('Эрнест Хеммингуэй',3,'02.07.1961','Американец'),('Нил Гейман',4,'10.11.1960','Англичанин'),('Дэниел Киз',5,'09.08.1927','Американец'),('Терри Пратчетт',6,'28.04.1948','Англичанин'),('Стивен М. Бакстер',7,'13.11.1957','Англичанин');
+INSERT INTO `authors`
+VALUES ('Стивен Кинг', 1, '21.09.1947', 'Американец'), ('Рэй Брэдбери', 2, '22.08.1920', 'Американец'),
+  ('Эрнест Хеммингуэй', 3, '02.07.1961', 'Американец'), ('Нил Гейман', 4, '10.11.1960', 'Англичанин'),
+  ('Дэниел Киз', 5, '09.08.1927', 'Американец'), ('Терри Пратчетт', 6, '28.04.1948', 'Англичанин'),
+  ('Стивен М. Бакстер', 7, '13.11.1957', 'Англичанин');
 
 #Написать запрос, выбирающий из таблицы все страны с населением выше 50 млн. человек
 USE counties;
-SELECT * FROM countries;
+SELECT *
+FROM countries;
 
-SELECT * FROM countries
+SELECT *
+FROM countries
 WHERE population > 50;
 
 #Написать запрос, выбирающий из таблицы все страны, отсортированные по возрастанию численности населения.
-SELECT * FROM countries
+SELECT *
+FROM countries
 ORDER BY population;
 
 #Написать запрос, выбирающий из таблицы суммарное население пяти самых маленьких стран.
-SELECT sum(population) FROM countries WHERE population <= (
-  SELECT  population FROM countries
+SELECT sum(population)
+FROM countries
+WHERE population <= (
+  SELECT population
+  FROM countries
   ORDER BY population
   LIMIT 1 OFFSET 4);
 
 #Написать запрос, заменяющий государственный язык одной из стран на другой.
-UPDATE countries SET official_language = 'German'
+UPDATE countries
+SET official_language = 'German'
 WHERE c_id = 2;
 
 #Написать запрос, удаляющий страну с наибольшим населением.
 DELETE FROM countries
 WHERE population = (SELECT *
-                      FROM (SELECT MAX(population) AS id
-                            FROM countries t) x);
+                    FROM (SELECT MAX(population) AS id
+                          FROM countries t) x);
 
 USE book;
 #Написать запрос, выбирающий: название книги и имя автора, отсортированные по году издания книги в возрастающем порядке.
-SELECT b.year_of_publication , b.name, a.name, a.surname
+SELECT
+  b.year_of_publication,
+  b.name,
+  a.name,
+  a.surname
 FROM books b, authors a
 WHERE b.id_author = a.id_author
 ORDER BY b.year_of_publication;
 
 #Написать тот же запрос, но для убывающего порядка.
-SELECT b.year_of_publication , b.name, a.name, a.surname
+SELECT
+  b.year_of_publication,
+  b.name,
+  a.name,
+  a.surname
 FROM books b, authors a
 WHERE b.id_author = a.id_author
 ORDER BY b.year_of_publication DESC;
 
 #Написать запрос, выбирающий количество книг у заданного автора.
-SELECT a.name, a.surname, COUNT(*)
+SELECT
+  a.name,
+  a.surname,
+  COUNT(*)
 FROM books b, authors a
-WHERE  b.id_author = a.id_author
+WHERE b.id_author = a.id_author
 GROUP BY a.surname

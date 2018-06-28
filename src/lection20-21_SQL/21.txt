@@ -1,49 +1,77 @@
 ﻿USE new_book;
 CREATE TABLE `books` (
-  `id_book` int(2) NOT NULL AUTO_INCREMENT,
-  `name` char(50) NOT NULL,
-  `pages` int(4) DEFAULT NULL,
-  `genre` char(50) DEFAULT NULL,
+  `id_book` INT(2)   NOT NULL AUTO_INCREMENT,
+  `name`    CHAR(50) NOT NULL,
+  `pages`   INT(4)            DEFAULT NULL,
+  `genre`   CHAR(50)          DEFAULT NULL,
   PRIMARY KEY (`id_book`)
 );
 
-INSERT INTO `books` VALUES (1,'Кладбище домашних животных',450,'Роман'),(2,'Страна радости',320,'Роман'),(3,'Оно',1245,'Роман'),(4,'451 градус по Фаренгейту',256,'Роман'),(5,'Старик и море. Рассказы',256,'Повесть'),(6,'Фантастические создания',512,'Современная проза'),(7,'Скандинавские боги',320,'Фэнтези'),(8,'Американские боги',704,'Роман'),(9,'Таинственная история Билли Миллигана',576,'Психология'),(10,'Пятая Салли',352,'Зарубежная литература'),(11,'Благие знамения',512,'Фантастика'),(12,'Бесконечная земля',448,'Фантастика');
+INSERT INTO `books`
+VALUES (1, 'Кладбище домашних животных', 450, 'Роман'), (2, 'Страна радости', 320, 'Роман'), (3, 'Оно', 1245, 'Роман'),
+  (4, '451 градус по Фаренгейту', 256, 'Роман'), (5, 'Старик и море. Рассказы', 256, 'Повесть'),
+  (6, 'Фантастические создания', 512, 'Современная проза'), (7, 'Скандинавские боги', 320, 'Фэнтези'),
+  (8, 'Американские боги', 704, 'Роман'), (9, 'Таинственная история Билли Миллигана', 576, 'Психология'),
+  (10, 'Пятая Салли', 352, 'Зарубежная литература'), (11, 'Благие знамения', 512, 'Фантастика'),
+  (12, 'Бесконечная земля', 448, 'Фантастика');
+INSERT INTO books VALUE (11, 'Благие знамения', 512, 'Фантастика'), (12, 'Бесконечная земля', 448, 'Фантастика');
+SELECT avg(books.pages)
+FROM books;
+
 
 CREATE TABLE `authors` (
-  `name` char(50) NOT NULL,
-  `id_author` int(2) NOT NULL AUTO_INCREMENT,
-  `birth` DATE DEFAULT NULL,
-  `nationality` char(10) DEFAULT NULL,
+  `name`        CHAR(50) NOT NULL,
+  `id_author`   INT(2)   NOT NULL AUTO_INCREMENT,
+  `birth`       DATE              DEFAULT NULL,
+  `nationality` CHAR(10)          DEFAULT NULL,
   PRIMARY KEY (`id_author`)
 );
-INSERT INTO `authors` VALUES ('Стивен Кинг',1,'1947.09.21','Американец');
-INSERT INTO `authors` VALUES ('Рэй Брэдбери',2,'1920.08.22','Американец'),('Эрнест Хеммингуэй',3,'1961.07.02','Американец'),('Нил Гейман',4,'1960.11.10','Англичанин'),('Дэниел Киз',5,'1927.08.09','Американец'),('Терри Пратчетт',6,'1948.04.28','Англичанин'),('Стивен М. Бакстер',7,'1957.11.13','Англичанин');
+INSERT INTO `authors` VALUES ('Стивен Кинг', 1, '1947.09.21', 'Американец');
+INSERT INTO `authors`
+VALUES ('Рэй Брэдбери', 2, '1920.08.22', 'Американец'), ('Эрнест Хеммингуэй', 3, '1961.07.02', 'Американец'),
+  ('Нил Гейман', 4, '1960.11.10', 'Англичанин'), ('Дэниел Киз', 5, '1927.08.09', 'Американец'),
+  ('Терри Пратчетт', 6, '1948.04.28', 'Англичанин'), ('Стивен М. Бакстер', 7, '1957.11.13', 'Англичанин');
 
 CREATE TABLE `book_author` (
-  `id_book` int(2) NOT NULL,
-  `id_autor` int(2) NOT NULL,
-  PRIMARY KEY (`id_book`,`id_autor`)
+  `id_book`  INT(2) NOT NULL,
+  `id_autor` INT(2) NOT NULL,
+  PRIMARY KEY (`id_book`, `id_autor`)
 );
 
-INSERT INTO `book_author` VALUES (1,1),(2,1),(3,1),(4,2),(5,3),(6,4),(7,4),(8,4),(9,5),(10,5),(11,4),(11,6),(12,6),(12,7);
-SELECT * FROM book_author;
+INSERT INTO `book_author`
+VALUES (1, 1), (2, 1), (3, 1), (4, 2), (5, 3), (6, 4), (7, 4), (8, 4), (9, 5), (10, 5), (11, 4), (11, 6), (12, 6),
+  (12, 7);
+INSERT INTO book_author VALUE (11, 4), (11, 6), (12, 6), (12, 7);
+SELECT *
+FROM book_author;
 
 /*1.Выбрать из базы данных имена авторов с названиями написанных ими книг.
 Назвать поля результирующей таблицы book_author и book_name.*/
-SELECT a.name book_author, b.name book_name
-  FROM authors a
-JOIN book_author ba ON a.id_author = ba.id_autor
-JOIN books b ON b.id_book = ba.id_book;
+SELECT
+  a.name book_author,
+  b.name book_name
+FROM authors a
+  JOIN book_author ba ON a.id_author = ba.id_autor
+  JOIN books b ON b.id_book = ba.id_book;
 
 /*2.Выбрать из таблицы все книги авторов выбранной национальности.*/
-SELECT b.name, b.genre, b.pages, a.name
+SELECT
+  b.name,
+  b.genre,
+  b.pages,
+  a.name
 FROM books b
   JOIN book_author ba ON b.id_book = ba.id_book
   JOIN authors a ON a.id_author = ba.id_autor
 WHERE a.nationality = 'Американец';
 
 /*3.Выбрать из таблицы все книги, авторы которых родились после 1900 года.*/
-SELECT b.name, b.genre, b.pages, a.name, a.birth
+SELECT
+  b.name,
+  b.genre,
+  b.pages,
+  a.name,
+  a.birth
 FROM books b
   JOIN book_author ba ON b.id_book = ba.id_book
   JOIN authors a ON a.id_author = ba.id_autor
@@ -51,8 +79,43 @@ WHERE a.birth > '1960';
 
 /*4.Удалить из таблицы данных книгу с заданным названием.*/
 DELETE books, book_author
-    FROM books
-JOIN book_author
-WHERE books.id_book = book_author.id_book and books.name = 'Благие знамения';
+FROM books
+  JOIN book_author
+WHERE books.id_book = book_author.id_book AND books.name = 'Бесконечная земля';
 
-SELECT * FROM books;
+SELECT *
+FROM books;
+
+/*5.Выбрать из таблицы: имя автора, национальность и среднее количество написанных им страниц, упорядочить по году рождения автора.*/
+SELECT
+  a.name,
+  a.nationality,
+  avg(b.pages)
+FROM authors a
+  JOIN book_author ba ON a.id_author = ba.id_autor
+  JOIN books b ON b.id_book = ba.id_book
+GROUP BY a.name
+ORDER BY a.birth;
+
+/*6,Выбрать из таблицы: имя автора, национальность и среднее количество написанных им страниц, где среднее число страниц больше 300.*/
+SELECT
+  a.name,
+  a.nationality,
+  avg(b.pages)
+FROM authors a
+  JOIN book_author ba ON a.id_author = ba.id_autor
+  JOIN books b ON b.id_book = ba.id_book
+GROUP BY a.name
+HAVING avg(b.pages) > 300;
+
+/*7.* Выбрать из таблицы данные в виде: автор, ср. число страниц для всех авторов,
+среднее количество написанных страниц которых выше среднего количества страниц, написанных всеми авторами.*/
+SELECT
+  a.name,
+  a.nationality,
+  avg(b.pages)
+FROM authors a
+  JOIN book_author ba ON a.id_author = ba.id_autor
+  JOIN books b ON b.id_book = ba.id_book
+GROUP BY a.name
+HAVING avg(b.pages) > (SELECT avg(b.pages) FROM books b);
