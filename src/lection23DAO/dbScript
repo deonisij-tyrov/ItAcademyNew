@@ -1,0 +1,21 @@
+USE base_station;
+INSERT INTO bs (id, name, ne_id)
+VALUES (DEFAULT, 'BS-000', 0), (DEFAULT, 'BS-001', 1), (DEFAULT, 'BS-000', 0), (DEFAULT, 'BS-002', 2);
+INSERT INTO cell (id, cell_name, sector, power_id, bs_id, band_id)
+VALUES (DEFAULT, '000-S1', 1, 1, 000, 3),
+  (DEFAULT, '000-S2', 2, 1, 000, 3),
+  (DEFAULT, '000-S3', 3, 1, 000, 3),
+  (DEFAULT, '001-S1', 1, 1, 001, 3),
+  (DEFAULT, '001-S2', 2, 1, 001, 3),
+  (DEFAULT, '001-S3', 3, 1, 001, 3),
+  (DEFAULT, '002-S1', 1, 1, 002, 3),
+  (DEFAULT, '002-S2', 2, 1, 002, 3),
+  (DEFAULT, '002-S3', 3, 1, 002, 3);
+INSERT INTO frequency (band, ul, dl) VALUES (1, 1920, 2110),
+  (2, 1850, 1930),
+  (3, 1710, 1805),
+  (4, 1710, 2110),
+  (5, 824, 869),
+  (6, 830, 875),
+  (7, 2500, 2620),
+  (8, 880, 925);
