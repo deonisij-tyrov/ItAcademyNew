@@ -1,6 +1,6 @@
 package lection22JDBC;
 
-import lection22JDBC.dataBaseManager.ConnectionManager;
+import lection23DAO.dataBaseManager.ConnectionManager;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
