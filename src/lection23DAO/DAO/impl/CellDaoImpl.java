@@ -15,10 +15,9 @@ public class CellDaoImpl implements CellDAO {
     private static final String readCellQuery = "SELECT * FROM cell WHERE id = ?;";
     private static final String deleteCellQuery = "DELETE FROM cell WHERE id = ?;";
     private static final String getReadCellQueryByBaseStation = "SELECT * FROM cell WHERE bs_id = ?;";
+    private static final String creatBaseStation = "INSERT INTO bs (id, name) VALUES (?, ?);";
+    private static final String getBaseStation = "SELECT * FROM bs WHERE id = ?;";
 
-    private static volatile Cell cell;
-
-    private final Connection connection;
     private PreparedStatement psCreate;
     private PreparedStatement psUpdate;
     private PreparedStatement psRead;
@@ -37,9 +36,6 @@ public class CellDaoImpl implements CellDAO {
         }
     }
 
-    public CellDaoImpl(final Connection connection) {
-        this.connection = ConnectionManager.getConnection();
-    }
 
     private static void close(ResultSet resultSet) {
         try {
@@ -53,7 +49,7 @@ public class CellDaoImpl implements CellDAO {
     @Override
     public List<Cell> BaseStation(BaseStation baseStation) throws SQLException {
         ArrayList<Cell> list = new ArrayList<>();
-        psReadByBaseStation.setLong(1, baseStation.getBsNumber());
+        psReadByBaseStation.setLong(1, baseStation.getId());
         ResultSet resultSet = psReadByBaseStation.executeQuery();
         while (resultSet.next()) {
             long id = resultSet.getLong(1);
@@ -65,6 +61,41 @@ public class CellDaoImpl implements CellDAO {
             list.add(new Cell(id, name, sector, power, bsNumber, band));
         }
         return list;
+    }
+
+    @Override
+    public void addNewBaseStationCells(BaseStation baseStation) throws SQLException {
+        Connection connection = ConnectionManager.getConnection();
+        try {
+            connection.setAutoCommit(false);
+            addNewBaseStationIfNotExist(connection, baseStation);
+            PreparedStatement preparedStatement = connection.prepareStatement(creatCellQuery);
+            for (Cell cell : baseStation.getCells()) {
+                preparedStatement.setString(1, cell.getName());
+                preparedStatement.setInt(2, cell.getSector());
+                preparedStatement.setInt(3, cell.getPower());
+                preparedStatement.setLong(4, cell.getBsNumber());
+                preparedStatement.setLong(5, cell.getBand());
+                preparedStatement.executeUpdate();
+            }
+            connection.commit();
+        } catch (SQLException e) {
+            connection.rollback();
+            e.printStackTrace();
+        }
+    }
+
+    private void addNewBaseStationIfNotExist(Connection connection, BaseStation baseStation) throws SQLException {
+        PreparedStatement preparedStatement = connection.prepareStatement(getBaseStation);
+        preparedStatement.setLong(1, baseStation.getId());
+        ResultSet resultSet = preparedStatement.getResultSet();
+        if (!resultSet.next()) {
+            preparedStatement = connection.prepareStatement(creatBaseStation);
+            preparedStatement.setLong(1, baseStation.getId());
+            preparedStatement.setString(2, baseStation.getName());
+            preparedStatement.executeUpdate();
+        }
+        close(resultSet);
     }
 
     @Override

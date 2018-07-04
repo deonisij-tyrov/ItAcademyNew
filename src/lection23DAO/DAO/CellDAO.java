@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface CellDAO extends DAO<Cell, Long> {
     List<Cell> BaseStation(BaseStation baseStation) throws SQLException;
+    void addNewBaseStationCells(BaseStation baseStation) throws SQLException;
 }
