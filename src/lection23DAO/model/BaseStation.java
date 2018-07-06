@@ -1,4 +1,4 @@
-package lection23DAO;
+package lection23DAO.model;
 
 import lombok.Data;
 

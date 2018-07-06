@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="jboss:jboss-jmx:4.0.4" type="repository">
+    <properties maven-id="jboss:jboss-jmx:4.0.4" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jboss-jmx-4.0.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
