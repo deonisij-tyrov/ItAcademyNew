@@ -12,8 +12,9 @@
     <orderEntry type="library" name="jsoup-1.11.3" level="project" />
     <orderEntry type="library" name="log4j-1.2.17" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.40-bin" level="project" />
-    <orderEntry type="library" name="com.bluecatcode.junit:junit-4.12-extended:1.0.3" level="project" />
     <orderEntry type="library" name="jboss:jboss-jmx:4.0.4" level="project" />
     <orderEntry type="library" name="com.h2database:h2:1.4.197" level="project" />
+    <orderEntry type="library" name="junit-4.10" level="project" />
+    <orderEntry type="library" name="servlet-api" level="project" />
   </component>
 </module>
