@@ -12,12 +12,12 @@ public class TestClassForeTask6 {
     public static void main(String[] args) {
         try {
 
-            task1();
-            deleteTest();
+//            task1();
+//            deleteTest();
 //            task2();
 //            deleteTest();
-//            task3();
-////            deleteTest();
+            task3();
+            deleteTest();
 //            task4();
 ////            deleteTest();
 

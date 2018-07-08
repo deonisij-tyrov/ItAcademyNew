@@ -15,6 +15,5 @@
     <orderEntry type="library" name="jboss:jboss-jmx:4.0.4" level="project" />
     <orderEntry type="library" name="com.h2database:h2:1.4.197" level="project" />
     <orderEntry type="library" name="junit-4.10" level="project" />
-    <orderEntry type="library" name="servlet-api" level="project" />
   </component>
 </module>
